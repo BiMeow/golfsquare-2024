@@ -1,0 +1,23 @@
+{
+  "extends": "next/core-web-vitals",
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx", "**/*.mjs"],
+      "plugins": ["tailwindcss", "simple-import-sort"],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "react/display-name": "off",
+        "react-hooks/rules-of-hooks": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "react/jsx-no-target-blank": "off",
+        "react/no-unescaped-entities": "off",
+        "react/jsx-key": "off",
+        "jsx-a11y/alt-text": "off",
+        "@next/next/no-img-element": "off"
+      }
+    }
+  ]
+}

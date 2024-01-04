@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.cusContainer {
+		@apply mx-auto w-[90%] tl-l:w-full tl-l:px-[20px];
+	}
+
+	.secSpacing {
+		@apply mb-[80px] mb:mb-[50px];
+	}
+
+	.absFull {
+		@apply absolute left-0 top-0 h-full w-full object-cover;
+	}
+
+	.errors {
+		@apply text-[12px] text-[#ff0000];
+	}
+}
+
+// @font-face {
+//   font-family: "Gilroy";
+//   src: url("../../public/font/TTFirsNeueTrial_Regular.eot");
+//   src: url("../../public/font/TTFirsNeueTrial_Regular.eot")
+//       format("embedded-opentype"),
+//     url("../../public/font/TTFirsNeueTrial_Regular.woff2") format("woff2"),
+//     url("../../public/font/TTFirsNeueTrial_Regular.woff") format("woff"),
+//     url("../../public/font/TTFirsNeueTrial_Regular.ttf") format("truetype"),
+//     url("../../public/font/TTFirsNeueTrial_Regular.svg#TTFirsNeueTrial_Regular")
+//       format("svg");
+//   font-weight: normal;
+//   font-style: normal;
+// }
