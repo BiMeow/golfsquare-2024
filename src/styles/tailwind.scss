@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.cusContainer {
+		@apply mx-auto w-[92%] tl-l:w-full tl-l:px-[20px];
+	}
+
+	.secSpacing {
+		@apply mb-[80px] mb:mb-[50px];
+	}
+
+	.absFull {
+		@apply absolute left-0 top-0 h-full w-full object-cover;
+	}
+
+	.errors {
+		@apply text-[12px] text-[#ff0000];
+	}
+}
