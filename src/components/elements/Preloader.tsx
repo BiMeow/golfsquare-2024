@@ -5,39 +5,26 @@ import { useStorage } from "@/components/context/StorageProvider";
 import { useWindowSize } from "usehooks-ts";
 
 function Preloader({ ...props }) {
-  const router = useRouter();
+	const router = useRouter();
 
-  const { width } = useWindowSize();
+	const { width } = useWindowSize();
 
-  const { isLoading } = useStorage();
+	const { isLoading } = useStorage();
 
-  return (
-    <>
-      <div className={`Preloader`}>
-        <div
-          className={`
+	return (
+		<>
+			<div className={`Preloader`}>
+				<div
+					className={`
           fixed inset-0 z-[9999] flex h-screen w-screen items-center justify-center overflow-hidden duration-700
           ${isLoading ? "" : "scale-0 rounded-full opacity-0"}
           `}
-        >
-          <div className="overlay absolute left-0 top-0 h-full w-full //bg-[#0007] bg-greenDark backdrop-blur-[40px]"></div>
-
-          <div className="relative w-[200px] rounded-full overflow-hidden bg-greenDark mb:hidden">
-            <div className="aspect-1"></div>
-            <img
-              src="/images/loader.png"
-              alt=""
-              className="move absolute w-[500px] h-full max-w-none top-0 left-0"
-            />
-          </div>
-
-          <div className="move w-[200px] hidden mb:block">
-            <img src="/images/Logo.png" alt="" className="w-full" />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+				>
+					<div className="overlay absolute left-0 top-0 h-full w-full bg-[#0007] backdrop-blur-[40px]"></div>
+				</div>
+			</div>
+		</>
+	);
 }
 
 export default memo(Preloader);
