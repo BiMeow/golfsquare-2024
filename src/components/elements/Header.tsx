@@ -48,7 +48,7 @@ function Header({ ...props }) {
 
 	return (
 		<>
-			<div className={`Header sticky top-0 bg-[#0d133277] py-[30px] backdrop-blur-[10px]`}>
+			<div className={`Header //backdrop-blur-[10px] fixed top-0 z-[444] w-full py-[30px]`}>
 				<div className="cusContainer">
 					<div className="flex items-center justify-between">
 						<Link href="/">
@@ -57,7 +57,11 @@ function Header({ ...props }) {
 
 						<div className="listMenu flex space-x-[60px]">
 							{listMenu.map((e: any, i: number) => (
-								<Link href={e.href} key={i} className="text-red font-GilroyBold text-[14px] uppercase">
+								<Link
+									href={e.href}
+									key={i}
+									className="font-GilroyBold text-[14px] uppercase text-red"
+								>
 									{e.title}
 								</Link>
 							))}
@@ -70,6 +74,12 @@ function Header({ ...props }) {
 					</div>
 				</div>
 			</div>
+
+			<style jsx global>{`
+				.Header {
+					background: linear-gradient(180deg, #0d1332 0%, #0d1332dd 50%, #0000 100%);
+				}
+			`}</style>
 		</>
 	);
 }

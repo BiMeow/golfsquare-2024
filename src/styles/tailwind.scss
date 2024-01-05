@@ -15,7 +15,39 @@
 		@apply absolute left-0 top-0 h-full w-full object-cover;
 	}
 
+	.mainPage {
+		@apply pt-[15vw];
+	}
+
 	.errors {
 		@apply text-[12px] text-[#ff0000];
+	}
+
+	.text-64 {
+		@apply text-[64px] font-bold;
+	}
+
+	.text-50 {
+		@apply text-[50px] font-bold;
+	}
+
+	.text-48 {
+		@apply text-[48px] font-bold;
+	}
+
+	.text-36 {
+		@apply text-[36px] font-bold;
+	}
+
+	.text-24 {
+		@apply text-[24px];
+	}
+
+	.hoverShadow {
+		@apply hover:shadow-[0px_0px_30px_#ED2224] group-hover:shadow-[0px_0px_30px_#ED2224];
+	}
+
+	.mainBtn {
+		@apply border-none bg-red px-[25px] py-[10px] text-center font-bold uppercase outline-none duration-500 hover:bg-white hover:text-blue hover:shadow-[0px_0px_30px_#ED2224];
 	}
 }
