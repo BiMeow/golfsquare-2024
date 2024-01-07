@@ -77,7 +77,7 @@ function SectionAboutSimulator({ ...props }) {
 
 	return (
 		<>
-			<div className={`SectionAboutSimulator secSpacing`}>
+			<div className={`SectionAboutSimulator secSpacing mb-[60px]`}>
 				<div className="cusContainer">
 					<h2 className="text-64 mb-[20px]">Golf simulator</h2>
 					<p className="mb-[80px] max-w-[800px]">

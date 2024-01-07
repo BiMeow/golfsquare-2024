@@ -14,7 +14,7 @@ let listMenu = [
 	},
 	{
 		title: "Plan a visit",
-		href: "/#",
+		href: "/planavisit",
 	},
 	{
 		title: "Membership",

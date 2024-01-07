@@ -14,7 +14,7 @@ function SectionContact({ ...props }) {
 	} = useForm<any>({ mode: "all" });
 
 	const onSubmitContact = (data: any) => {
-		console.log(`BiMeow login`, data);
+		console.log(`BiMeow contact`, data);
 	};
 
 	return (
