@@ -5,7 +5,13 @@ import Preloader from "@/components/elements/Preloader";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-function MasterPage({ title = "BiMeow", description = "BiMeow is me!!!", ...props }: any) {
+function MasterPage({
+	title = "BiMeow",
+	description = "BiMeow is me!!!",
+	pageName,
+	activeNav,
+	...props
+}: any) {
 	const router = useRouter();
 
 	const { children } = props;
@@ -13,11 +19,11 @@ function MasterPage({ title = "BiMeow", description = "BiMeow is me!!!", ...prop
 	return (
 		<>
 			<Head>
-				<title>{title}</title>
+				<title>GolfSquare {pageName && `| ${pageName}`}</title>
 
 				<meta charSet="UTF-8" key="charset" />
 
-				<link rel="shortcut icon" href={`/images/fav-icon.svg`} />
+				<link rel="shortcut icon" href={`/images/logo-icon.png`} />
 
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={description} />
@@ -42,7 +48,7 @@ function MasterPage({ title = "BiMeow", description = "BiMeow is me!!!", ...prop
 				<Preloader />
 
 				<main className={`MasterPage flex min-h-screen flex-col justify-between`}>
-					<Header />
+					<Header activeNav={activeNav} />
 					<div className={`pageContent`}>{children}</div>
 					<Footer />
 				</main>
