@@ -4,9 +4,9 @@ const MasterPage = dynamic(() => import("@/components/master/MasterPage"));
 const PageHome = dynamic(() => import("@/components/pageContent/PageHome"));
 
 export default function Home() {
-  return (
-    <MasterPage pageName={"Trang chủ"}>
-      <PageHome />
-    </MasterPage>
-  );
+	return (
+		<MasterPage pageName={"Home"}>
+			<PageHome />
+		</MasterPage>
+	);
 }

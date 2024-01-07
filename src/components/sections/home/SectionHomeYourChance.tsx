@@ -43,7 +43,7 @@ function SectionHomeYourChance({ ...props }) {
 					className="moveBanner absolute top-0 aspect-[144/77] w-full rounded-b-[75px] object-cover"
 				/>
 				<div className="cusContainer relative">
-					<h2 className="titleStoke relative z-10 mb-[80px] text-center font-GilroyBold text-[170px] font-bold">
+					<h2 className="titleStoke relative z-10 mb-[80px]">
 						GRAB YOUR <br /> CHANCE
 					</h2>
 
@@ -53,8 +53,8 @@ function SectionHomeYourChance({ ...props }) {
 								className="itemPromo w-1/3 px-[40px] text-center font-medium"
 								key={i}
 							>
-								<p className="mb-[20px] text-[24px]">{e.title}</p>
-								<p>{e.description}</p>
+								<p className="mb-[20px] text-[24px] font-semibold">{e.title}</p>
+								<p className="text-[16px] font-medium">{e.description}</p>
 							</div>
 						))}
 					</div>
@@ -70,18 +70,6 @@ function SectionHomeYourChance({ ...props }) {
 					/>
 				</div>
 			</div>
-
-			<style jsx global>{`
-				.SectionHomeYourChance {
-					.titleStoke {
-						background: transparent;
-						-webkit-background-clip: text;
-						-webkit-text-fill-color: transparent;
-						-webkit-text-stroke-width: 2px;
-						-webkit-text-stroke-color: white;
-					}
-				}
-			`}</style>
 		</>
 	);
 }

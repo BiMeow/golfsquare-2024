@@ -6,7 +6,7 @@ import gsap from "gsap";
 let listMenu = [
 	{
 		title: "About",
-		href: "/#",
+		href: "/about",
 	},
 	{
 		title: "Book a table",
@@ -14,7 +14,7 @@ let listMenu = [
 	},
 	{
 		title: "Plan a visit",
-		href: "/#",
+		href: "/planavisit",
 	},
 	{
 		title: "Membership",
@@ -30,7 +30,7 @@ let listMenu = [
 	},
 ];
 
-function Header({ ...props }) {
+function Header({ activeNav = -1, ...props }) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -49,7 +49,7 @@ function Header({ ...props }) {
 	return (
 		<>
 			<div className={`Header //backdrop-blur-[10px] fixed top-0 z-[444] w-full py-[30px]`}>
-				<div className="cusContainer">
+				<div className="cusContainerLarge">
 					<div className="flex items-center justify-between">
 						<Link href="/">
 							<img src="/images/logo.png" alt="" className="w-[205px]" />
@@ -60,7 +60,10 @@ function Header({ ...props }) {
 								<Link
 									href={e.href}
 									key={i}
-									className="font-GilroyBold text-[14px] uppercase text-red"
+									className={`
+									font-GilroyBold text-[14px] uppercase duration-300 
+									${activeNav == i ? "text-white" : "text-red hover:text-white hover:opacity-75"}
+									`}
 								>
 									{e.title}
 								</Link>
