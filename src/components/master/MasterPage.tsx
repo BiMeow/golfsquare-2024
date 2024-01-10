@@ -10,6 +10,7 @@ function MasterPage({
 	description = "BiMeow is me!!!",
 	pageName,
 	activeNav,
+	activeSubNav,
 	...props
 }: any) {
 	const router = useRouter();
@@ -48,7 +49,7 @@ function MasterPage({
 				<Preloader />
 
 				<main className={`MasterPage flex min-h-screen flex-col justify-between`}>
-					<Header activeNav={activeNav} />
+					<Header activeNav={activeNav} activeSubNav={activeSubNav} />
 					<div className={`pageContent`}>{children}</div>
 					<Footer />
 				</main>

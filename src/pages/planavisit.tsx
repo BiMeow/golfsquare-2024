@@ -5,7 +5,7 @@ const PagePlanAVisit = dynamic(() => import("@/components/pageContent/PagePlanAV
 
 export default function PlanAVisit() {
 	return (
-		<MasterPage pageName={"About"} activeNav={2}>
+		<MasterPage pageName={"Plan a visit"} activeNav={2}>
 			<PagePlanAVisit />
 		</MasterPage>
 	);

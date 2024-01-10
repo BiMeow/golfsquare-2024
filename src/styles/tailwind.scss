@@ -7,6 +7,10 @@
 		@apply mx-auto w-[80%] tl-l:w-full tl-l:px-[20px];
 	}
 
+	.cusContainerMd {
+		@apply mx-auto w-[85%] tl-l:w-full tl-l:px-[20px];
+	}
+
 	.cusContainerLarge {
 		@apply mx-auto w-[92%] tl-l:w-full tl-l:px-[20px];
 	}
@@ -24,7 +28,7 @@
 	}
 
 	.errors {
-		@apply mt-[5px] text-[12px] text-[#ff0000];
+		@apply mt-[5px] text-[12px] text-[#ED2224];
 	}
 
 	.text-64 {
