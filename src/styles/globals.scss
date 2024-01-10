@@ -71,3 +71,40 @@ html {
 		display: none;
 	}
 }
+
+.cusSlider {
+	.slick-list {
+		position: relative;
+		z-index: 10;
+	}
+
+	.slick-slide {
+		height: unset;
+
+		> div {
+			height: 100%;
+			display: flex;
+			align-items: end;
+		}
+	}
+
+	.slick-dots {
+		position: absolute;
+		bottom: -20px;
+		left: 0;
+		z-index: 10;
+		display: flex !important;
+		justify-content: center;
+
+		li {
+			width: fit-content;
+			height: fit-content;
+
+			&.slick-active {
+				.cusDot {
+					background: #ed2224;
+				}
+			}
+		}
+	}
+}
