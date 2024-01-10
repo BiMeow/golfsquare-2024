@@ -213,9 +213,9 @@ function PageMembership({ ...props }) {
 						{listTab.map((e: any, i: number) => (
 							<div
 								className={`
-                itemTab text-24 relative flex cursor-pointer items-center pb-[8px] duration-300
-                ${activeTab == i ? "font-bold text-red" : "font-medium text-white hover:opacity-75"}
-                `}
+								itemTab text-24 relative flex cursor-pointer items-center pb-[8px] duration-300
+								${activeTab == i ? "font-bold text-red" : "font-medium text-white hover:opacity-75"}
+								`}
 								key={i}
 								onClick={() => setActiveTab(i)}
 							>
@@ -223,9 +223,9 @@ function PageMembership({ ...props }) {
 								<p>{e.title}</p>
 								<div
 									className={`
-                  borderTab absolute left-0 top-full h-[6px] w-full bg-red duration-500
-                  ${activeTab == i ? "max-w-[200px]" : "max-w-0"}
-                  `}
+									borderTab absolute left-0 top-full h-[6px] w-full bg-red duration-500
+									${activeTab == i ? "max-w-[200px]" : "max-w-0"}
+									`}
 								></div>
 							</div>
 						))}
