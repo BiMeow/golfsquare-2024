@@ -18,7 +18,7 @@ let listMenu = [
 	},
 	{
 		title: "Membership",
-		href: "/#",
+		href: "/membership",
 	},
 	{
 		title: "Learn",
@@ -26,11 +26,23 @@ let listMenu = [
 	},
 	{
 		title: "Have fun",
-		href: "/#",
+		href: "",
+		children: [
+			{
+				title: "F&B",
+				href: "/fnb",
+				id: 79,
+			},
+			{
+				title: "PARTIES & EVENTS",
+				href: "/events",
+				id: 98,
+			},
+		],
 	},
 ];
 
-function Header({ activeNav = -1, ...props }) {
+function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -57,16 +69,41 @@ function Header({ activeNav = -1, ...props }) {
 
 						<div className="listMenu flex space-x-[60px]">
 							{listMenu.map((e: any, i: number) => (
-								<Link
-									href={e.href}
+								<div
 									key={i}
 									className={`
-									font-GilroyBold text-[14px] uppercase duration-300 
-									${activeNav == i ? "text-white" : "text-red hover:text-white hover:opacity-75"}
+									group relative cursor-pointer font-GilroyBold text-[14px] uppercase duration-300
+									${activeNav == i ? "text-white" : "text-red hover:text-[#c4c4c4]"}
 									`}
 								>
 									{e.title}
-								</Link>
+									{e.href && <Link href={e.href} className="absFull" />}
+									{e.children && (
+										<div className="subNav absolute right-0 top-full z-10 pt-[20px]">
+											<div className="max-h-0 overflow-hidden rounded-[10px]  bg-[#0D1332] shadow-[0px_0px_10px_#fff7] duration-500 group-hover:max-h-[200px]">
+												<div className="listSub px-[20px] py-[10px]">
+													{e.children.map((e2: any, i2: number) => (
+														<div
+															className={`
+															itemSub relative whitespace-nowrap border-b border-[#55596f] py-[10px] text-center font-GilroyBold text-[14px] uppercase duration-300 last:border-none
+															${activeSubNav == i2 ? "text-white" : "text-red hover:text-[#c4c4c4]"}
+															`}
+															key={i2}
+														>
+															{e2.title}
+															{e2.href && (
+																<Link
+																	href={e2.href}
+																	className="absFull"
+																/>
+															)}
+														</div>
+													))}
+												</div>
+											</div>
+										</div>
+									)}
+								</div>
 							))}
 						</div>
 					</div>

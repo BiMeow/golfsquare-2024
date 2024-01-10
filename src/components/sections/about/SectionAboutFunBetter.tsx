@@ -36,7 +36,7 @@ function SectionAboutFunBetter({ ...props }) {
 	return (
 		<>
 			<div className={`SectionAboutFunBetter secSpacing relative`}>
-				<div className="moveBanner absolute left-0 top-[50px] w-full opacity-80 blur-[5px]">
+				<div className="moveBanner absolute left-0 top-[50px] max-h-[90%] w-full overflow-hidden opacity-80 blur-[5px]">
 					<img
 						src="/images/about/funbetter-banner.jpg"
 						alt=""
