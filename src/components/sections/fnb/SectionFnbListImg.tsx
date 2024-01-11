@@ -5,46 +5,46 @@ import { IconPlay } from "@/components/elements/Icon";
 
 let listImg = [
 	{
-		image: "/images/event/img-1.jpg",
+		image: "/images/fnb/img-1.jpg",
 	},
 	{
-		image: "/images/event/img-2.jpg",
+		image: "/images/fnb/img-2.jpg",
 	},
 	{
-		image: "/images/event/img-3.jpg",
+		image: "/images/fnb/img-3.jpg",
 	},
 	{
-		image: "/images/event/img-4.jpg",
+		image: "/images/fnb/img-4.jpg",
 	},
 	{
-		image: "/images/event/img-5.jpg",
+		image: "/images/fnb/img-5.jpg",
 	},
 	{
-		image: "/images/event/img-6.jpg",
+		image: "/images/fnb/img-6.jpg",
 	},
 	{
-		image: "/images/event/img-1.jpg",
+		image: "/images/fnb/img-1.jpg",
 	},
 	{
-		image: "/images/event/img-2.jpg",
+		image: "/images/fnb/img-2.jpg",
 	},
 	{
-		image: "/images/event/img-4.jpg",
+		image: "/images/fnb/img-4.jpg",
 	},
 	{
-		image: "/images/event/img-5.jpg",
+		image: "/images/fnb/img-5.jpg",
 	},
 	{
-		image: "/images/event/img-2.jpg",
+		image: "/images/fnb/img-2.jpg",
 	},
 	{
-		image: "/images/event/img-3.jpg",
+		image: "/images/fnb/img-3.jpg",
 	},
 	{
-		image: "/images/event/img-4.jpg",
+		image: "/images/fnb/img-4.jpg",
 	},
 	{
-		image: "/images/event/img-5.jpg",
+		image: "/images/fnb/img-5.jpg",
 	},
 ];
 
@@ -70,7 +70,7 @@ function SectionEventListImg({ ...props }) {
 		<>
 			<div className={`SectionEventListImg secSpacing`}>
 				<div className="banner relative mb-[120px]">
-					<img src="/images/event/banner.jpg" alt="" className="aspect-[144/60] object-cover" />
+					<img src="/images/fnb/banner.jpg" alt="" className="aspect-[144/60] object-cover" />
 					<div className="hoverShadow absolute left-1/2 top-1/2 mb-[50px] flex aspect-1 w-[74px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white">
 						<IconPlay />
 					</div>

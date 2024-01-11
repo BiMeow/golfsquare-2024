@@ -50,8 +50,8 @@ function SectionEventList({ ...props }) {
 
 	return (
 		<>
-			<div className={`SectionEventList secSpacing`}>
-				<div className="cusContainer mb-[160px]">
+			<div className={`SectionEventList mb-[160px]`}>
+				<div className="cusContainer">
 					{listEvents.map((e: any, i: number) => (
 						<div className="listEvent mb-[100px] last:mb-0" key={i}>
 							<h2 className="mb-[50px] text-center text-[36px] font-bold uppercase">{e.title}</h2>
@@ -76,12 +76,6 @@ function SectionEventList({ ...props }) {
 							</div>
 						</div>
 					))}
-				</div>
-				<div className="banner relative">
-					<img src="/images/event/banner.jpg" alt="" className="aspect-[144/60] object-cover" />
-					<div className="hoverShadow absolute left-1/2 top-1/2 mb-[50px] flex aspect-1 w-[74px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white">
-						<IconPlay />
-					</div>
 				</div>
 			</div>
 		</>
