@@ -22,7 +22,7 @@ let listMenu = [
 	},
 	{
 		title: "Learn",
-		href: "/#",
+		href: "/learn",
 	},
 	{
 		title: "Have fun",
@@ -47,20 +47,22 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 
 	useEffect(() => {
 		setTimeout(() => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: ".MasterPage",
-					start: "top top",
-					end: "99% bottom",
-					scrub: 2,
-				},
-			}).fromTo(".headerLine", { width: 0 }, { width: "100%" });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".MasterPage",
+						start: "top top",
+						end: "99% bottom",
+						scrub: 2,
+					},
+				})
+				.fromTo(".headerLine", { width: 0 }, { width: "100%" });
 		}, 1500);
 	}, []);
 
 	return (
 		<>
-			<div className={`Header //backdrop-blur-[10px] fixed top-0 z-[444] w-full py-[30px]`}>
+			<div className={`Header //backdrop-blur-[5px] fixed top-0 z-[444] w-full pt-[30px]`}>
 				<div className="cusContainerLarge">
 					<div className="flex items-center justify-between">
 						<Link href="/">
@@ -91,12 +93,7 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 															key={i2}
 														>
 															{e2.title}
-															{e2.href && (
-																<Link
-																	href={e2.href}
-																	className="absFull"
-																/>
-															)}
+															{e2.href && <Link href={e2.href} className="absFull" />}
 														</div>
 													))}
 												</div>
