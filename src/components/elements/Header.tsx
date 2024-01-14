@@ -75,7 +75,7 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 							className={`
 							listMenu flex space-x-[60px] duration-500
 							tl-l:px-[20px] mb:absolute mb:left-0 mb:top-0 mb:h-[100dvh] mb:w-screen mb:flex-col mb:space-x-0 mb:space-y-[25px] mb:bg-blue mb:py-[75px]
-							${showNav ? "translate-x-0" : "translate-x-[-100%]"}
+							${showNav ? "mb:translate-x-0" : "mb:translate-x-[-100%]"}
 							`}
 						>
 							<img src="/images/header-line.png" alt="" className="mb-[50px] hidden w-full mb:block" />
