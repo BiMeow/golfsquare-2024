@@ -16,7 +16,7 @@
 	}
 
 	.secSpacing {
-		@apply mb-[60px] mb:mb-[40px];
+		@apply mb-[60px];
 	}
 
 	.absFull {
@@ -32,11 +32,11 @@
 	}
 
 	.text-64 {
-		@apply text-[64px] font-bold;
+		@apply text-[64px] font-bold mb:text-[40px];
 	}
 
 	.text-52 {
-		@apply text-[52px] font-bold;
+		@apply text-[52px] font-bold mb:text-[32px];
 	}
 
 	.text-50 {
@@ -44,15 +44,15 @@
 	}
 
 	.text-48 {
-		@apply text-[48px] font-bold;
+		@apply text-[48px] font-bold mb:text-[24px];
 	}
 
 	.text-40 {
-		@apply text-[40px] font-bold;
+		@apply text-[40px] font-bold mb:text-[20px];
 	}
 
 	.text-36 {
-		@apply text-[36px] font-bold;
+		@apply text-[36px] font-bold mb:text-[20px];
 	}
 
 	.text-24 {
@@ -68,19 +68,23 @@
 	}
 
 	.titleStoke {
-		@apply text-center font-GilroyBold text-[170px] font-bold;
+		@apply text-center font-GilroyBold text-[170px] font-bold mb:text-[70px];
 		background: transparent;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		-webkit-text-stroke-width: 2px;
 		-webkit-text-stroke-color: white;
+
+		@media screen and (max-width: 767px) {
+			-webkit-text-stroke-width: 1px;
+		}
 	}
 
 	.cusLabel {
-		@apply mb-[20px] block text-[24px] text-[#00FFFF];
+		@apply mb-[20px] block text-[24px] text-[#00FFFF] mb:mb-[10px] mb:text-[16px];
 	}
 
 	.cusInput {
-		@apply w-full rounded-[60px] border-none bg-white px-[30px] py-[15px] text-[18px] text-blue outline-none;
+		@apply w-full rounded-[60px] border-none bg-white px-[30px] py-[15px] text-[18px] text-blue outline-none mb:px-[20px] mb:py-[10px];
 	}
 }

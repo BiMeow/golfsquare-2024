@@ -23,9 +23,9 @@ function SectionAboutIntro({ ...props }) {
 		<>
 			<div className={`SectionAboutIntro secSpacing`}>
 				<div className="cusContainer mb-[60px]">
-					<h2 className="text-64 mb-[80px]">About us</h2>
+					<h2 className="text-64 mb-[80px] mb:mb-[30px]">About us</h2>
 
-					<div className="listImage mx-[-15px] mb-[80px] flex flex-wrap">
+					<div className="listImage mx-[-15px] mb-[80px] flex flex-wrap mb:hidden">
 						{listImage.map((e: any, i: number) => (
 							<div
 								className={`
@@ -34,13 +34,32 @@ function SectionAboutIntro({ ...props }) {
                                 `}
 								key={i}
 							>
-								<img
-									src={e.image}
-									alt=""
-									className="aspect-[255/415] w-full object-cover"
-								/>
+								<img src={e.image} alt="" className="aspect-[255/415] w-full object-cover" />
 							</div>
 						))}
+					</div>
+
+					<div className="listImageMb mx-[-8px] mb-[80px] hidden flex-wrap mb:flex">
+						<div className="c1 w-1/2 space-y-[16px] px-[8px]">
+							{listImage.map(
+								(e: any, i: number) =>
+									i % 2 == 0 && (
+										<div className="itemImage" key={i}>
+											<img src={e.image} alt="" className="aspect-[255/415] w-full object-cover" />
+										</div>
+									)
+							)}
+						</div>
+						<div className="c2 w-1/2 space-y-[16px] px-[8px] pt-[60px]">
+							{listImage.map(
+								(e: any, i: number) =>
+									i % 2 != 0 && (
+										<div className="itemImage" key={i}>
+											<img src={e.image} alt="" className="aspect-[255/415] w-full object-cover" />
+										</div>
+									)
+							)}
+						</div>
 					</div>
 
 					<div className="mx-auto max-w-[920px] text-center">
@@ -48,26 +67,18 @@ function SectionAboutIntro({ ...props }) {
 							<span className="text-[24px] font-bold">Welcome to Golf Square!</span>
 							<br />
 							<br />
-							Immerse yourself in a captivating world where state-of-the-art Korean
-							Golf Simulator technology seamlessly combines with a love for sports,
-							captivating entertainment, and delectable culinary delights. It's not
-							just about golf - it's an unforgettable experience.
+							Immerse yourself in a captivating world where state-of-the-art Korean Golf Simulator technology seamlessly combines with a love for
+							sports, captivating entertainment, and delectable culinary delights. It's not just about golf - it's an unforgettable experience.
 						</p>
 					</div>
 				</div>
 
 				<div className="banner relative">
-					<img
-						src="/images/about/intro-banner.jpg"
-						alt=""
-						className="aspect-[145/75] object-cover"
-					/>
+					<img src="/images/about/intro-banner.jpg" alt="" className="aspect-[145/75] object-cover mb:aspect-[375/620]" />
 
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-						<h2 className="text-52 mb-[40px] text-center uppercase">
-							WE DON’T MAKE FUN
-						</h2>
-						<h1 className="w-full border-y border-red pb-[10px] text-center text-[125px] font-bold uppercase text-red">
+						<h2 className="text-52 mb-[40px] text-center uppercase">WE DON’T MAKE FUN</h2>
+						<h1 className="w-full border-y border-red pb-[10px] text-center text-[125px] font-bold uppercase text-red mb:font-GilroyBold mb:text-[54px]">
 							We make fun better
 						</h1>
 					</div>

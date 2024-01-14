@@ -42,31 +42,35 @@ function Footer({ ...props }) {
 
 	return (
 		<>
-			<div className={`Footer text-red flex flex-col items-center justify-center py-[130px] text-[16px]`}>
+			<div
+				className={`Footer flex flex-col items-center justify-center py-[130px] text-[16px] text-red tl-l:px-[20px] mb:pb-[60px] mb:pt-[80px] mb:text-[14px]`}
+			>
 				<img src="/images/logo-icon.png" alt="" className="mb-[32px] w-[65px]" />
 				<p className="mb-[50px] text-center">
-					Light density, portable, easy for installation. <br /> Labor cost saving and project schedule
-					shortening.
+					Light density, portable, easy for installation. <br /> Labor cost saving and project schedule shortening.
 				</p>
 
 				<div className="listSocial mb-[50px] flex items-center space-x-[30px]">
 					{listSocial.map((e: any, i: number) => (
-						<div
-							className="itemSocial fill-red relative cursor-pointer duration-300 hover:fill-white"
-							key={i}
-						>
+						<div className="itemSocial relative cursor-pointer fill-red duration-300 hover:fill-white" key={i}>
 							{e.icon}
 							<Link href={e.link} className="absFull" target="_blank" />
 						</div>
 					))}
 				</div>
 
-				<p className="mb-[30px] text-center font-bold">HOTLINE: (+84)969 87 3300 | sales@golfsquare.com.au</p>
+				<p className="mb-[30px] flex items-center text-center font-bold">
+					HOTLINE: (+84) 969 87 3300
+					<span className="mx-[10px] mb:hidden">|</span>
+					<br className="hidden mb:block" />
+					<br className="hidden mb:block" />
+					sales@golfsquare.com.au
+				</p>
 
-				<div className="listMore flex items-center space-x-[40px]">
+				<div className="listMore flex flex-wrap items-center gap-y-[25px] space-x-[40px] mb:w-full mb:space-x-0">
 					{listMore.map((e: any, i: number) => (
 						<div
-							className="itemMore text-red relative cursor-pointer font-bold duration-300 hover:text-white"
+							className="itemMore relative cursor-pointer font-bold text-red duration-300 hover:text-white mb:w-1/2 mb:text-center mb:text-[16px]"
 							key={i}
 						>
 							<p>{e.title}</p>
