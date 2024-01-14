@@ -5,8 +5,7 @@ import { memo, useEffect } from "react";
 let listPromo = [
 	{
 		title: "Promotion 1",
-		description:
-			"Redeemable on Topgolf game play, food and drinks, Lifetime Memberships, lessons and gear.",
+		description: "Redeemable on Topgolf game play, food and drinks, Lifetime Memberships, lessons and gear.",
 	},
 	{
 		title: "Promotion 2",
@@ -23,14 +22,16 @@ function SectionHomeYourChance({ ...props }) {
 
 	useEffect(() => {
 		setTimeout(() => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: ".SectionHomeYourChance",
-					start: "top bottom",
-					end: "bottom top",
-					scrub: 4,
-				},
-			}).fromTo(".SectionHomeYourChance .moveBanner", { y: 300 }, { y: 0 });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionHomeYourChance",
+						start: "top bottom",
+						end: "bottom top",
+						scrub: 4,
+					},
+				})
+				.fromTo(".SectionHomeYourChance .moveBanner", { y: 300 }, { y: 0 });
 		}, 1500);
 	}, []);
 
@@ -40,21 +41,18 @@ function SectionHomeYourChance({ ...props }) {
 				<img
 					src="/images/home/yourchance-banner.jpg"
 					alt=""
-					className="moveBanner absolute top-0 aspect-[144/77] w-full rounded-b-[75px] object-cover"
+					className="moveBanner absolute top-0 aspect-[144/77] w-full rounded-b-[75px] object-cover mb:aspect-[375/800]"
 				/>
 				<div className="cusContainer relative">
-					<h2 className="titleStoke relative z-10 mb-[80px]">
+					<h2 className="titleStoke relative z-10 mb-[80px] mb:mb-[40px]">
 						GRAB YOUR <br /> CHANCE
 					</h2>
 
-					<div className="listPromo mx-[-40px] mb-[80px] flex">
+					<div className="listPromo mx-[-40px] mb-[80px] flex flex-wrap mb:gap-y-[40px]">
 						{listPromo.map((e: any, i: number) => (
-							<div
-								className="itemPromo w-1/3 px-[40px] text-center font-medium"
-								key={i}
-							>
-								<p className="mb-[20px] text-[24px] font-semibold">{e.title}</p>
-								<p className="text-[16px] font-medium">{e.description}</p>
+							<div className="itemPromo w-1/3 px-[40px] text-center font-medium mb:w-full" key={i}>
+								<p className="mb-[20px] text-[24px] font-semibold mb:text-[18px]">{e.title}</p>
+								<p className="text-[16px] font-medium mb:text-[14px]">{e.description}</p>
 							</div>
 						))}
 					</div>
@@ -66,7 +64,7 @@ function SectionHomeYourChance({ ...props }) {
 					<img
 						src="/images/home/yourchance-banner-2.jpg"
 						alt=""
-						className="mx-auto aspect-[144/77] w-full max-w-[1110px] rounded-[50px]"
+						className="mx-auto aspect-[144/77] w-full max-w-[1110px] rounded-[50px] object-cover mb:aspect-[33/39]"
 					/>
 				</div>
 			</div>

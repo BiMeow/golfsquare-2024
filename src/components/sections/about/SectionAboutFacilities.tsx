@@ -23,47 +23,35 @@ function SectionAboutFacilities({ ...props }) {
 	return (
 		<>
 			<div className={`SectionAboutFacilities secSpacing`}>
-				<div className="mb-[30px] flex justify-center">
+				<div className="mb-[30px] flex flex-wrap justify-center tl-l:px-[20px]">
 					<div className="relative w-full max-w-[730px]">
 						<img src="/images/golfman.png" alt="" className="w-full" />
 					</div>
-					<div className="content ml-[-300px] w-full max-w-[525px] pt-[150px]">
-						<img
-							src="/images/logo-icon-white.png"
-							alt=""
-							className="mb-[50px] w-[50px]"
-						/>
+					<div className="content ml-[-300px] w-full max-w-[525px] pt-[150px] mb:ml-0 mb:pt-[20px]">
+						<img src="/images/logo-icon-white.png" alt="" className="mb-[50px] w-[50px] mb:mb-[25px] mb:w-[35px]" />
 						<p className="mb-[20px]">
-							At Golf Square, golf is more than just a sport; it is an opportunity to
-							create lasting memories, push your limits, and indulge in pure
-							enjoyment. We envision a haven where golf enthusiasts of all levels,
-							from beginners to seasoned professionals, come together to embrace the
-							essence of the game in a cozy environment.
+							At Golf Square, golf is more than just a sport; it is an opportunity to create lasting memories, push your limits, and indulge in pure
+							enjoyment. We envision a haven where golf enthusiasts of all levels, from beginners to seasoned professionals, come together to embrace
+							the essence of the game in a cozy environment.
 						</p>
 					</div>
 				</div>
 
 				<div className="cusContainer">
-					<h3 className="text-36 mb-[40px] ">FACILITIES INCLUDE</h3>
-					<div className="listHappen mx-[-20px] flex">
+					<h3 className="text-36 mb-[40px] mb:mb-[25px]">FACILITIES INCLUDE</h3>
+					<div className="listHappen mx-[-20px] flex flex-wrap gap-y-[25px]">
 						{listHappen.map((e: any, i: number) => (
 							<div
 								className={`
-								itemHappen w-1/3 px-[20px]
+								itemHappen w-1/3 px-[20px] mb:w-full
 								`}
 								key={i}
 							>
 								<div className="content group relative">
 									<div className="overflow-hidden rounded-[60px]">
-										<img
-											src={e.image}
-											alt=""
-											className="aspect-[360/425] w-full duration-500 group-hover:scale-[1.01]"
-										/>
+										<img src={e.image} alt="" className="aspect-[360/425] w-full duration-500 group-hover:scale-[1.01]" />
 									</div>
-									<p className="font absolute bottom-[40px] left-[30px] text-[24px] font-bold">
-										{e.title}
-									</p>
+									<p className="font absolute bottom-[40px] left-[30px] text-[24px] font-bold">{e.title}</p>
 								</div>
 							</div>
 						))}

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Thumbs } from "swiper/modules";
 
 import "swiper/css/effect-fade";
+import { useWindowSize } from "usehooks-ts";
 
 let listCol = [
 	[
@@ -71,84 +72,79 @@ let listImage = [
 function SectionAboutSimulator({ ...props }) {
 	const router = useRouter();
 
+	const { width } = useWindowSize();
+
 	const [mainSwiper, setMainSwiper] = useState<any>(null);
 	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 	const [activeSlide, setActiveSlide] = useState<any>(0);
+
+	console.log(`BiMeow`, thumbsSwiper);
 
 	return (
 		<>
 			<div className={`SectionAboutSimulator secSpacing mb-[60px]`}>
 				<div className="cusContainer">
 					<h2 className="text-64 mb-[20px]">Golf simulator</h2>
-					<p className="mb-[80px] max-w-[800px]">
-						Embark on a golfing adventure and explore the world's most prestigious
-						courses right at your fingertips. Unleash the power of our advanced Korean
-						golf simulator technology to play rounds, perfect your swing, or engage in
-						thrilling tournaments against other players. Prepare for a vivid, precise,
-						and sensational golfing experience like no other.
+					<p className="mb-[80px] max-w-[800px] mb:mb-[30px]">
+						Embark on a golfing adventure and explore the world's most prestigious courses right at your fingertips. Unleash the power of our advanced
+						Korean golf simulator technology to play rounds, perfect your swing, or engage in thrilling tournaments against other players. Prepare for
+						a vivid, precise, and sensational golfing experience like no other.
 					</p>
 
-					<div className="listCol mx-[-30px] mb-[60px] flex flex-wrap">
+					<div className="listCol relative mx-[-30px] mb-[60px] flex flex-wrap gap-y-[40px]">
 						{listCol.map((e: any, i: number) => (
-							<div
-								className="itemCol relative flex w-1/3 flex-col justify-around space-y-[40px] px-[30px]"
-								key={i}
-							>
+							<div className="itemCol relative flex w-1/3 flex-col justify-around space-y-[40px] px-[30px] mb:w-full" key={i}>
 								{e.map((e2: any, i2: number) => (
 									<div className="colContent flex items-center" key={i2}>
-										<div className="aspect-1 w-[22px] rounded-full bg-red"></div>
-										<p className="w-[calc(100%-22px)] pl-[25px]">{e2.text}</p>
+										<div className="aspect-1 w-[22px] rounded-full bg-red mb:w-[15px]"></div>
+										<p className="w-[calc(100%-22px)] pl-[25px] mb:pl-[10px] mb:text-red">{e2.text}</p>
 									</div>
 								))}
 
-								<div className="absolute left-[40px] top-1/2 !m-0 h-[85%] w-[1px] -translate-y-1/2 bg-red"></div>
+								<div className="absolute left-[40px] top-1/2 !m-0 h-[85%] w-[2px] -translate-y-1/2 bg-red mb:left-[36px]"></div>
 							</div>
 						))}
+						<div className="absolute left-[40px] top-1/2 !m-0 h-[85%] w-[2px] -translate-y-1/2 bg-red mb:left-[36px] "></div>
 					</div>
 
 					<div className="sliderSimulator">
-						<div className="mx-[-25px] flex">
-							<div className="mainSlider w-[25%] px-[25px]">
-								<div className="relative h-full w-full">
-									<Swiper
-										direction={"vertical"}
-										className="cusSwiperSimulator !absolute !h-full !w-full"
-										slidesPerView={3}
-										spaceBetween={15}
-										onSlideChange={(e) => {
-											setActiveSlide(e.realIndex);
-											thumbsSwiper?.slideTo(e.realIndex);
-										}}
-										loop={true}
-										onSwiper={setMainSwiper}
-										slideToClickedSlide
-									>
-										{listImage.map((e: any, i: number) => (
-											<SwiperSlide
-												key={i}
-												className={`
+						<div className="mx-[-25px] flex flex-wrap">
+							<div className="mainSlider w-[25%] px-[25px] mb:order-2 mb:w-full">
+								<div className="relative h-full w-full mb:h-auto">
+									{!thumbsSwiper?.destroyed && (
+										<Swiper
+											direction={width > 767 ? "vertical" : "horizontal"}
+											className="cusSwiperSimulator !absolute !h-full !w-full mb:!relative mb:!h-auto"
+											slidesPerView={3}
+											spaceBetween={15}
+											onSlideChange={(e) => {
+												setActiveSlide(e.realIndex);
+												thumbsSwiper?.slideTo(e.realIndex);
+											}}
+											loop={true}
+											onSwiper={setMainSwiper}
+											slideToClickedSlide
+										>
+											{listImage.map((e: any, i: number) => (
+												<SwiperSlide
+													key={i}
+													className={`
                                                 itemSliderSimulator h-full w-full overflow-hidden rounded-[30px] duration-500
-                                                ${
-													activeSlide == i
-														? "border-2 border-white grayscale-0"
-														: "grayscale"
-												}
+												mb:h-auto mb:rounded-[20px]
+                                                ${activeSlide == i ? "border-2 border-white grayscale-0" : "grayscale"}
                                                 `}
-											>
-												<img
-													src={e.image}
-													alt=""
-													className="h-full w-full object-cover"
-												/>
-											</SwiperSlide>
-										))}
-									</Swiper>
+												>
+													<img src={e.image} alt="" className="h-full w-full object-cover" />
+												</SwiperSlide>
+											))}
+										</Swiper>
+									)}
 								</div>
 							</div>
 
-							<div className="navSlider w-[75%] px-[25px]">
+							<div className="navSlider w-[75%] px-[25px] mb:order-1 mb:mb-[15px] mb:w-full">
 								<Swiper
-									className="cusSwiperSimulator h-full w-full"
+									className="cusSwiperSimulator h-full w-full mb:h-[200px]"
 									slidesPerView={1}
 									effect={"fade"}
 									modules={[EffectFade]}
@@ -156,15 +152,8 @@ function SectionAboutSimulator({ ...props }) {
 									allowTouchMove={false}
 								>
 									{listImage.map((e: any, i: number) => (
-										<SwiperSlide
-											key={i}
-											className="itemSliderSimulator !h-full overflow-hidden rounded-[30px]"
-										>
-											<img
-												src={e.image}
-												alt=""
-												className="aspect-[255/160] w-full object-cover"
-											/>
+										<SwiperSlide key={i} className="itemSliderSimulator !h-full overflow-hidden rounded-[30px]">
+											<img src={e.image} alt="" className="aspect-[255/160] w-full object-cover" />
 										</SwiperSlide>
 									))}
 								</Swiper>
