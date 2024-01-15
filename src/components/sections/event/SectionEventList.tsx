@@ -50,18 +50,18 @@ function SectionEventList({ ...props }) {
 
 	return (
 		<>
-			<div className={`SectionEventList mb-[160px]`}>
+			<div className={`SectionEventList mb-[160px] mb:mb-[100px]`}>
 				<div className="cusContainer">
 					{listEvents.map((e: any, i: number) => (
 						<div className="listEvent mb-[100px] last:mb-0" key={i}>
-							<h2 className="mb-[50px] text-center text-[36px] font-bold uppercase">{e.title}</h2>
+							<h2 className="mb-[50px] text-center text-[36px] font-bold uppercase mb:mb-[30px] mb:text-[20px]">{e.title}</h2>
 
-							<div className="listEvents mx-[-15px] flex flex-wrap items-stretch">
+							<div className="listEvents mx-[-15px] flex flex-wrap items-stretch gap-y-[25px]">
 								{e.list?.map(
 									(e: any, i: number) =>
 										i < 3 && (
-											<div className="itemCeleb group w-1/3 px-[15px]" key={i}>
-												<div className="h-full bg-[#0D133277] backdrop-blur-[5px]">
+											<div className="itemCeleb group w-1/3 px-[15px] mb:w-full" key={i}>
+												<div className="h-full bg-[#0D133277] backdrop-blur-[5px] mb:bg-[#0D1332]">
 													<div className="overflow-hidden">
 														<img src={e.image} alt="" className="aspect-[35/41] object-cover duration-500 group-hover:scale-[1.01]" />
 													</div>

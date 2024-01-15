@@ -42,6 +42,15 @@ function SectionVisitCoach({ ...props }) {
 		slidesPerRow: 1,
 		arrows: false,
 		customPaging: (i: any) => <div className="cusDot h-[10px] w-[10px] rounded-full bg-[#55596f] duration-500 hover:opacity-75"></div>,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 1,
+					rows: 1,
+				},
+			},
+		],
 	};
 
 	return (
@@ -53,26 +62,28 @@ function SectionVisitCoach({ ...props }) {
 						<div className="absolute left-1/2 top-full h-[4px] w-full max-w-[89px] -translate-x-1/2 bg-red"></div>
 					</div>
 
-					<p className="mx-auto mb-[100px] max-w-[715px] text-center">
-						Let our trained professionals coach you to be the best golfer you have ever been. <br /> They are skilled and are committed to help you be
-						better.
+					<p className="mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
+						Let our trained professionals coach you to be the best golfer you have ever been. <br className="mb:hidden" /> They are skilled and are
+						committed to help you be better.
 					</p>
 
 					<div className="listCoach">
 						<Slider {...settings} className="cusSlider">
 							{listCoach.map((e: any, i: number) => (
-								<div className="itemCoach relative mb-[30px] bg-[#0F163C] px-[70px] pb-[40px] pt-[35px]" key={i}>
-									<img src="/images/visit/coach-line.png" alt="" className="absolute bottom-[65px] left-[60px] w-[860px]" />
+								<div className="itemCoach relative mb-[30px] bg-[#0F163C] px-[70px] pb-[40px] pt-[35px] mb:px-[20px] mb:py-[30px]" key={i}>
+									<img src="/images/visit/coach-line.png" alt="" className="absolute bottom-[65px] left-[60px] w-[860px] mb:!hidden" />
 
-									<div className="mx-[-30px] flex">
-										<div className="image w-[35%] px-[30px]">
-											<img src={e.image} alt="" className="mb-[20px] aspect-[275/330] object-contain object-bottom" />
-
+									<div className="mx-[-30px] flex flex-wrap">
+										<div className="image relative w-[35%] px-[30px] mb:w-full">
+											<div className="relative">
+												<img src={e.image} alt="" className="mb-[20px] aspect-[275/330] object-contain object-bottom mb:mx-auto mb:max-w-[155px]" />
+												<img src="/images/visit/coach-line-mb.png" alt="" className="absolute bottom-[-20px] left-0 hidden w-full mb:block" />
+											</div>
 											<p className="text-24 text-center font-bold uppercase">steven paine</p>
 										</div>
 
-										<div className="info w-[65%] px-[30px] pt-[70px]">
-											<p className="mb-[30px] font-bold">About:</p>
+										<div className="info w-[65%] px-[30px] pt-[70px] mb:w-full mb:pt-[20px]">
+											<p className="mb-[30px] font-bold mb:mb-[10px]">About:</p>
 
 											<ul className="list-disc space-y-[10px] pl-[20px]">
 												<li>

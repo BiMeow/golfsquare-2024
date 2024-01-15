@@ -8,11 +8,11 @@ function PageFnb({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageFnb relative overflow-hidden pt-[200px]`}>
+			<div className={`PageFnb relative overflow-hidden pt-[200px] mb:pt-[100px]`}>
 				<div className="cusContainer">
-					<img src="/images/fnb/top.png" alt="" className="mx-auto mb-[50px] max-w-[1030px]" />
+					<img src="/images/fnb/top.png" alt="" className="mx-auto mb-[50px] w-full max-w-[1030px]" />
 
-					<div className="mb-[100px] flex justify-center">
+					<div className="mb-[100px] flex justify-center mb:mb-[60px]">
 						<button className="mainBtn">View menu</button>
 					</div>
 				</div>

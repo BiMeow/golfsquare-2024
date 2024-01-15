@@ -29,14 +29,14 @@ function SectionLearnFee({ title = "Lesson Package Fees (Off-Peak Rate Only)", .
 	return (
 		<>
 			<div className={`SectionLearnFee secSpacing`}>
-				<div className="cusContainer">
-					<h2 className="text-36 mb-[60px]">{title}</h2>
+				<h2 className="text-36 mb-[60px] tl-l:px-[20px] mb:mb-[25px]">{title}</h2>
 
-					<div className="listTab mb-[50px] flex items-center space-x-[60px]">
+				<div className="cusContainer mb-[50px] overflow-y-hidden overflow-x-scroll  mb:mb-[40px] mb:pr-0">
+					<div className="listTab flex items-center space-x-[60px] mb:w-fit mb:max-w-none mb:space-x-[30px] mb:pr-[20px]">
 						{listTab.map((e: any, i: number) => (
 							<div
 								className={`
-								itemTab text-24 relative cursor-pointer pb-[8px] duration-300
+								itemTab text-24 relative cursor-pointer whitespace-nowrap pb-[8px] duration-300
 								${activeTab == i ? "font-bold text-red" : "font-medium text-[#55596f] hover:opacity-75"}
 								`}
 								key={i}
@@ -52,29 +52,31 @@ function SectionLearnFee({ title = "Lesson Package Fees (Off-Peak Rate Only)", .
 							</div>
 						))}
 					</div>
+				</div>
 
-					<div className="feeContent flex items-center overflow-hidden rounded-[6px] bg-[#0C2C44]">
-						<div className="c1 w-1/2">
+				<div className="cusContainer">
+					<div className="feeContent flex flex-wrap items-center overflow-hidden rounded-[6px] bg-[#0C2C44]">
+						<div className="c1 w-1/2 mb:w-full">
 							<img src="/images/learn/fee.jpg" alt="" className="aspect-[56/67] w-full object-cover" />
 						</div>
 
-						<div className="c2 w-1/2 py-[40px]">
-							<div className="box mb-[40px] translate-x-[-10%] rounded-[6px] bg-red px-[40px] py-[50px]">
+						<div className="c2 w-1/2 py-[40px] mb:mt-[-50px] mb:w-full mb:p-[20px] mb:pt-0">
+							<div className="box mb-[40px] translate-x-[-10%] rounded-[6px] bg-red px-[40px] py-[50px] mb:mb-[30px] mb:translate-x-0 mb:px-[20px] mb:py-[30px]">
 								<h3 className="mb-[20px] border-b-2 border-[#fff9] pb-[20px] text-[32px] font-bold">{listTab[activeTab].title}</h3>
-								<div className="flex justify-between">
-									<div>
-										<p className="text-[14px] font-bold text-[#fff9]">Individual Lesson</p>
-										<p className="font-GilroyBlack text-[30px] font-bold">$150</p>
+								<div className="flex flex-wrap justify-between gap-y-[25px]">
+									<div className="mb:flex mb:w-full mb:items-center mb:justify-between">
+										<p className="text-[14px] font-bold text-[#fff9] mb:w-1/2">Individual Lesson</p>
+										<p className="font-GilroyBlack text-[30px] font-bold mb:mx-auto mb:text-[24px]">$150</p>
 									</div>
-									<div>
-										<p className="text-[14px] font-bold text-[#fff9]">Group Lesson (Max 2 in a Group)/pax</p>
-										<p className="font-GilroyBlack text-[30px] font-bold">$120</p>
+									<div className="mb:flex mb:w-full mb:items-center mb:justify-between">
+										<p className="text-[14px] font-bold text-[#fff9] mb:w-1/2">Group Lesson (Max 2 in a Group)/pax</p>
+										<p className="font-GilroyBlack text-[30px] font-bold mb:mx-auto mb:text-[24px]">$120</p>
 									</div>
 								</div>
 							</div>
 
-							<div className="content px-[40px]">
-								<p className="mb-[16px] font-bold">Details:</p>
+							<div className="content px-[40px] mb:px-0">
+								<p className="mb-[16px] font-bold mb:text-[18px]">Details:</p>
 								<div className="listDetail mb-[40px] space-y-[14px] pl-[10px]">
 									{["Period: N/A", "Simulator (9 Hole) - 1 hour", "Field Lesson: $200"].map((e: any, i: number) => (
 										<div className="itemDetail flex items-center">
