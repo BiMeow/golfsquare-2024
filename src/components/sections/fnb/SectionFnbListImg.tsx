@@ -64,20 +64,30 @@ function SectionEventListImg({ ...props }) {
 		slidesPerRow: 1,
 		arrows: false,
 		customPaging: (i: any) => <div className="cusDot h-[10px] w-[10px] rounded-full bg-[#55596f] duration-500 hover:opacity-75"></div>,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					rows: 1,
+				},
+			},
+		],
 	};
 
 	return (
 		<>
 			<div className={`SectionEventListImg secSpacing`}>
-				<div className="banner relative mb-[120px]">
-					<img src="/images/fnb/banner.jpg" alt="" className="aspect-[144/60] object-cover" />
+				<div className="banner relative mb-[120px] mb:mb-[80px]">
+					<img src="/images/fnb/banner.jpg" alt="" className="aspect-[144/60] object-cover mb:aspect-[375/450]" />
 					<div className="hoverShadow absolute left-1/2 top-1/2 mb-[50px] flex aspect-1 w-[74px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white">
 						<IconPlay />
 					</div>
 				</div>
 
 				<div className="cusContainer">
-					<h2 className="mb-[60px] text-center text-[36px] font-bold uppercase">square golf favorites</h2>
+					<h2 className="mb-[60px] text-center text-[36px] font-bold uppercase mb:mb-[30px] mb:text-[20px]">square golf favorites</h2>
 					<div className="listImg">
 						<Slider {...settings} className="cusSlider">
 							{listImg.map((e: any, i: number) => (

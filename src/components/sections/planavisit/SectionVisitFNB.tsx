@@ -28,29 +28,26 @@ function SecitonVisitFNB({ ...props }) {
 						<div className="absolute left-1/2 top-full h-[4px] w-full max-w-[89px] -translate-x-1/2 bg-red"></div>
 					</div>
 
-					<p className="mx-auto mb-[100px] max-w-[715px] text-center">
-						No matter what you’re craving, Golf Square is the place for great food and
-						drinks. <br /> Whether you combine it with Golf Square game time or just
-						visit one of our five bars and restaurants, we’re happy to serve you!
+					<p className="mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
+						No matter what you’re craving, Golf Square is the place for great food and drinks. <br className="mb:hidden" /> Whether you combine it
+						with Golf Square game time or just visit one of our five bars and restaurants, we’re happy to serve you!
 					</p>
 
-					<div className="listImage relative mx-[-15px] flex flex-wrap">
+					<div className="listImage relative mx-[-15px] flex flex-wrap mb:mx-[-8px] mb:gap-y-[16px]">
 						{listImage.map((e: any, i: number) => (
-							<div className="itemImage w-1/4 px-[15px]">
-								<img
-									src={e.image}
-									alt=""
-									className="aspect-[255/415] object-cover"
-								/>
+							<div className="itemImage w-1/4 px-[15px] mb:w-1/2 mb:px-[8px]" key={i}>
+								<img src={e.image} alt="" className="aspect-[255/415] object-cover" />
 							</div>
 						))}
 					</div>
 				</div>
-				<img src="/images/visit/fnb-bg.png" alt="" className="mt-[-200px] w-full" />
+				<img src="/images/visit/fnb-bg.png" alt="" className="mt-[-200px] w-full mb:mt-0" />
 				<div className="banner relative">
-					<img src="/images/visit/fnb-banner.jpg" alt="" className="w-full" />
+					<img src="/images/visit/fnb-banner.jpg" alt="" className="w-full mb:hidden" />
+					<img src="/images/visit/fnb-banner-mb.jpg" alt="" className="hidden w-full mb:block" />
+
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-						<h3 className="text-52 mb-[30px]">TRY OUR RESTAURANTS</h3>
+						<h3 className="text-52 mb-[30px] mb:mb-[20px]">TRY OUR RESTAURANTS</h3>
 						<button className="mainBtn">LEARN MORE</button>
 					</div>
 				</div>

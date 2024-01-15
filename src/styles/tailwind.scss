@@ -40,7 +40,7 @@
 	}
 
 	.text-50 {
-		@apply text-[50px] font-bold;
+		@apply text-[50px] font-bold mb:text-[32px];
 	}
 
 	.text-48 {
@@ -56,7 +56,7 @@
 	}
 
 	.text-24 {
-		@apply text-[24px];
+		@apply text-[24px] mb:text-[18px];
 	}
 
 	.hoverShadow {

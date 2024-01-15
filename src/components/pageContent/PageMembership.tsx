@@ -88,55 +88,20 @@ let listCompare = [
 	{
 		title: "Complimentary\nSimulator Use",
 		list: [
-			[
-				"Monday - Friday\nOff-Peak Hours",
-				"Monday - Friday\nOff-Peak Hours",
-				"Monday - Friday\nOff-Peak Hours",
-				"All Day\n(Peak & Off-Peak)",
-			],
-			[
-				"Max 2 hours\nper day",
-				"Max 2 hours\nper day",
-				"Max 2 hours\nper day",
-				"Max 2 hours\nper day",
-			],
-			[
-				"Max 1 booth\nper booking",
-				"Max 1 booth\nper booking",
-				"Max 1 booth\nper booking",
-				"Max 1 booth\nper booking",
-			],
-			[
-				"6 free guest\npass/month",
-				"6 free guest\npass/month",
-				"6 free guest\npass/month",
-				"Free Guest\nInvitation",
-			],
+			["Monday - Friday\nOff-Peak Hours", "Monday - Friday\nOff-Peak Hours", "Monday - Friday\nOff-Peak Hours", "All Day\n(Peak & Off-Peak)"],
+			["Max 2 hours\nper day", "Max 2 hours\nper day", "Max 2 hours\nper day", "Max 2 hours\nper day"],
+			["Max 1 booth\nper booking", "Max 1 booth\nper booking", "Max 1 booth\nper booking", "Max 1 booth\nper booking"],
+			["6 free guest\npass/month", "6 free guest\npass/month", "6 free guest\npass/month", "Free Guest\nInvitation"],
 			[
 				"20% Discount during\npeak hours/extra time",
 				"20% Discount during\npeak hours/extra time",
 				"20% Discount during\npeak hours/extra time",
 				"30% Discount\nextra time booking",
 			],
-			[
-				"10% Discount on\nF&B service",
-				"10% Discount on\nF&B service",
-				"10% Discount on\nF&B service",
-				"20% Discount on\nF&B service",
-			],
-			[
-				"Reciprocal Discounty",
-				"Reciprocal Discounty",
-				"Reciprocal Discounty",
-				"Reciprocal Discounty",
-			],
+			["10% Discount on\nF&B service", "10% Discount on\nF&B service", "10% Discount on\nF&B service", "20% Discount on\nF&B service"],
+			["Reciprocal Discounty", "Reciprocal Discounty", "Reciprocal Discounty", "Reciprocal Discounty"],
 			["Welcome Gift", "Welcome Gift", "Welcome Gift", "Welcome Gift"],
-			[
-				"1 hour of Golf Lesson\nYearly Payment",
-				"1 hour of Golf Lesson\nYearly Payment",
-				"1 hour of\nGolf Lesson",
-				"5 hour of\nGolf Lesson",
-			],
+			["1 hour of Golf Lesson\nYearly Payment", "1 hour of Golf Lesson\nYearly Payment", "1 hour of\nGolf Lesson", "5 hour of\nGolf Lesson"],
 		],
 	},
 	{
@@ -149,14 +114,7 @@ let listCompare = [
 	},
 	{
 		title: "Value",
-		list: [
-			[
-				"Worth ($1,800/Month or\n$24,000/Year)",
-				"Worth ($2,500/Month or\n32,000/Year)",
-				"Worth (40,000/Year)",
-				"Worth (50,000/Year)",
-			],
-		],
+		list: [["Worth ($1,800/Month or\n$24,000/Year)", "Worth ($2,500/Month or\n32,000/Year)", "Worth (40,000/Year)", "Worth (50,000/Year)"]],
 	},
 ];
 
@@ -180,7 +138,7 @@ function PageMembership({ ...props }) {
 		switch (activeTab) {
 			case 0:
 				return (
-					<div className="cusContainer mt-[180px]">
+					<div className="cusContainer mt-[180px] mb:mt-[100px]">
 						<SectionMembershipBlock data={listMembership} />
 					</div>
 				);
@@ -205,11 +163,11 @@ function PageMembership({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageMembership pt-[200px]`}>
+			<div className={`PageMembership pt-[200px] mb:pt-[100px]`}>
 				<div className="cusContainer">
 					<h2 className="text-64 mb-[45px] text-center">Membership</h2>
 
-					<div className="listTab mb-[100px] flex items-center justify-center space-x-[70px]">
+					<div className="listTab mb-[100px] flex items-center justify-center space-x-[70px] tl-p:hidden">
 						{listTab.map((e: any, i: number) => (
 							<div
 								className={`
