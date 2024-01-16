@@ -10,7 +10,7 @@ let listMenu = [
 	},
 	{
 		title: "Book a table",
-		href: "/#",
+		href: "/contact",
 	},
 	{
 		title: "Plan a visit",

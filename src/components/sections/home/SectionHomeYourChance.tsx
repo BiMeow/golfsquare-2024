@@ -48,9 +48,9 @@ function SectionHomeYourChance({ ...props }) {
 						GRAB YOUR <br /> CHANCE
 					</h2>
 
-					<div className="listPromo mx-[-40px] mb-[80px] flex flex-wrap mb:gap-y-[40px]">
+					<div className="listPromo mx-[-40px] mb-[80px] flex flex-wrap mb:mx-0 mb:gap-y-[40px]">
 						{listPromo.map((e: any, i: number) => (
-							<div className="itemPromo w-1/3 px-[40px] text-center font-medium mb:w-full" key={i}>
+							<div className="itemPromo w-1/3 px-[40px] text-center font-medium mb:w-full mb:px-0" key={i}>
 								<p className="mb-[20px] text-[24px] font-semibold mb:text-[18px]">{e.title}</p>
 								<p className="text-[16px] font-medium mb:text-[14px]">{e.description}</p>
 							</div>
