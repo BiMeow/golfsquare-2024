@@ -1,3 +1,4 @@
+import SectionReady from "@/components/sections/common/SectionReady";
 import SectionFnbListImg from "@/components/sections/fnb/SectionFnbListImg";
 import SectionFnbNewDish from "@/components/sections/fnb/SectionFnbNewDish";
 import { useRouter } from "next/router";
@@ -18,6 +19,7 @@ function PageFnb({ ...props }) {
 				</div>
 				<SectionFnbNewDish />
 				<SectionFnbListImg />
+				<SectionReady />
 			</div>
 		</>
 	);

@@ -27,7 +27,7 @@ function SectionHomeAbout({ ...props }) {
 				<div className="mb-[30px] flex justify-center tl-l:px-[20px] mb:mb-[60px] mb:flex-wrap">
 					<div className="relative w-full max-w-[730px]">
 						<img src="/images/golfman.png" alt="" className="w-full" />
-						<img src="/images/golfman-ball.png" alt="" className="absolute bottom-[20%] right-[-100px] w-[70px]" />
+						<img src="/images/golfman-ball.png" alt="" className="absolute bottom-[20%] right-[-100px] w-[70px] mb:right-[20px]" />
 					</div>
 					<div className="content ml-[-320px] w-full max-w-[525px] pt-[100px] mb:ml-0 mb:pt-[10px] mb:text-center">
 						<h2 className="text-48 mb-[15px] text-red">About GolfSquare</h2>
@@ -46,12 +46,12 @@ function SectionHomeAbout({ ...props }) {
 					<h3 className="text-36 mb-[30px] text-red">
 						WHAT’S HAPPENING AT <br /> GOLFSQUARE
 					</h3>
-					<div className="listHappen mx-[-40px] flex flex-wrap gap-y-[25px]">
+					<div className="listHappen mx-[-40px] flex flex-wrap gap-y-[25px] mb:mx-0">
 						{listHappen.map((e: any, i: number) => (
 							<div
 								className={`
 								itemHappen w-1/3 cursor-pointer px-[40px]
-								mb:w-full
+								mb:w-full mb:px-0
 								${i == 1 ? "pt-[60px] mb:pt-0" : ""}
 								`}
 								key={i}

@@ -1,3 +1,4 @@
+import SectionReady from "@/components/sections/common/SectionReady";
 import SectionEventList from "@/components/sections/event/SectionEventList";
 import SectionEventListImg from "@/components/sections/event/SectionEventListImg";
 import SectionHomeAbout from "@/components/sections/home/SectionHomeAbout";
@@ -12,7 +13,7 @@ function PageEvents({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageEvents relative overflow-hidden pt-[200px]`}>
+			<div className={`PageEvents relative overflow-hidden pt-[200px] mb:pt-[100px]`}>
 				<img src="/images/event/bg.jpg" alt="" className="absolute left-0 top-0 w-full mb:hidden" />
 				<img src="/images/event/bg-mb.jpg" alt="" className="ob absolute left-0 top-0 hidden w-full mb:block" />
 
@@ -32,6 +33,7 @@ function PageEvents({ ...props }) {
 					</div>
 					<SectionEventList />
 					<SectionEventListImg />
+					<SectionReady />
 				</div>
 			</div>
 		</>
