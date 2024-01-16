@@ -27,7 +27,7 @@ function SectionHomeAbout({ ...props }) {
 				<div className="mb-[30px] flex justify-center tl-l:px-[20px] mb:mb-[60px] mb:flex-wrap">
 					<div className="relative w-full max-w-[730px]">
 						<img src="/images/golfman.png" alt="" className="w-full" />
-						<img src="/images/golfman-ball.png" alt="" className="absolute bottom-[20%] right-[-100px] w-[70px] mb:right-[20px]" />
+						<img src="/images/golfman-ball.png" alt="" className="absolute bottom-[20%] right-[-100px] w-[70px] mb:right-[20px] mb:w-[30px]" />
 					</div>
 					<div className="content ml-[-320px] w-full max-w-[525px] pt-[100px] mb:ml-0 mb:pt-[10px] mb:text-center">
 						<h2 className="text-48 mb-[15px] text-red">About GolfSquare</h2>
