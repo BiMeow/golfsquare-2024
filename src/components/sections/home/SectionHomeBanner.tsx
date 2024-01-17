@@ -9,7 +9,7 @@ function SectionHomeBanner({ ...props }) {
 
 	useEffect(() => {
 		setTimeout(() => {
-			const splitText = SplitType.create(".splitText", { types: "chars" });
+			const splitText = SplitType.create(".splitText", { types: "words,chars" });
 
 			gsap
 				.timeline({
