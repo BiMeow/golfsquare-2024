@@ -5,7 +5,14 @@ import Preloader from "@/components/elements/Preloader";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-function MasterPage({ title = "BiMeow", description = "BiMeow is me!!!", pageName, activeNav, activeSubNav, ...props }: any) {
+function MasterPage({
+	title = "GOLF SQUARE",
+	description = "WE DON'T MAKE FUN, WE MAKE FUN BETTER",
+	pageName,
+	activeNav,
+	activeSubNav,
+	...props
+}: any) {
 	const router = useRouter();
 
 	const { children } = props;
@@ -21,10 +28,7 @@ function MasterPage({ title = "BiMeow", description = "BiMeow is me!!!", pageNam
 
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={description} />
-				<meta
-					property="og:image"
-					content={`https://google-cdn.digitop.vn/strategycoast/banner.jpg?fbclid=IwAR1VfBaKysv8MHY_JizgSgOK4d2HYU5qdDdTw-I02rn7jPz5qeMAqnt3bsU`}
-				/>
+				<meta property="og:image" content={`https://golfsquare-2024.vercel.app/images/home/banner.jpg`} />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:image:height" content="630" />
 
