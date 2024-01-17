@@ -3,6 +3,7 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
+import { useWindowSize } from "usehooks-ts";
 
 let listHappen = [
 	{
@@ -22,6 +23,8 @@ let listHappen = [
 function SectionHomeAbout({ ...props }) {
 	const router = useRouter();
 
+	const { width } = useWindowSize();
+
 	useEffect(() => {
 		setTimeout(() => {
 			gsap
@@ -35,19 +38,21 @@ function SectionHomeAbout({ ...props }) {
 				})
 				.fromTo(".SectionHomeAbout .listHappen .itemHappen", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
 
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".SectionHomeAbout .listHappen",
-						start: "75px bottom",
-						end: "bottom center",
-						scrub: 2,
-						//toggleActions: "restart reverse restart none",
-					},
-				})
-				.fromTo(".SectionHomeAbout .listHappen .itemHappen1", { y: 0 }, { y: 30 }, 0)
-				.fromTo(".SectionHomeAbout .listHappen .itemHappen2", { y: 0 }, { y: -30 }, 0)
-				.fromTo(".SectionHomeAbout .listHappen .itemHappen3", { y: 0 }, { y: 30 }, 0);
+			if (width > 1280) {
+				gsap
+					.timeline({
+						scrollTrigger: {
+							trigger: ".SectionHomeAbout .listHappen",
+							start: "75px bottom",
+							end: "bottom center",
+							scrub: 2,
+							//toggleActions: "restart reverse restart none",
+						},
+					})
+					.fromTo(".SectionHomeAbout .listHappen .itemHappen1", { y: 0 }, { y: 30 }, 0)
+					.fromTo(".SectionHomeAbout .listHappen .itemHappen2", { y: 0 }, { y: -30 }, 0)
+					.fromTo(".SectionHomeAbout .listHappen .itemHappen3", { y: 0 }, { y: 30 }, 0);
+			}
 		}, 1500);
 	}, []);
 
