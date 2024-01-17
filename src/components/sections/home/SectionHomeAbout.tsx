@@ -1,7 +1,8 @@
 import { IconArrow } from "@/components/elements/Icon";
+import gsap from "gsap";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listHappen = [
 	{
@@ -21,15 +22,48 @@ let listHappen = [
 function SectionHomeAbout({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionHomeAbout .listHappen",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionHomeAbout .listHappen .itemHappen", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionHomeAbout .listHappen",
+						start: "75px bottom",
+						end: "bottom center",
+						scrub: 2,
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionHomeAbout .listHappen .itemHappen1", { y: 0 }, { y: 30 }, 0)
+				.fromTo(".SectionHomeAbout .listHappen .itemHappen2", { y: 0 }, { y: -30 }, 0)
+				.fromTo(".SectionHomeAbout .listHappen .itemHappen3", { y: 0 }, { y: 30 }, 0);
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionHomeAbout secSpacing`}>
 				<div className="mb-[30px] flex justify-center tl-l:px-[20px] mb:mb-[60px] mb:flex-wrap">
 					<div className="relative w-full max-w-[730px]">
-						<img src="/images/golfman.png" alt="" className="w-full" />
-						<img src="/images/golfman-ball.png" alt="" className="absolute bottom-[20%] right-[-100px] w-[70px] mb:right-[20px] mb:w-[30px]" />
+						<img src="/images/golfman.png" alt="" className="fadeRight w-full" />
+						<img
+							src="/images/golfman-ball.png"
+							alt=""
+							className="fadeRight absolute bottom-[20%] right-[-100px] w-[70px] mb:right-[20px] mb:w-[30px]"
+						/>
 					</div>
-					<div className="content ml-[-320px] w-full max-w-[525px] pt-[100px] mb:ml-0 mb:pt-[10px] mb:text-center">
+					<div className="content fadeUp ml-[-320px] w-full max-w-[525px] pt-[100px] mb:ml-0 mb:pt-[10px] mb:text-center">
 						<h2 className="text-48 mb-[15px] text-red">About GolfSquare</h2>
 						<p className="mb-[20px] text-[16px] mb:text-[14px]">
 							One of the most visually striking settings in the city. It is the first-ever library dedicated to entertainment enthusiasts, offering a
@@ -43,15 +77,15 @@ function SectionHomeAbout({ ...props }) {
 				</div>
 
 				<div className="cusContainerLarge">
-					<h3 className="text-36 mb-[30px] text-red">
+					<h3 className="text-36 fadeUp mb-[30px] text-red">
 						WHAT’S HAPPENING AT <br /> GOLFSQUARE
 					</h3>
 					<div className="listHappen mx-[-40px] flex flex-wrap gap-y-[25px] mb:mx-0">
 						{listHappen.map((e: any, i: number) => (
 							<div
 								className={`
-								itemHappen w-1/3 cursor-pointer px-[40px]
-								mb:w-full mb:px-0
+								itemHappen itemHappen${i + 1} w-1/3 cursor-pointer px-[40px]
+								mb:w-full mb:px-0 
 								${i == 1 ? "pt-[60px] mb:pt-0" : ""}
 								`}
 								key={i}

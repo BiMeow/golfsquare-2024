@@ -143,3 +143,12 @@ html {
 .ant-modal-mask {
 	backdrop-filter: blur(10px);
 }
+
+/* Animation init */
+.fadeUp,
+.fadeDown,
+.fadeRight,
+.fadeLeft,
+.fadeIn {
+	opacity: 0;
+}
