@@ -48,7 +48,6 @@ function SectionHomeBanner({ ...props }) {
 					start: "10px top",
 					end: `20% top`,
 					scrub: true,
-					markers: true,
 				},
 				stagger: 0.5,
 				color: "#ff0000",
@@ -60,7 +59,7 @@ function SectionHomeBanner({ ...props }) {
 		<>
 			<div className={`SectionHomeBanner fadeIn secSpacing relative`}>
 				<div className="relative aspect-[144/84] overflow-hidden mb:aspect-[375/780]">
-					<img src="/images/home/banner.jpg" alt="" className="image absFull h-[calc(100%+100px)] object-cover object-bottom" />
+					<img src="/images/home/banner.jpg" alt="" className="image absFull h-[calc(100%+100px)] object-cover" />
 				</div>
 				<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center tl-l:px-[20px]">
 					<h2 className="text-64 moveUp splitText mb-[16px] text-center opacity-0">
