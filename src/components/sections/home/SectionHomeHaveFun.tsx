@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext, useRef, memo, useMemo } from "react";
 import { useRouter } from "next/router";
 import gsap from "gsap";
+import { useWindowSize } from "usehooks-ts";
 
 let listHaveFun = [
 	{
@@ -19,6 +20,8 @@ let listHaveFun = [
 
 function SectionHomeHaveFun({ ...props }) {
 	const router = useRouter();
+
+	const { width } = useWindowSize();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -44,19 +47,21 @@ function SectionHomeHaveFun({ ...props }) {
 				})
 				.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
 
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".SectionHomeHaveFun .listHaveFun",
-						start: "75px bottom",
-						end: "bottom center",
-						scrub: 2,
-						//toggleActions: "restart reverse restart none",
-					},
-				})
-				.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun1", { y: 0 }, { y: 30 }, 0)
-				.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun2", { y: 0 }, { y: -30 }, 0)
-				.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun3", { y: 0 }, { y: 30 }, 0);
+			if (width > 1280) {
+				gsap
+					.timeline({
+						scrollTrigger: {
+							trigger: ".SectionHomeHaveFun .listHaveFun",
+							start: "75px bottom",
+							end: "bottom center",
+							scrub: 2,
+							//toggleActions: "restart reverse restart none",
+						},
+					})
+					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun1", { y: 0 }, { y: 30 }, 0)
+					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun2", { y: 0 }, { y: -30 }, 0)
+					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun3", { y: 0 }, { y: 30 }, 0);
+			}
 		}, 1500);
 	}, []);
 
