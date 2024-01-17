@@ -59,7 +59,7 @@ function Footer({ ...props }) {
 					))}
 				</div>
 
-				<p className="mb-[30px] flex items-center text-center font-bold">
+				<p className="mb-[30px] flex items-center text-center font-bold mb:flex-col">
 					HOTLINE: (+84) 969 87 3300
 					<span className="mx-[10px] mb:hidden">|</span>
 					<br className="hidden mb:block" />
