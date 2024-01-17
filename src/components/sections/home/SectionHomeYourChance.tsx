@@ -32,6 +32,16 @@ function SectionHomeYourChance({ ...props }) {
 					},
 				})
 				.fromTo(".SectionHomeYourChance .moveBanner", { y: 300 }, { y: 0 });
+
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionHomeYourChance .listPromo",
+						start: "75px bottom",
+						end: "bottom top",
+					},
+				})
+				.fromTo(".SectionHomeYourChance .itemPromo", { y: 100, opacity: 0 }, { y: 0, stagger: 0.3, opacity: 1 });
 		}, 1500);
 	}, []);
 
@@ -44,7 +54,7 @@ function SectionHomeYourChance({ ...props }) {
 					className="moveBanner absolute top-0 aspect-[144/77] w-full rounded-b-[75px] object-cover mb:aspect-[375/800]"
 				/>
 				<div className="cusContainer relative">
-					<h2 className="titleStoke relative z-10 mb-[80px] mb:mb-[40px]">
+					<h2 className="titleStoke fadeUp relative z-10 mb-[80px] mb:mb-[40px]">
 						GRAB YOUR <br /> CHANCE
 					</h2>
 
@@ -57,14 +67,14 @@ function SectionHomeYourChance({ ...props }) {
 						))}
 					</div>
 
-					<div className="mb-[80px] flex justify-center">
+					<div className="fadeUp mb-[80px] flex justify-center">
 						<button className="mainBtn">all promos</button>
 					</div>
 
 					<img
 						src="/images/home/yourchance-banner-2.jpg"
 						alt=""
-						className="mx-auto aspect-[144/77] w-full max-w-[1110px] rounded-[50px] object-cover mb:aspect-[33/39]"
+						className="fadeUp mx-auto aspect-[144/77] w-full max-w-[1110px] rounded-[50px] object-cover mb:aspect-[33/39]"
 					/>
 				</div>
 			</div>

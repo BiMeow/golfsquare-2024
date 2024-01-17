@@ -1,5 +1,6 @@
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listImage = [
 	{
@@ -19,16 +20,31 @@ let listImage = [
 function SecitonVisitFNB({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SecitonVisitFNB",
+						start: "top top",
+						end: "bottom top",
+						scrub: 2,
+					},
+				})
+				.fromTo(".SecitonVisitFNB .image", { y: 100 }, { y: 0 }, 0);
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SecitonVisitFNB secSpacing`}>
-				<div className="cusContainer">
-					<div className="visitTitle relative mx-auto mb-[40px] w-max">
+				<div className="cusContainer relative z-10">
+					<div className="visitTitle fadeUp relative mx-auto mb-[40px] w-max">
 						<h2 className="text-50">F&B</h2>
 						<div className="absolute left-1/2 top-full h-[4px] w-full max-w-[89px] -translate-x-1/2 bg-red"></div>
 					</div>
 
-					<p className="mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
+					<p className="fadeUp mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
 						No matter what you’re craving, Golf Square is the place for great food and drinks. <br className="mb:hidden" /> Whether you combine it
 						with Golf Square game time or just visit one of our five bars and restaurants, we’re happy to serve you!
 					</p>
@@ -41,14 +57,14 @@ function SecitonVisitFNB({ ...props }) {
 						))}
 					</div>
 				</div>
-				<img src="/images/visit/fnb-bg.png" alt="" className="mt-[-200px] w-full mb:mt-0" />
+				<img src="/images/visit/fnb-bg.png" alt="" className="image mt-[-200px] w-full mb:mt-0" />
 				<div className="banner relative">
-					<img src="/images/visit/fnb-banner.jpg" alt="" className="w-full mb:hidden" />
-					<img src="/images/visit/fnb-banner-mb.jpg" alt="" className="hidden w-full mb:block" />
+					<img src="/images/visit/fnb-banner.jpg" alt="" className="fadeIn w-full mb:hidden" />
+					<img src="/images/visit/fnb-banner-mb.jpg" alt="" className="fadeIn hidden w-full mb:block" />
 
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-						<h3 className="text-52 mb-[30px] mb:mb-[20px]">TRY OUR RESTAURANTS</h3>
-						<button className="mainBtn">LEARN MORE</button>
+						<h3 className="text-52 fadeUp mb-[30px] mb:mb-[20px]">TRY OUR RESTAURANTS</h3>
+						<button className="mainBtn fadeUp">LEARN MORE</button>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,7 @@
 import { IconArrow } from "@/components/elements/Icon";
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listWhy = [
 	{
@@ -36,13 +37,28 @@ let listWhy = [
 function SectionAboutWhy({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionAboutWhy .listWhy",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionAboutWhy .listWhy .itemWhy", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionAboutWhy secSpacing`}>
 				<div className="cusContainer">
 					<div className="heading mb-[80px] flex items-center space-x-[35px] mb:space-x-[15px]">
-						<img src="/images/logo-icon.png" alt="" className="w-[105px] mb:w-[55px]" />
-						<h2 className="text-40 uppercase">
+						<img src="/images/logo-icon.png" alt="" className="fadeRight w-[105px] mb:w-[55px]" />
+						<h2 className="text-40 fadeLeft uppercase">
 							Why is <br /> <span className="text-64 mb:text-[32px]">GolfSquare?</span>
 						</h2>
 					</div>

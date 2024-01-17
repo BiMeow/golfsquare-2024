@@ -32,6 +32,17 @@ function SectionAboutFunBetter({ ...props }) {
 					},
 				})
 				.fromTo(".SectionAboutFunBetter .moveBanner", { y: 300 }, { y: 0 });
+
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionAboutFunBetter .listBetter",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionAboutFunBetter .listBetter .itemBetter", { opacity: 0, x: -100 }, { opacity: 1, x: 0, stagger: 0.3 });
 		}, 1500);
 	}, []);
 
@@ -39,14 +50,14 @@ function SectionAboutFunBetter({ ...props }) {
 		<>
 			<div className={`SectionAboutFunBetter secSpacing relative`}>
 				<div className="moveBanner absolute left-0 top-[50px] max-h-[90%] w-full overflow-hidden opacity-80 blur-[5px] mb:max-h-[97%]">
-					<img src="/images/about/funbetter-banner.jpg" alt="" className="aspect-[144/140] w-full object-cover mb:aspect-[375/2121]" />
+					<img src="/images/about/funbetter-banner.jpg" alt="" className="fadeUp aspect-[144/140] w-full object-cover mb:aspect-[375/2121]" />
 				</div>
 				<div className="cusContainer relative mb-[40px]">
-					<h2 className="titleStoke relative z-10 mb-[80px] mb:mb-[40px]">
+					<h2 className="titleStoke fadeUp relative z-10 mb-[80px] mb:mb-[40px]">
 						MAKE FUN <br /> BETTER
 					</h2>
 
-					<p className="mx-auto mb-[120px] max-w-[920px] text-center mb:mb-[60px]">
+					<p className="fadeUp mx-auto mb-[120px] max-w-[920px] text-center mb:mb-[60px]">
 						Eat, Drink and Play - At GolfSquare, we redefine leisure and elevate enjoyment. Our state-of-the-art indoor golfing facility is paired
 						with a dining experience that tantalizes the senses, exceptional event hosting, and wine cocktails that are nothing short of perfection. 
 						Dive into an experience where every moment is crafted for delight. After all, 'We make fun better'. Packages to suit all occasions and
@@ -68,11 +79,11 @@ function SectionAboutFunBetter({ ...props }) {
 						))}
 					</div>
 
-					<div className="flex justify-center">
+					<div className="fadeUp flex justify-center">
 						<button className="mainBtn">MAKE FUN BETTER NOW</button>
 					</div>
 				</div>
-				<img src="/images/header-line.png" alt="" className="relative z-10 w-full" />
+				<img src="/images/header-line.png" alt="" className="fadeRight relative z-10 w-full" />
 			</div>
 		</>
 	);

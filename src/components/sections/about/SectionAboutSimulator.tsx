@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Thumbs } from "swiper/modules";
 
 import "swiper/css/effect-fade";
 import { useWindowSize } from "usehooks-ts";
+import gsap from "gsap";
 
 let listCol = [
 	[
@@ -78,14 +79,27 @@ function SectionAboutSimulator({ ...props }) {
 	const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 	const [activeSlide, setActiveSlide] = useState<any>(0);
 
-	console.log(`BiMeow`, thumbsSwiper);
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionAboutSimulator .listCol",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionAboutSimulator .listCol .itemCol p", { opacity: 0 }, { opacity: 1, stagger: 0.3 });
+		}, 1500);
+	}, []);
 
 	return (
 		<>
 			<div className={`SectionAboutSimulator secSpacing mb-[60px]`}>
 				<div className="cusContainer">
-					<h2 className="text-64 mb-[20px]">Golf simulator</h2>
-					<p className="mb-[80px] max-w-[800px] mb:mb-[30px]">
+					<h2 className="text-64 fadeUp mb-[20px]">Golf simulator</h2>
+					<p className="fadeUp mb-[80px] max-w-[800px] mb:mb-[30px]">
 						Embark on a golfing adventure and explore the world's most prestigious courses right at your fingertips. Unleash the power of our advanced
 						Korean golf simulator technology to play rounds, perfect your swing, or engage in thrilling tournaments against other players. Prepare for
 						a vivid, precise, and sensational golfing experience like no other.
@@ -107,7 +121,7 @@ function SectionAboutSimulator({ ...props }) {
 						<div className="absolute left-[40px] top-1/2 !m-0 h-[85%] w-[2px] -translate-y-1/2 bg-red mb:left-[36px] "></div>
 					</div>
 
-					<div className="sliderSimulator">
+					<div className="sliderSimulator fadeUp">
 						<div className="mx-[-25px] flex flex-wrap">
 							<div className="mainSlider w-[25%] px-[25px] mb:order-2 mb:w-full">
 								<div className="relative h-full w-full mb:h-auto">

@@ -26,35 +26,37 @@ function SectionHomeAbout({ ...props }) {
 	const { width } = useWindowSize();
 
 	useEffect(() => {
-		setTimeout(() => {
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".SectionHomeAbout .listHappen",
-						start: "75px bottom",
-						end: "bottom bottom",
-						//toggleActions: "restart reverse restart none",
-					},
-				})
-				.fromTo(".SectionHomeAbout .listHappen .itemHappen", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
-
-			if (width > 1280) {
+		if (width) {
+			setTimeout(() => {
 				gsap
 					.timeline({
 						scrollTrigger: {
 							trigger: ".SectionHomeAbout .listHappen",
 							start: "75px bottom",
-							end: "bottom center",
-							scrub: 2,
+							end: "bottom bottom",
 							//toggleActions: "restart reverse restart none",
 						},
 					})
-					.fromTo(".SectionHomeAbout .listHappen .itemHappen1", { y: 0 }, { y: 30 }, 0)
-					.fromTo(".SectionHomeAbout .listHappen .itemHappen2", { y: 0 }, { y: -30 }, 0)
-					.fromTo(".SectionHomeAbout .listHappen .itemHappen3", { y: 0 }, { y: 30 }, 0);
-			}
-		}, 1500);
-	}, []);
+					.fromTo(".SectionHomeAbout .listHappen .itemHappen", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+
+				if (width > 1280) {
+					gsap
+						.timeline({
+							scrollTrigger: {
+								trigger: ".SectionHomeAbout .listHappen",
+								start: "75px bottom",
+								end: "bottom center",
+								scrub: 2,
+								//toggleActions: "restart reverse restart none",
+							},
+						})
+						.fromTo(".SectionHomeAbout .listHappen .itemHappen1", { y: 0 }, { y: 60 }, 0)
+						.fromTo(".SectionHomeAbout .listHappen .itemHappen2", { y: 0 }, { y: -60 }, 0)
+						.fromTo(".SectionHomeAbout .listHappen .itemHappen3", { y: 0 }, { y: 60 }, 0);
+				}
+			}, 1500);
+		}
+	}, [width]);
 
 	return (
 		<>

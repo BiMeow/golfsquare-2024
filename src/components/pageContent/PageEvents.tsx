@@ -19,12 +19,12 @@ function PageEvents({ ...props }) {
 
 				<div className="relative z-10">
 					<div className="cusContainer">
-						<h2 className="mb-[25px] text-center text-[90px] font-bold mb:mb-[30px] mb:text-[52px]">
+						<h2 className="fadeUp mb-[25px] text-center text-[90px] font-bold mb:mb-[30px] mb:text-[52px]">
 							PARTIES &
 							<br />
 							<span className="text-red">EVENTS</span>
 						</h2>
-						<p className="mx-auto mb-[100px] max-w-[920px] text-center font-GilroyMedium mb:mb-[60px]">
+						<p className="fadeUp mx-auto mb-[100px] max-w-[920px] text-center font-GilroyMedium mb:mb-[60px]">
 							Eat, Drink and Play - At GolfSquare, we redefine leisure and elevate enjoyment. Our state-of-the-art indoor golfing facility is paired
 							with a dining experience that tantalizes the senses, exceptional event hosting, and wine cocktails that are nothing short of
 							perfection.  Dive into an experience where every moment is crafted for delight. After all, 'We make fun better'. Packages to suit all

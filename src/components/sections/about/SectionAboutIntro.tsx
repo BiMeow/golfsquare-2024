@@ -1,5 +1,7 @@
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
+import SplitType from "split-type";
 
 let listImage = [
 	{
@@ -19,17 +21,55 @@ let listImage = [
 function SectionAboutIntro({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionAboutIntro .listImage",
+						start: "75px bottom",
+						end: "bottom top",
+					},
+				})
+				.fromTo(".SectionAboutIntro .itemImage", { x: -100, opacity: 0 }, { x: 0, stagger: 0.3, opacity: 1 }, 0.3);
+
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionAboutIntro .banner",
+						start: "top top",
+						end: "bottom top",
+						scrub: 2,
+					},
+				})
+				.fromTo(".SectionAboutIntro .banner .image", { y: 0 }, { y: -100 }, 0);
+
+			const splitText = SplitType.create(".splitText", { types: "chars" });
+
+			gsap.to(splitText.chars, {
+				scrollTrigger: {
+					trigger: ".SectionAboutIntro .textRun",
+					start: "10px top",
+					end: `110% 50%`,
+					scrub: true,
+				},
+				stagger: 0.5,
+				color: "#fff",
+			});
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionAboutIntro secSpacing`}>
-				<div className="cusContainer mb-[60px]">
-					<h2 className="text-64 mb-[80px] mb:mb-[30px]">About us</h2>
+				<div className="textRun cusContainer mb-[60px]">
+					<h2 className="text-64 fadeUp mb-[80px] mb:mb-[30px]">About us</h2>
 
 					<div className="listImage mx-[-15px] mb-[80px] flex flex-wrap mb:hidden">
 						{listImage.map((e: any, i: number) => (
 							<div
 								className={`
-                                itemImage w-1/4 px-[15px]
+                                itemImage w-1/4 px-[15px] opacity-0
                                 ${i % 2 == 0 ? "" : "pt-[60px]"}
                                 `}
 								key={i}
@@ -62,7 +102,7 @@ function SectionAboutIntro({ ...props }) {
 						</div>
 					</div>
 
-					<div className="mx-auto max-w-[920px] text-center">
+					<div className="fadeUp splitText mx-auto max-w-[920px] text-center text-[#fff7]">
 						<p>
 							<span className="text-[24px] font-bold">Welcome to Golf Square!</span>
 							<br />
@@ -74,11 +114,13 @@ function SectionAboutIntro({ ...props }) {
 				</div>
 
 				<div className="banner relative">
-					<img src="/images/about/intro-banner.jpg" alt="" className="aspect-[145/75] object-cover mb:aspect-[375/620]" />
+					<div className="fadeIn relative aspect-[145/75] overflow-hidden mb:aspect-[375/620]">
+						<img src="/images/about/intro-banner.jpg" alt="" className="image absFull h-[calc(100%+100px)] object-cover" />
+					</div>
 
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-						<h2 className="text-52 mb-[40px] text-center uppercase">WE DON’T MAKE FUN</h2>
-						<h1 className="w-full border-y border-red pb-[10px] text-center text-[125px] font-bold uppercase text-red mb:font-GilroyBold mb:text-[54px]">
+						<h2 className="text-52 fadeUp mb-[40px] text-center uppercase">WE DON’T MAKE FUN</h2>
+						<h1 className="fadeUp w-full border-y border-red pb-[10px] text-center text-[125px] font-bold uppercase text-red mb:font-GilroyBold mb:text-[54px]">
 							We make fun better
 						</h1>
 					</div>

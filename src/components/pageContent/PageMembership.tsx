@@ -165,9 +165,9 @@ function PageMembership({ ...props }) {
 		<>
 			<div className={`PageMembership pt-[200px] mb:pt-[100px]`}>
 				<div className="cusContainer">
-					<h2 className="text-64 mb-[45px] text-center">Membership</h2>
+					<h2 className="text-64 fadeUp mb-[45px] text-center">Membership</h2>
 
-					<div className="listTab mb-[100px] flex items-center justify-center space-x-[70px] tl-p:hidden">
+					<div className="listTab fadeUp mb-[100px] flex items-center justify-center space-x-[70px] tl-p:hidden">
 						{listTab.map((e: any, i: number) => (
 							<div
 								className={`

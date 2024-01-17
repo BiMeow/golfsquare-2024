@@ -24,46 +24,48 @@ function SectionHomeHaveFun({ ...props }) {
 	const { width } = useWindowSize();
 
 	useEffect(() => {
-		setTimeout(() => {
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".SectionHomeHaveFun",
-						start: "top bottom",
-						end: "bottom top",
-						scrub: 2,
-					},
-				})
-				.fromTo(".SectionHomeHaveFun .image", { y: 0 }, { y: -100 }, 0);
+		if (width) {
+			setTimeout(() => {
+				gsap
+					.timeline({
+						scrollTrigger: {
+							trigger: ".SectionHomeHaveFun",
+							start: "top bottom",
+							end: "bottom top",
+							scrub: 2,
+						},
+					})
+					.fromTo(".SectionHomeHaveFun .image", { y: 0 }, { y: -100 }, 0);
 
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".SectionHomeHaveFun .listHaveFun",
-						start: "75px bottom",
-						end: "bottom bottom",
-						//toggleActions: "restart reverse restart none",
-					},
-				})
-				.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
-
-			if (width > 1280) {
 				gsap
 					.timeline({
 						scrollTrigger: {
 							trigger: ".SectionHomeHaveFun .listHaveFun",
 							start: "75px bottom",
-							end: "bottom center",
-							scrub: 2,
+							end: "bottom bottom",
 							//toggleActions: "restart reverse restart none",
 						},
 					})
-					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun1", { y: 0 }, { y: 30 }, 0)
-					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun2", { y: 0 }, { y: -30 }, 0)
-					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun3", { y: 0 }, { y: 30 }, 0);
-			}
-		}, 1500);
-	}, []);
+					.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+
+				if (width > 1280) {
+					gsap
+						.timeline({
+							scrollTrigger: {
+								trigger: ".SectionHomeHaveFun .listHaveFun",
+								start: "75px bottom",
+								end: "bottom center",
+								scrub: 2,
+								//toggleActions: "restart reverse restart none",
+							},
+						})
+						.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun1", { y: 0 }, { y: 60 }, 0)
+						.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun2", { y: 0 }, { y: -60 }, 0)
+						.fromTo(".SectionHomeHaveFun .listHaveFun .itemHaveFun3", { y: 0 }, { y: 60 }, 0);
+				}
+			}, 1500);
+		}
+	}, [width]);
 
 	return (
 		<>
