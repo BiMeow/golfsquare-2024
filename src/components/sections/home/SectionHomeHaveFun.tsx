@@ -65,7 +65,7 @@ function SectionHomeHaveFun({ ...props }) {
 			<div className={`SectionHomeHaveFun secSpacing`}>
 				<div className="banner relative">
 					<div className="relative aspect-[146/75] overflow-hidden mb:aspect-[375/620]">
-						<img src="/images/home/havefun-banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover object-bottom" />
+						<img src="/images/home/havefun-banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
 					</div>
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center tl-l:px-[20px]">
 						<h2 className="mb-[60px] text-center text-[170px] font-bold text-white mb:mb-[25px] mb:text-[70px]">

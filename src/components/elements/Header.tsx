@@ -53,7 +53,7 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 				.timeline({
 					scrollTrigger: {
 						trigger: ".MasterPage",
-						start: "top top",
+						start: "10px top",
 						end: "99% bottom",
 						scrub: 2,
 					},
