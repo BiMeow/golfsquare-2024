@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext, useRef, memo, useMemo } from "react";
-import { useRouter, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import gsap from "gsap";
 import { useWindowSize } from "usehooks-ts";
 
