@@ -17,7 +17,7 @@ function SectionReady({ ...props }) {
 
 	return (
 		<>
-			<div className={`SectionReady py-[75px]`}>
+			<div className={`SectionReady fadeUp py-[75px]`}>
 				<div className="cusContainer">
 					<div className="flex items-center justify-between gap-x-[86px] gap-y-[30px] mb:flex-wrap mb:justify-center mb:text-center">
 						<p className="text-[40px] font-bold mb:text-[32px]">

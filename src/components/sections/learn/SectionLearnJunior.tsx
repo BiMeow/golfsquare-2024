@@ -1,6 +1,7 @@
 import SectionLearnFee from "@/components/sections/learn/SectionLearnFee";
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listFeature = [
 	{
@@ -32,18 +33,46 @@ let listFeature = [
 function SecitonLearnJunior({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SecitonLearnJunior",
+						start: "top top",
+						end: "bottom top",
+						scrub: 2,
+					},
+				})
+				.fromTo(".SecitonLearnJunior .image", { y: 0 }, { y: -100 }, 0);
+
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SecitonLearnJunior .listFeature",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SecitonLearnJunior .listFeature .itemFeature", { opacity: 0, x: -100 }, { opacity: 1, x: 0, stagger: 0.3 });
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SecitonLearnJunior`}>
 				<div className="banner relative">
-					<img src="/images/learn/junior-banner.jpg" alt="" className="aspect-[144/65] w-full object-cover mb:aspect-[375/650]" />
+					<div className="relative aspect-[144/65] overflow-hidden mb:aspect-[375/650]">
+						<img src="/images/learn/junior-banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
+					</div>
 					<div className="content absolute left-0 top-0 h-full w-full">
 						<div className="ml-auto w-fit pr-[10%] pt-[10%] mb:px-[20px] mb:pt-[60px]">
 							<div className="flex gap-y-[16px] mb:flex-wrap">
 								<div>
-									<img src="/images/logo-icon.png" alt="" className="mr-[35px] w-[105px] mb:w-[55px]" />
+									<img src="/images/logo-icon.png" alt="" className="fadeUp mr-[35px] w-[105px] mb:w-[55px]" />
 								</div>
-								<div className="max-w-[460px] mb:max-w-none">
+								<div className="fadeUp max-w-[460px] mb:max-w-none">
 									<h2 className="text-64 mb-[20px]">JUNIOR GOLF PROGRAMME</h2>
 									<p className="mb-[40px] text-[22px] mb:mb-[20px] mb:text-[16px]">Excellent for children aged 5 to 15 years old</p>
 									<p className="text-[16px] mb:text-[14px]">
@@ -73,10 +102,10 @@ function SecitonLearnJunior({ ...props }) {
 					</div>
 
 					<div className="timing">
-						<h2 className="text-36 mb-[75px] mb:mb-[40px]">Lesson Timing and Date</h2>
+						<h2 className="text-36 fadeUp mb-[75px] mb:mb-[40px]">Lesson Timing and Date</h2>
 
 						<div className="mx-[-15px] flex flex-wrap gap-y-[60px] text-[#00FFFF]">
-							<div className="c1 relative w-1/2 px-[15px] mb:w-full">
+							<div className="c1 fadeUp relative w-1/2 px-[15px] mb:w-full">
 								<div className="h-full rounded-[60px] border border-[#00FFFF] px-[80px] py-[65px] mb:px-[50px] mb:py-[45px]">
 									<p className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-blue px-[20px] font-GilroyBold text-[24px] uppercase mb:text-[18px]">
 										Group Lesson
@@ -89,7 +118,7 @@ function SecitonLearnJunior({ ...props }) {
 									<p className="mb:text-center">Max 5 pax</p>
 								</div>
 							</div>
-							<div className="c2 relative w-1/2 px-[15px] mb:w-full">
+							<div className="c2 fadeUp relative w-1/2 px-[15px] mb:w-full">
 								<div className="h-full rounded-[60px] border border-[#00FFFF] px-[80px] py-[70px] mb:px-[50px] mb:py-[45px]">
 									<p className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-blue px-[20px] font-GilroyBold text-[24px] uppercase mb:text-[18px]">
 										Personal Makeup Lesson

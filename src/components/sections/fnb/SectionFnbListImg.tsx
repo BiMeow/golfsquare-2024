@@ -2,6 +2,7 @@ import { useEffect, useState, useContext, useRef, memo, useMemo } from "react";
 import { useRouter } from "next/router";
 import Slider from "react-slick";
 import { IconPlay } from "@/components/elements/Icon";
+import gsap from "gsap";
 
 let listImg = [
 	{
@@ -76,19 +77,36 @@ function SectionEventListImg({ ...props }) {
 		],
 	};
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionEventListImg .banner",
+						start: "top top",
+						end: "bottom top",
+						scrub: 2,
+					},
+				})
+				.fromTo(".SectionEventListImg .banner .image", { y: 0 }, { y: -100 }, 0);
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionEventListImg secSpacing`}>
 				<div className="banner relative mb-[120px] mb:mb-[80px]">
-					<img src="/images/fnb/banner.jpg" alt="" className="aspect-[144/60] object-cover mb:aspect-[375/450]" />
+					<div className="relative aspect-[144/60] overflow-hidden mb:aspect-[375/450]">
+						<img src="/images/fnb/banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
+					</div>
 					<div className="hoverShadow absolute left-1/2 top-1/2 mb-[50px] flex aspect-1 w-[74px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white">
 						<IconPlay />
 					</div>
 				</div>
 
 				<div className="cusContainer">
-					<h2 className="mb-[60px] text-center text-[36px] font-bold uppercase mb:mb-[30px] mb:text-[20px]">square golf favorites</h2>
-					<div className="listImg">
+					<h2 className="fadeUp mb-[60px] text-center text-[36px] font-bold uppercase mb:mb-[30px] mb:text-[20px]">square golf favorites</h2>
+					<div className="listImg fadeUp">
 						<Slider {...settings} className="cusSlider">
 							{listImg.map((e: any, i: number) => (
 								<div className="itemImg px-[15px] pb-[30px]" key={i}>

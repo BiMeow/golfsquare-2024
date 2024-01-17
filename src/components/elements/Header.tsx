@@ -64,7 +64,7 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 
 	return (
 		<>
-			<div className={`Header //backdrop-blur-[5px] fixed top-0 z-[444] w-full pt-[30px] mb:pt-[20px]`}>
+			<div className={`Header fadeDown //backdrop-blur-[5px] fixed top-0 z-[444] w-full pt-[30px] mb:pt-[20px]`}>
 				<div className="cusContainerLarge mb:mb-[10px]">
 					<div className="flex items-center justify-between">
 						<Link href="/" className="relative z-10">

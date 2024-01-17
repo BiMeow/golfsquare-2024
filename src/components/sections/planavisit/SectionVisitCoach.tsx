@@ -57,17 +57,17 @@ function SectionVisitCoach({ ...props }) {
 		<>
 			<div className={`SectionVisitCoach secSpacing`}>
 				<div className="cusContainer">
-					<div className="visitTitle relative mx-auto mb-[40px] w-max">
+					<div className="visitTitle fadeUp relative mx-auto mb-[40px] w-max">
 						<h2 className="text-50">COACH</h2>
 						<div className="absolute left-1/2 top-full h-[4px] w-full max-w-[89px] -translate-x-1/2 bg-red"></div>
 					</div>
 
-					<p className="mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
+					<p className="fadeUp mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
 						Let our trained professionals coach you to be the best golfer you have ever been. <br className="mb:hidden" /> They are skilled and are
 						committed to help you be better.
 					</p>
 
-					<div className="listCoach">
+					<div className="listCoach fadeUp">
 						<Slider {...settings} className="cusSlider">
 							{listCoach.map((e: any, i: number) => (
 								<div className="itemCoach relative mb-[30px] bg-[#0F163C] px-[70px] pb-[40px] pt-[35px] mb:px-[20px] mb:py-[30px]" key={i}>

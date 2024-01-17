@@ -1,5 +1,6 @@
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listDish = [
 	{
@@ -23,12 +24,27 @@ let listDish = [
 function SectionFnbNewDish({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionFnbNewDish .listDish",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionFnbNewDish .listDish .itemDish", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionFnbNewDish mb-[30px]`}>
 				<div className="mb:px-[20px]">
-					<h2 className="text-36 mb-[35px] text-center mb:mb-[16px]">NEW DISHES !</h2>
-					<p className="mx-auto mb-[70px] max-w-[920px] text-center font-GilroyMedium mb:mb-[60px]">
+					<h2 className="text-36 fadeUp mb-[35px] text-center mb:mb-[16px]">NEW DISHES !</h2>
+					<p className="fadeUp mx-auto mb-[70px] max-w-[920px] text-center font-GilroyMedium mb:mb-[60px]">
 						At Golf Square, the fun extends beyond the greens. Catering to joy-seekers of all ages, our vibrant space is the perfect venue for family
 						gatherings, group celebrations, or solo escapades. With a year-round calendar of events, engaging competitions, and exclusive promotions,
 						there is always a compelling reason to return
@@ -46,7 +62,7 @@ function SectionFnbNewDish({ ...props }) {
 						</div>
 					))}
 				</div>
-				<div className="bestSeller bg-[#0F163C] pl-[14%] mb:pl-0">
+				<div className="bestSeller fadeUp bg-[#0F163C] pl-[14%] mb:pl-0">
 					<div className="mx-[-50px] flex flex-wrap items-center gap-y-[30px] mb:pb-[45px] mb:pt-[65px]">
 						<div className="c1 w-[35%] px-[50px] mb:w-full">
 							<div className="relative mx-auto mb-[60px] w-fit">

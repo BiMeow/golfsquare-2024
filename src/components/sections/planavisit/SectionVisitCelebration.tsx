@@ -1,5 +1,6 @@
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listCeleb = [
 	{
@@ -37,16 +38,31 @@ let listCeleb = [
 function SectionVisitCelebration({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionVisitCelebration .listCeleb",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionVisitCelebration .listCeleb .itemCeleb", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionVisitCelebration mb-[40px]`}>
 				<div className="cusContainer">
-					<div className="visitTitle relative mx-auto mb-[40px] w-max">
+					<div className="visitTitle fadeUp relative mx-auto mb-[40px] w-max">
 						<h2 className="text-50">CELEBRATIONS</h2>
 						<div className="absolute left-1/2 top-full h-[4px] w-full max-w-[89px] -translate-x-1/2 bg-red"></div>
 					</div>
 
-					<p className="mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
+					<p className="fadeUp mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
 						Rain or shine, day or night, make your next party or group event more eventful at Square Golf. We offer versatile event catering packages
 						perfect for your next birthday party, company event, or social get-together!
 					</p>

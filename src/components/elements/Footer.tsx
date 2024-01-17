@@ -43,7 +43,7 @@ function Footer({ ...props }) {
 	return (
 		<>
 			<div
-				className={`Footer flex flex-col items-center justify-center py-[130px] text-[16px] text-red tl-l:px-[20px] mb:pb-[60px] mb:pt-[80px] mb:text-[14px]`}
+				className={`Footer fadeIn flex flex-col items-center justify-center py-[130px] text-[16px] text-red tl-l:px-[20px] mb:pb-[60px] mb:pt-[80px] mb:text-[14px]`}
 			>
 				<img src="/images/logo-icon.png" alt="" className="mb-[32px] w-[65px]" />
 				<p className="mb-[50px] text-center">

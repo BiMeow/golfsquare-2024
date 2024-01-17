@@ -1,6 +1,7 @@
 import { IconPlay } from "@/components/elements/Icon";
+import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 let listEvents = [
 	{
@@ -48,19 +49,34 @@ let listEvents = [
 function SectionEventList({ ...props }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionEventList .listEvents",
+						start: "75px bottom",
+						end: "bottom bottom",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionEventList .listEvents .itemEvent", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
+		}, 1500);
+	}, []);
+
 	return (
 		<>
 			<div className={`SectionEventList mb-[160px] mb:mb-[100px]`}>
 				<div className="cusContainer">
 					{listEvents.map((e: any, i: number) => (
-						<div className="listEvent mb-[100px] last:mb-0" key={i}>
+						<div className="listEvent fadeUp mb-[100px] last:mb-0" key={i}>
 							<h2 className="mb-[50px] text-center text-[36px] font-bold uppercase mb:mb-[30px] mb:text-[20px]">{e.title}</h2>
 
 							<div className="listEvents mx-[-15px] flex flex-wrap items-stretch gap-y-[25px]">
 								{e.list?.map(
 									(e: any, i: number) =>
 										i < 3 && (
-											<div className="itemCeleb group w-1/3 px-[15px] mb:w-full" key={i}>
+											<div className="itemEvent group w-1/3 px-[15px] mb:w-full" key={i}>
 												<div className="h-full bg-[#0D133277] backdrop-blur-[5px] mb:bg-[#0D1332]">
 													<div className="overflow-hidden">
 														<img src={e.image} alt="" className="aspect-[35/41] object-cover duration-500 group-hover:scale-[1.01]" />

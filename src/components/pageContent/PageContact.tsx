@@ -13,7 +13,7 @@ function PageContact({ ...props }) {
 			<div className={`PageContact pt-[150px] mb:pt-[100px]`}>
 				<div className="pl-[10%] tl-l:px-[20px]">
 					<div className="mx-[-35px] flex flex-wrap">
-						<div className="c1 w-[30%] px-[35px] pt-[100px] mb:mb-[50px] mb:w-full mb:pt-0">
+						<div className="c1 fadeLeft w-[30%] px-[35px] pt-[100px] mb:mb-[50px] mb:w-full mb:pt-0">
 							<h2 className="text-64 mb:mb-[10px]">Contact us</h2>
 							<img src="/images/header-line.png" alt="" className="mb-[40px] w-full mb:w-[70%]" />
 
@@ -38,13 +38,13 @@ function PageContact({ ...props }) {
 							</div>
 						</div>
 
-						<div className="c2 w-[70%] px-[35px] mb:w-full">
+						<div className="c2 fadeRight w-[70%] px-[35px] mb:w-full">
 							<img src="/images/contact/man.png" alt="" className="w-full mb:hidden" />
 							<img src="/images/contact/man-mb.png" alt="" className="hidden w-full mb:block" />
 						</div>
 					</div>
 				</div>
-				<div className="cusContainer">
+				<div className="cusContainer fadeUp">
 					<img src="/images/contact/banner.jpg" alt="" className="aspect-[1110/414] w-full rounded-[60px] object-cover mb:aspect-[327/414]" />
 					<img src="/images/header-line.png" alt="" className="w-full -translate-y-[60%]" />
 				</div>
