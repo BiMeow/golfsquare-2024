@@ -21,52 +21,62 @@ const MainProvider: React.FC<Props> = ({ children, isPrivate }) => {
 	const initAnimation = () => {
 		let listFadeIn = gsap.utils.toArray(".fadeIn");
 		listFadeIn.forEach((l: any) => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: l,
-					start: "top 80%",
-				},
-			}).fromTo(l, { autoAlpha: 0, opacity: 0 }, { autoAlpha: 1, opacity: 1 });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: l,
+						start: "75px bottom",
+					},
+				})
+				.fromTo(l, { autoAlpha: 0, opacity: 0 }, { autoAlpha: 1, opacity: 1 });
 		});
 
 		let listFadeUp = gsap.utils.toArray(".fadeUp");
 		listFadeUp.forEach((l: any) => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: l,
-					start: "top 80%",
-				},
-			}).fromTo(l, { y: 75, autoAlpha: 0, opacity: 0 }, { y: 0, autoAlpha: 1, opacity: 1 });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: l,
+						start: "75px bottom",
+					},
+				})
+				.fromTo(l, { y: 75, autoAlpha: 0, opacity: 0 }, { y: 0, autoAlpha: 1, opacity: 1 });
 		});
 
 		let listFadeDown = gsap.utils.toArray(".fadeDown");
 		listFadeDown.forEach((l: any) => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: l,
-					start: "top 80%",
-				},
-			}).fromTo(l, { y: -75, autoAlpha: 0, opacity: 1 }, { y: 0, autoAlpha: 1, opacity: 1 });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: l,
+						start: "75px bottom",
+					},
+				})
+				.fromTo(l, { y: -75, autoAlpha: 0, opacity: 1 }, { y: 0, autoAlpha: 1, opacity: 1 });
 		});
 
 		let listFadeRight = gsap.utils.toArray(".fadeRight");
 		listFadeRight.forEach((l: any) => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: l,
-					start: "top 80%",
-				},
-			}).fromTo(l, { x: -75, autoAlpha: 0, opacity: 0 }, { x: 0, autoAlpha: 1, opacity: 1 });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: l,
+						start: "75px bottom",
+					},
+				})
+				.fromTo(l, { x: -75, autoAlpha: 0, opacity: 0 }, { x: 0, autoAlpha: 1, opacity: 1 });
 		});
 
 		let listFadeLeft = gsap.utils.toArray(".fadeLeft");
 		listFadeLeft.forEach((l: any) => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: l,
-					start: "top 80%",
-				},
-			}).fromTo(l, { x: 75, autoAlpha: 0, opacity: 0 }, { x: 0, autoAlpha: 1, opacity: 1 });
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: l,
+						start: "75px bottom",
+					},
+				})
+				.fromTo(l, { x: 75, autoAlpha: 0, opacity: 0 }, { x: 0, autoAlpha: 1, opacity: 1 });
 		});
 
 		ScrollTrigger.refresh();
