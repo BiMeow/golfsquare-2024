@@ -1,3 +1,4 @@
+import { useStorage } from "@/components/context/StorageProvider";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { memo, useState } from "react";
@@ -5,15 +6,7 @@ import { memo, useState } from "react";
 function SectionReady({ ...props }) {
 	const router = useRouter();
 
-	const [isModalOpen, setIsModalOpen] = useState<any>(false);
-
-	const handleOk = () => {
-		setIsModalOpen(false);
-	};
-
-	const handleCancel = () => {
-		setIsModalOpen(false);
-	};
+	const { setIsModalOpen } = useStorage();
 
 	return (
 		<>
@@ -30,19 +23,6 @@ function SectionReady({ ...props }) {
 					</div>
 				</div>
 			</div>
-
-			<Modal
-				open={isModalOpen}
-				onOk={handleOk}
-				onCancel={handleCancel}
-				centered
-				footer={null}
-				className="cusModal _md:px-[20px] !w-full max-w-[700px]"
-			>
-				<div className="relative aspect-[1] overflow-hidden rounded-[15px]">
-					<iframe src={"https://golfsquare-2024.vercel.app/"} className=" h-full w-full"></iframe>
-				</div>
-			</Modal>
 
 			<style jsx global>
 				{`

@@ -2,6 +2,8 @@ import { useEffect, useState, useContext, useRef, memo, useMemo } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import gsap from "gsap";
+import { useWindowSize } from "usehooks-ts";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 let listMenu = [
 	{
@@ -45,22 +47,48 @@ let listMenu = [
 function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 	const router = useRouter();
 
+	const { width } = useWindowSize();
+
 	const [showNav, setShowNav] = useState<any>(false);
 
 	useEffect(() => {
 		setTimeout(() => {
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".MasterPage",
-						start: "10px top",
-						end: "99% bottom",
-						scrub: 2,
-					},
-				})
-				.fromTo(".headerLine", { width: 0 }, { width: "100%" });
-		}, 1500);
-	}, []);
+			// gsap
+			// 	.timeline({
+			// 		scrollTrigger: {
+			// 			trigger: ".MasterPage",
+			// 			start: "10px top",
+			// 			end: "99% bottom",
+			// 			scrub: 2,
+			// 		},
+			// 	})
+			// 	.fromTo(".headerLine", { width: 0 }, { width: "100%" });
+			if (width) {
+				if (width > 1280) {
+					gsap
+						.timeline({
+							scrollTrigger: {
+								trigger: ".hideLine",
+								start: "top top",
+								toggleActions: "restart none reverse none",
+							},
+						})
+						.fromTo(".headerLine", { height: 100, opacity: 1 }, { height: 0, opacity: 0 });
+				} else {
+					gsap
+						.timeline({
+							scrollTrigger: {
+								trigger: ".hideLine",
+								start: "top top",
+								toggleActions: "restart none reverse none",
+							},
+						})
+						.fromTo(".headerLine", { height: 30, opacity: 1 }, { height: 0, opacity: 0 });
+				}
+			}
+			ScrollTrigger.refresh();
+		}, 500);
+	}, [width]);
 
 	return (
 		<>
@@ -140,9 +168,9 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 						</div>
 					</div>
 				</div>
-				<div className="headerLine w-0 overflow-hidden">
-					<div className="w-screen">
-						<img src="/images/header-line.png" alt="" className="w-full" />
+				<div className="headerLine h-[75px] overflow-hidden mb:h-[30px]">
+					<div className="h-full w-screen">
+						<img src="/images/header-line.png" alt="" className="h-[75px] w-full mb:h-[30px]" />
 					</div>
 				</div>
 			</div>

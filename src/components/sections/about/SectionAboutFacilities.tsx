@@ -38,28 +38,28 @@ function SectionAboutFacilities({ ...props }) {
 					})
 					.fromTo(".SectionAboutFacilities .listHappen .itemHappen", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
 
-				if (width > 1280) {
-					gsap
-						.timeline({
-							scrollTrigger: {
-								trigger: ".SectionAboutFacilities .listHappen",
-								start: "75px bottom",
-								end: "bottom center",
-								scrub: 2,
-								//toggleActions: "restart reverse restart none",
-							},
-						})
-						.fromTo(".SectionAboutFacilities .listHappen .itemHappen1", { y: 0 }, { y: 60 }, 0)
-						.fromTo(".SectionAboutFacilities .listHappen .itemHappen2", { y: 0 }, { y: -60 }, 0)
-						.fromTo(".SectionAboutFacilities .listHappen .itemHappen3", { y: 0 }, { y: 60 }, 0);
-				}
+				// if (width > 1280) {
+				// 	gsap
+				// 		.timeline({
+				// 			scrollTrigger: {
+				// 				trigger: ".SectionAboutFacilities .listHappen",
+				// 				start: "75px bottom",
+				// 				end: "bottom center",
+				// 				scrub: 2,
+				// 				//toggleActions: "restart reverse restart none",
+				// 			},
+				// 		})
+				// 		.fromTo(".SectionAboutFacilities .listHappen .itemHappen1", { y: 0 }, { y: 60 }, 0)
+				// 		.fromTo(".SectionAboutFacilities .listHappen .itemHappen2", { y: 0 }, { y: -60 }, 0)
+				// 		.fromTo(".SectionAboutFacilities .listHappen .itemHappen3", { y: 0 }, { y: 60 }, 0);
+				// }
 			}, 1500);
 		}
 	}, [width]);
 
 	return (
 		<>
-			<div className={`SectionAboutFacilities secSpacing`}>
+			<div className={`SectionAboutFacilities mb-[126px] mb:mb-[60px]`}>
 				<div className="mb-[30px] flex flex-wrap justify-center tl-l:px-[20px]">
 					<div className="relative w-full max-w-[730px]">
 						<img src="/images/golfman.png" alt="" className="fadeRight w-full" />

@@ -52,7 +52,7 @@ function SectionAboutFunBetter({ ...props }) {
 				<div className="moveBanner absolute left-0 top-[50px] max-h-[90%] w-full overflow-hidden opacity-80 blur-[5px] mb:max-h-[97%]">
 					<img src="/images/about/funbetter-banner.jpg" alt="" className="fadeUp aspect-[144/140] w-full object-cover mb:aspect-[375/2121]" />
 				</div>
-				<div className="cusContainer relative mb-[40px]">
+				<div className="cusContainer relative mb-[84px]">
 					<h2 className="titleStoke fadeUp relative z-10 mb-[80px] mb:mb-[40px]">
 						MAKE FUN <br /> BETTER
 					</h2>
@@ -70,11 +70,12 @@ function SectionAboutFunBetter({ ...props }) {
 								<img
 									src={e.image}
 									alt=""
-									className="aspect-[395/615] w-full rounded-[5px] grayscale duration-300 group-hover:scale-[1.01] group-hover:grayscale-0"
+									className="//rounded-[5px] aspect-[395/615] w-full grayscale duration-300 group-hover:scale-[1.01] group-hover:grayscale-0"
 								/>
-								<p className="absolute bottom-[50px] left-[50px] border-red font-GilroyBold font-bold duration-300 group-hover:border-l-[5px] group-hover:pl-[5px] group-hover:text-red mb:bottom-[30px] mb:left-[30px]">
+								<p className="absolute bottom-[50px] left-[50px] z-10 border-red font-GilroyBold font-bold duration-300 group-hover:border-l-[5px] group-hover:pl-[5px] group-hover:text-red mb:bottom-[30px] mb:left-[30px]">
 									{e.title}
 								</p>
+								<div className="absolute bottom-0 left-0 h-[40%] w-full bg-gradient-to-t from-[#010101] to-[#0000]"></div>
 							</div>
 						))}
 					</div>

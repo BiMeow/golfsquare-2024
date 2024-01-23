@@ -10,30 +10,32 @@ function PageContact({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageContact pt-[150px] mb:pt-[100px]`}>
+			<div className={`PageContact pt-[150px] mb:pt-[120px]`}>
 				<div className="pl-[10%] tl-l:px-[20px]">
 					<div className="mx-[-35px] flex flex-wrap">
 						<div className="c1 fadeLeft w-[30%] px-[35px] pt-[100px] mb:mb-[50px] mb:w-full mb:pt-0">
-							<h2 className="text-64 mb:mb-[10px]">Contact us</h2>
-							<img src="/images/header-line.png" alt="" className="mb-[40px] w-full mb:w-[70%]" />
+							<div className="sticky top-[150px]">
+								<h2 className="text-64 uppercase mb:mb-[10px]">Contact us</h2>
+								<img src="/images/header-line.png" alt="" className="mb-[40px] w-full mb:w-[70%]" />
 
-							<div className="flex justify-between mb:flex-wrap">
-								<p className="w-[175px] mb:mb-[20px] mb:w-full">
-									Address:
-									<br />
-									<strong>8 Annastasia Way Sunshine North Victoria 3020 Australia</strong>
-								</p>
-								<div className="space-y-[20px]">
-									<p>
-										Email:
+								<div className="flex justify-between mb:flex-wrap">
+									<p className="w-[175px] mb:mb-[20px] mb:w-full">
+										Address:
 										<br />
-										<strong>sales@golfsquare.com.au</strong>
+										<strong>8 Annastasia Way Sunshine North Victoria 3020 Australia</strong>
 									</p>
-									<p>
-										Phone:
-										<br />
-										<strong>1800 166 168</strong>
-									</p>
+									<div className="space-y-[20px]">
+										<p>
+											Email:
+											<br />
+											<strong>sales@golfsquare.com.au</strong>
+										</p>
+										<p>
+											Phone:
+											<br />
+											<strong>1800 166 168</strong>
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>

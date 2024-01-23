@@ -1,3 +1,4 @@
+import { useStorage } from "@/components/context/StorageProvider";
 import { IconPlay } from "@/components/elements/Icon";
 import gsap from "gsap";
 import { useRouter } from "next/router";
@@ -6,6 +7,8 @@ import SplitType from "split-type";
 
 function SectionHomeBanner({ ...props }) {
 	const router = useRouter();
+
+	const { setIsModalOpen } = useStorage();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -72,7 +75,7 @@ function SectionHomeBanner({ ...props }) {
 							</div>
 						</div>
 					</div>
-					<div className="moveUp opacity-0">
+					<div className="moveUp opacity-0" onClick={() => setIsModalOpen(true)}>
 						<button className="mainBtn">BOOK A TABLE</button>
 					</div>
 				</div>

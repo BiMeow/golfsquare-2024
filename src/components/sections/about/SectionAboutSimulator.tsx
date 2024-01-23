@@ -98,7 +98,7 @@ function SectionAboutSimulator({ ...props }) {
 		<>
 			<div className={`SectionAboutSimulator secSpacing mb-[60px]`}>
 				<div className="cusContainer">
-					<h2 className="text-64 fadeUp mb-[20px]">Golf simulator</h2>
+					<h2 className="text-64 fadeUp mb-[20px] uppercase">Golf simulator</h2>
 					<p className="fadeUp mb-[80px] max-w-[800px] mb:mb-[30px]">
 						Embark on a golfing adventure and explore the world's most prestigious courses right at your fingertips. Unleash the power of our advanced
 						Korean golf simulator technology to play rounds, perfect your swing, or engage in thrilling tournaments against other players. Prepare for

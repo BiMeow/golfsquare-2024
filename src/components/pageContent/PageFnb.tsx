@@ -9,7 +9,7 @@ function PageFnb({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageFnb relative overflow-hidden pt-[200px] mb:pt-[100px]`}>
+			<div className={`PageFnb relative overflow-hidden pt-[230px] mb:pt-[120px]`}>
 				<div className="cusContainer">
 					<img src="/images/fnb/top.png" alt="" className="fadeUp mx-auto mb-[50px] w-full max-w-[1030px]" />
 
