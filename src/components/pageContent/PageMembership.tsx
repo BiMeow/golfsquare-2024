@@ -163,7 +163,7 @@ function PageMembership({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageMembership pt-[200px] mb:pt-[100px]`}>
+			<div className={`PageMembership pt-[230px] mb:pt-[120px]`}>
 				<div className="cusContainer">
 					<h2 className="text-64 fadeUp mb-[45px] text-center">Membership</h2>
 

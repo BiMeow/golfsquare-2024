@@ -2,6 +2,7 @@ import Providers from "@/components/context/compose/Providers";
 import Footer from "@/components/elements/Footer";
 import Header from "@/components/elements/Header";
 import Preloader from "@/components/elements/Preloader";
+import PopupIframe from "@/components/sections/common/PopupIframe";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
@@ -43,8 +44,10 @@ function MasterPage({
 
 				<main className={`MasterPage flex min-h-screen flex-col justify-between`}>
 					<Header activeNav={activeNav} activeSubNav={activeSubNav} />
+					<div className="hideLine absolute top-[100px]"></div>
 					<div className={`pageContent`}>{children}</div>
 					<Footer />
+					<PopupIframe />
 				</main>
 			</Providers>
 		</>

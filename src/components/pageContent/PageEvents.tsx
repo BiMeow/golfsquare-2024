@@ -13,7 +13,7 @@ function PageEvents({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageEvents relative overflow-hidden pt-[200px] mb:pt-[100px]`}>
+			<div className={`PageEvents relative overflow-hidden pt-[230px] mb:pt-[120px]`}>
 				<img src="/images/event/bg.jpg" alt="" className="absolute left-0 top-0 w-full mb:hidden" />
 				<img src="/images/event/bg-mb.jpg" alt="" className="ob absolute left-0 top-0 hidden w-full mb:block" />
 

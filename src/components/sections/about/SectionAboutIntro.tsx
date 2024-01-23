@@ -50,7 +50,7 @@ function SectionAboutIntro({ ...props }) {
 				scrollTrigger: {
 					trigger: ".SectionAboutIntro .textRun",
 					start: "10px top",
-					end: `110% 50%`,
+					end: `bottom 50%`,
 					scrub: true,
 				},
 				stagger: 0.5,
@@ -62,8 +62,8 @@ function SectionAboutIntro({ ...props }) {
 	return (
 		<>
 			<div className={`SectionAboutIntro secSpacing`}>
-				<div className="textRun cusContainer mb-[60px]">
-					<h2 className="text-64 fadeUp mb-[80px] mb:mb-[30px]">About us</h2>
+				<div className="textRun cusContainer mb-[102px]">
+					<h2 className="text-64 fadeUp mb-[80px] uppercase mb:mb-[30px]">About us</h2>
 
 					<div className="listImage mx-[-15px] mb-[80px] flex flex-wrap mb:hidden">
 						{listImage.map((e: any, i: number) => (

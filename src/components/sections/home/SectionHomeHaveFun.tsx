@@ -2,6 +2,7 @@ import { useEffect, useState, useContext, useRef, memo, useMemo } from "react";
 import { useRouter } from "next/router";
 import gsap from "gsap";
 import { useWindowSize } from "usehooks-ts";
+import Link from "next/link";
 
 let listHaveFun = [
 	{
@@ -78,7 +79,10 @@ function SectionHomeHaveFun({ ...props }) {
 						<h2 className="mb-[60px] text-center text-[170px] font-bold text-white mb:mb-[25px] mb:text-[70px]">
 							HAVE. <span className="text-red">FUN!</span>
 						</h2>
-						<button className="mainBtn">plan a visit</button>
+						<button className="mainBtn relative">
+							plan a visit
+							<Link href={"/planavisit"} className="absFull" />
+						</button>
 					</div>
 				</div>
 				<img src="/images/header-line.png" alt="" className="relative z-10 mb-[100px] mt-[-25px] w-full mb:mb-[60px] mb:mt-[-5px]" />

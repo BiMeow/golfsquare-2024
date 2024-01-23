@@ -12,7 +12,7 @@ function PageAbout({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageAbout pt-[200px] mb:pt-[100px]`}>
+			<div className={`PageAbout pt-[230px] mb:pt-[120px]`}>
 				<SectionAboutIntro />
 				<SectionAboutFacilities />
 				<SectionAboutWhy />
