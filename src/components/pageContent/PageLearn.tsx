@@ -9,7 +9,7 @@ function PageLearn({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageLearn relative overflow-hidden pt-[180px] mb:pt-0`}>
+			<div className={`PageLearn relative overflow-hidden`}>
 				<SectionLearnTop />
 				<SectionLearnFee />
 				<SectionLearnJunior />
