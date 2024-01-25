@@ -6,6 +6,7 @@ import { EffectFade, Thumbs } from "swiper/modules";
 import "swiper/css/effect-fade";
 import { useWindowSize } from "usehooks-ts";
 import gsap from "gsap";
+import { IconArrowSlider } from "@/components/elements/Icon";
 
 let listCol = [
 	[
@@ -156,7 +157,7 @@ function SectionAboutSimulator({ ...props }) {
 								</div>
 							</div>
 
-							<div className="navSlider w-[75%] px-[25px] mb:order-1 mb:mb-[15px] mb:w-full">
+							<div className="navSlider relative w-[75%] px-[25px] mb:order-1 mb:mb-[15px] mb:w-full">
 								<Swiper
 									className="cusSwiperSimulator h-full w-full mb:h-[200px]"
 									slidesPerView={1}
@@ -171,6 +172,19 @@ function SectionAboutSimulator({ ...props }) {
 										</SwiperSlide>
 									))}
 								</Swiper>
+
+								<div
+									className="iconArrowPrev absolute left-[50px] top-1/2 z-10 -translate-y-1/2 rotate-180 cursor-pointer duration-300 hover:opacity-70"
+									onClick={() => mainSwiper.slidePrev()}
+								>
+									<IconArrowSlider />
+								</div>
+								<div
+									className="iconArrowPrev absolute right-[50px] top-1/2 z-10 -translate-y-1/2 cursor-pointer duration-300 hover:opacity-70"
+									onClick={() => mainSwiper.slideNext()}
+								>
+									<IconArrowSlider />
+								</div>
 							</div>
 						</div>
 					</div>

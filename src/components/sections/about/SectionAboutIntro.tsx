@@ -46,14 +46,23 @@ function SectionAboutIntro({ ...props }) {
 
 			const splitText = SplitType.create(".splitText", { types: "chars" });
 
+			// gsap.to(splitText.chars, {
+			// 	scrollTrigger: {
+			// 		trigger: ".SectionAboutIntro .textRun",
+			// 		start: "10px top",
+			// 		end: `bottom 50%`,
+			// 		scrub: true,
+			// 	},
+			// 	stagger: 0.5,
+			// 	color: "#fff",
+			// });
+
 			gsap.to(splitText.chars, {
 				scrollTrigger: {
-					trigger: ".SectionAboutIntro .textRun",
-					start: "10px top",
-					end: `bottom 50%`,
-					scrub: true,
+					trigger: ".SectionAboutIntro .splitText",
+					start: "50px bottom",
 				},
-				stagger: 0.5,
+				stagger: 0.01,
 				color: "#fff",
 			});
 		}, 1500);

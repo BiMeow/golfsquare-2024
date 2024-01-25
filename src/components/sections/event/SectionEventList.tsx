@@ -81,7 +81,7 @@ function SectionEventList({ ...props }) {
 													<div className="overflow-hidden">
 														<img src={e.image} alt="" className="aspect-[35/41] object-cover duration-500 group-hover:scale-[1.01]" />
 													</div>
-													<div className="p-[20px]">
+													<div className="p-[30px]">
 														<p className="text-24 mb-[16px] font-bold">{e.title}</p>
 														<p className="text-[14px] italic">{e.description}</p>
 													</div>

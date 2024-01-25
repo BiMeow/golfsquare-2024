@@ -65,14 +65,19 @@ html {
 	font-size: 18px;
 	color: #fff;
 	line-height: 1.2;
+
+	@media screen and (max-width: 767px) {
+		font-size: 14px;
+	}
+}
+
+html,
+body,
+.hideScrollbar {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	&::-webkit-scrollbar {
 		display: none;
-	}
-
-	@media screen and (max-width: 767px) {
-		font-size: 14px;
 	}
 }
 

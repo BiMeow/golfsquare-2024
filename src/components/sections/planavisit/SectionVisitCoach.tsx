@@ -71,13 +71,13 @@ function SectionVisitCoach({ ...props }) {
 						<Slider {...settings} className="cusSlider">
 							{listCoach.map((e: any, i: number) => (
 								<div className="itemCoach relative mb-[30px] bg-[#0F163C] px-[70px] pb-[40px] pt-[35px] mb:px-[20px] mb:py-[30px]" key={i}>
-									<img src="/images/visit/coach-line.png" alt="" className="absolute bottom-[65px] left-[60px] w-[860px] mb:!hidden" />
+									<img src="/images/visit/coach-line.png" alt="" className="absolute bottom-[65px] left-[60px] z-10 w-[80%] mb:!hidden" />
 
 									<div className="mx-[-30px] flex flex-wrap">
 										<div className="image relative w-[35%] px-[30px] mb:w-full">
 											<div className="relative">
 												<img src={e.image} alt="" className="mb-[20px] aspect-[275/330] object-contain object-bottom mb:mx-auto mb:max-w-[155px]" />
-												<img src="/images/visit/coach-line-mb.png" alt="" className="absolute bottom-[-20px] left-0 hidden w-full mb:block" />
+												<img src="/images/visit/coach-line-mb.png" alt="" className="absolute bottom-[-20px] left-0 !hidden w-full mb:!block" />
 											</div>
 											<p className="text-24 text-center font-bold uppercase">steven paine</p>
 										</div>

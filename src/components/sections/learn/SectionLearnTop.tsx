@@ -7,11 +7,11 @@ function SectionLearnTop({ ...props }) {
 	return (
 		<>
 			<div className={`SectionLearnTop secSpacing relative`}>
-				<img src="/images/learn/top-man.jpg" alt="" className="fadeIn aspect-[145/70] w-full object-cover mb:hidden" />
+				<img src="/images/learn/top-man.jpg" alt="" className="fadeIn aspect-[216/125] w-full object-cover mb:hidden" />
 				<img src="/images/learn/top-man-mb.jpg" alt="" className="fadeIn mb-[30px] hidden w-full mb:block" />
 
 				<div className="content absolute left-0 top-0 h-full w-full mb:relative mb:px-[20px]">
-					<div className="ml-auto w-fit pr-[17%] pt-[15%] mb:p-0">
+					<div className="ml-auto w-fit pr-[25%] pt-[24%] mb:p-0">
 						<h2 className="fadeUp mb-[20px] text-[90px] font-bold mb:text-[52px]">
 							GET INTO
 							<br />

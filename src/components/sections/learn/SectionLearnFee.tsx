@@ -31,12 +31,12 @@ function SectionLearnFee({ title = "Lesson Package Fees (Off-Peak Rate Only)", .
 			<div className={`SectionLearnFee secSpacing`}>
 				<h2 className="text-36 fadeUp mb-[60px] px-[10%] tl-l:px-[20px] mb:mb-[25px]">{title}</h2>
 
-				<div className="cusContainer fadeUp mb-[50px] overflow-y-hidden overflow-x-scroll  mb:mb-[40px] mb:pr-0">
+				<div className="cusContainer fadeUp hideScrollbar mb-[50px] overflow-y-hidden overflow-x-scroll mb:mb-[40px] mb:pr-0">
 					<div className="listTab flex items-center space-x-[60px] mb:w-fit mb:max-w-none mb:space-x-[30px] mb:pr-[20px]">
 						{listTab.map((e: any, i: number) => (
 							<div
 								className={`
-								itemTab text-24 relative cursor-pointer whitespace-nowrap pb-[8px] duration-300
+								itemTab text-24 relative cursor-pointer whitespace-nowrap pb-[15px] duration-300
 								${activeTab == i ? "font-bold text-red" : "font-medium text-[#55596f] hover:opacity-75"}
 								`}
 								key={i}
@@ -45,7 +45,7 @@ function SectionLearnFee({ title = "Lesson Package Fees (Off-Peak Rate Only)", .
 								<p>{e.title}</p>
 								<div
 									className={`
-									borderTab absolute left-0 top-full h-[6px] w-full bg-red duration-500
+									borderTab absolute bottom-0 left-0 h-[6px] w-full bg-red duration-500
 									${activeTab == i ? "max-w-[200px]" : "max-w-0"}
 									`}
 								></div>
