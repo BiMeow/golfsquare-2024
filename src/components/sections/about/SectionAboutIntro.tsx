@@ -129,7 +129,7 @@ function SectionAboutIntro({ ...props }) {
 
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
 						<h2 className="text-52 fadeUp mb-[40px] text-center uppercase">WE DON’T MAKE FUN</h2>
-						<h1 className="fadeUp w-full border-y border-red pb-[10px] text-center text-[125px] font-bold uppercase text-red mb:font-GilroyBold mb:text-[54px]">
+						<h1 className="fadeUp w-full border-y border-red py-[20px] pb-[0px] text-center text-[125px] font-bold uppercase text-red mb:font-GilroyBold mb:text-[54px]">
 							We make fun better
 						</h1>
 					</div>

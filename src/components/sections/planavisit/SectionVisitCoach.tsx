@@ -6,27 +6,8 @@ let listCoach = [
 	{
 		image: "/images/visit/coach-1.png",
 	},
-	{
-		image: "/images/visit/coach-2.png",
-	},
-	{
-		image: "/images/visit/coach-2.png",
-	},
-	{
-		image: "/images/visit/coach-1.png",
-	},
-	{
-		image: "/images/visit/coach-1.png",
-	},
-	{
-		image: "/images/visit/coach-2.png",
-	},
-	{
-		image: "/images/visit/coach-1.png",
-	},
-	{
-		image: "/images/visit/coach-2.png",
-	},
+	
+	
 ];
 
 function SectionVisitCoach({ ...props }) {
@@ -79,7 +60,7 @@ function SectionVisitCoach({ ...props }) {
 												<img src={e.image} alt="" className="mb-[20px] aspect-[275/330] object-contain object-bottom mb:mx-auto mb:max-w-[155px]" />
 												<img src="/images/visit/coach-line-mb.png" alt="" className="absolute bottom-[-20px] left-0 !hidden w-full mb:!block" />
 											</div>
-											<p className="text-24 text-center font-bold uppercase">steven paine</p>
+											{/* <p className="text-24 text-center font-bold uppercase">steven paine</p> */}
 										</div>
 
 										<div className="info w-[65%] px-[30px] pt-[70px] mb:w-full mb:pt-[20px]">

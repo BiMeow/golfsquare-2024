@@ -12,7 +12,8 @@ let listMenu = [
 	},
 	{
 		title: "Book a table",
-		href: "/contact",
+		href: "https://widget.wabify.com/654c28d3b73e21699490003?fbclid=IwAR0wEo9lXXHkiQBw6klSfamYZa420cvw9RdOJc3jQNhOTMXXmthns_2y-dw",
+		target:"_blank",
 	},
 	{
 		title: "Plan a visit",

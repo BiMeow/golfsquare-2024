@@ -17,9 +17,11 @@ function SectionReady({ ...props }) {
 							READY TO <br className="mb:hidden" /> BOOK?
 						</p>
 						<p className="text-[20px] mb:text-[14px]">Request more info or call our Sales events team and start your event!</p>
-						<button className="mainBtn" onClick={() => setIsModalOpen(true)}>
-							book a table
-						</button>
+						<a href="https://widget.wabify.com/654c28d3b73e21699490003?fbclid=IwAR0wEo9lXXHkiQBw6klSfamYZa420cvw9RdOJc3jQNhOTMXXmthns_2y-dw" target="_blank">
+							<button className="mainBtn" onClick={() => setIsModalOpen(true)}>
+								book a table
+							</button>
+						</a>
 					</div>
 				</div>
 			</div>

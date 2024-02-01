@@ -4,21 +4,21 @@ import { memo, useEffect } from "react";
 
 let listDish = [
 	{
-		title: "Southern Fried Catfish & Chips",
+		title: "Chicken Snchitzel & Chips",
 		image: "/images/fnb/dish-1.png",
 	},
 	{
 		title: "Classic Fried Chicken",
 		image: "/images/fnb/dish-2.png",
 	},
-	{
-		title: "Shrimp Tacos with Best Shrimp Taco Sauce",
-		image: "/images/fnb/dish-3.png",
-	},
-	{
-		title: "Creamy Spinach & Shrimp Pesto Pasta",
-		image: "/images/fnb/dish-4.png",
-	},
+	// {
+	// 	title: "Shrimp Tacos with Best Shrimp Taco Sauce",
+	// 	image: "/images/fnb/dish-3.png",
+	// },
+	// {
+	// 	title: "Creamy Spinach & Shrimp Pesto Pasta",
+	// 	image: "/images/fnb/dish-4.png",
+	// },
 ];
 
 function SectionFnbNewDish({ ...props }) {

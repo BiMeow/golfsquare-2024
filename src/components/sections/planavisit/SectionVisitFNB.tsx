@@ -64,7 +64,7 @@ function SecitonVisitFNB({ ...props }) {
 
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
 						<h3 className="text-52 fadeUp mb-[30px] mb:mb-[20px]">TRY OUR RESTAURANTS</h3>
-						<button className="mainBtn fadeUp">LEARN MORE</button>
+						<a href="/fnb"><button className="mainBtn fadeUp">LEARN MORE</button></a>
 					</div>
 				</div>
 			</div>

@@ -14,7 +14,7 @@ function PageFnb({ ...props }) {
 					<img src="/images/fnb/top.png" alt="" className="fadeUp mx-auto mb-[50px] w-full max-w-[1030px]" />
 
 					<div className="mb-[100px] flex justify-center mb:mb-[60px]">
-						<button className="mainBtn fadeUp">View menu</button>
+						{/* <button className="mainBtn fadeUp">View menu</button> */}
 					</div>
 				</div>
 				<SectionFnbNewDish />

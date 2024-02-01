@@ -19,7 +19,7 @@ function SectionContact({ ...props }) {
 
 	return (
 		<>
-			<div className={`SectionContact fadeUp relative`}>
+			{/* <div className={`SectionContact fadeUp relative`}>
 				<img src="/images/bg-contact.png" alt="" className="w-full mb:hidden" />
 				<img src="/images/bg-contact-mb.png" alt="" className="hidden aspect-[375/620] w-full object-cover mb:block" />
 
@@ -62,7 +62,7 @@ function SectionContact({ ...props }) {
 				</div>
 
 				<img src="/images/header-line.png" alt="" className="absolute bottom-0 left-0 w-full" />
-			</div>
+			</div> */}
 		</>
 	);
 }

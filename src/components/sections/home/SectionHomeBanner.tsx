@@ -68,16 +68,20 @@ function SectionHomeBanner({ ...props }) {
 					<h2 className="text-64 moveUp splitText mb-[16px] text-center opacity-0">
 						WE DON’T MAKE FUN, <br className="mb:hidden" /> WE MAKE FUN BETTER
 					</h2>
-					<div className="moveUp opacity-0">
+					{/* <div className="moveUp opacity-0">
 						<div className="hoverShadow mb-[50px] flex aspect-1 w-[74px] cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white mb:w-[50px] mb:border-2">
 							<div className=" mb:ml-[3px] mb:scale-75">
 								<IconPlay />
 							</div>
 						</div>
+					</div> */}
+					{/* onClick={() => setIsModalOpen(true)} */}
+					<div className="moveUp opacity-0" >
+						<a target="_blank" href="https://widget.wabify.com/654c28d3b73e21699490003?fbclid=IwAR0wEo9lXXHkiQBw6klSfamYZa420cvw9RdOJc3jQNhOTMXXmthns_2y-dw">
+							<button className="mainBtn">BOOK A TABLE</button>
+						</a>
 					</div>
-					<div className="moveUp opacity-0" onClick={() => setIsModalOpen(true)}>
-						<button className="mainBtn">BOOK A TABLE</button>
-					</div>
+
 				</div>
 			</div>
 		</>

@@ -4,16 +4,16 @@ import { memo, useEffect } from "react";
 
 let listPromo = [
 	{
-		title: "Promotion 1",
-		description: "Redeemable on Topgolf game play, food and drinks, Lifetime Memberships, lessons and gear.",
+		title: "Swing into love this Valentine's Day!",
+		description: "🏌️‍♂️💕 Grab a jug of beer 🍺, indulge in your favorite foods and drinks with a 30% discount, and perfect your swing with an hour golf simulator session at a special price. Love is in the air and on the fairway! ",
 	},
 	{
 		title: "Promotion 2",
-		description: "Gift cards can be redeemed at any Topgolf location in the United States.",
+		description: "Comming soon",
 	},
 	{
 		title: "Promotion 3",
-		description: "Send via email or get a traditional gift card via mail.",
+		description: "Comming soon",
 	},
 ];
 
@@ -67,9 +67,9 @@ function SectionHomeYourChance({ ...props }) {
 						))}
 					</div>
 
-					<div className="fadeUp mb-[80px] flex justify-center">
+					{/* <div className="fadeUp mb-[80px] flex justify-center">
 						<button className="mainBtn">all promos</button>
-					</div>
+					</div> */}
 
 					<img
 						src="/images/home/yourchance-banner-2.jpg"

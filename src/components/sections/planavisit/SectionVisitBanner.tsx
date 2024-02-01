@@ -31,7 +31,7 @@ function SectionVisitBanner({ ...props }) {
 					<h2 className="fadeUp mb-[40px] text-center text-[90px] font-bold mb:text-[52px]">
 						MORE THAN <br /> JUST <span className="text-red">GOLF</span>
 					</h2>
-					<button className="mainBtn fadeUp">PLAN A VISIT</button>
+					{/* <button className="mainBtn fadeUp">PLAN A VISIT</button> */}
 				</div>
 			</div>
 		</>
