@@ -42,7 +42,7 @@ function Preloader({ ...props }) {
 						<div className="logoText absolute left-0 top-0 max-h-0 overflow-hidden">
 							<img src="/images/logo-text.png" alt="" className="w-[125px]" />
 						</div>
-						<img src="/images/logo-icon.png" alt="" className="logoIcon absolute right-[100px] top-[-10px] w-[75px] " />
+						<img src="/images/logo-icon.png" alt="" className="logoIcon absolute right-[100px] top-[-10px] w-[75px]" />
 					</div>
 				</div>
 			</div>
