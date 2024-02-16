@@ -5,6 +5,7 @@ import Preloader from "@/components/elements/Preloader";
 import PopupIframe from "@/components/sections/common/PopupIframe";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 function MasterPage({
 	title = "GOLF SQUARE",
@@ -20,6 +21,21 @@ function MasterPage({
 
 	return (
 		<>
+			<Script id="facebook-pixel">
+				{`
+					!function(f,b,e,v,n,t,s)
+					{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+					n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+					if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+					n.queue=[];t=b.createElement(e);t.async=!0;
+					t.src=v;s=b.getElementsByTagName(e)[0];
+					s.parentNode.insertBefore(t,s)}(window,document,'script',
+					'https://connect.facebook.net/en_US/fbevents.js');
+					fbq('init', '1432708464323815'); 
+					fbq('track', 'PageView');
+      	`}
+			</Script>
+
 			<Head>
 				<title>GolfSquare {pageName && `| ${pageName}`}</title>
 
@@ -48,6 +64,19 @@ function MasterPage({
 					<div className={`pageContent`}>{children}</div>
 					<Footer />
 					<PopupIframe />
+
+					<noscript
+						dangerouslySetInnerHTML={{
+							__html: (
+								<img
+									src="https://www.facebook.com/tr?id=1432708464323815&ev=PageView&noscript=1"
+									height="0"
+									width="0"
+									style={{ display: "none", visibility: "hidden" }}
+								></img>
+							),
+						}}
+					/>
 				</main>
 			</Providers>
 		</>
