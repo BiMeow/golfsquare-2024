@@ -36,6 +36,17 @@ function MasterPage({
       	`}
 			</Script>
 
+			<Script src="https://www.googletagmanager.com/gtag/js?id=G-QQMQ32F432" />
+			<Script id="google-analytics">
+				{`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+        
+                gtag('config', 'G-QQMQ32F432');
+                `}
+			</Script>
+
 			<Head>
 				<title>GolfSquare {pageName && `| ${pageName}`}</title>
 
