@@ -4,8 +4,8 @@ import { memo, useEffect } from "react";
 
 let listPromo = [
 	{
-		title: "Swing into love this Valentine's Day!",
-		description: "🏌️‍♂️💕 Grab a jug of beer 🍺, indulge in your favorite foods and drinks with a 30% discount, and perfect your swing with an hour golf simulator session at a special price. Love is in the air and on the fairway! ",
+		title: "Promotion 1",
+		description: "Comming soon",
 	},
 	{
 		title: "Promotion 2",

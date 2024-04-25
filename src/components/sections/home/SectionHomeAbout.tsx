@@ -9,14 +9,17 @@ let listHappen = [
 	{
 		title: "Golf Simulator",
 		image: "/images/home/happen-1.jpg",
+		href: "/learn",
 	},
 	{
 		title: "Sports Bar",
 		image: "/images/home/happen-2.jpg",
+		href: "/fnb",
 	},
 	{
-		title: "Dine With Us",
+		title: "Buy 1 get 2 pizzas",
 		image: "/images/home/happen-3.jpg",
+		href: "/pizzapromotion",
 	},
 ];
 
@@ -97,7 +100,7 @@ function SectionHomeAbout({ ...props }) {
 								`}
 								key={i}
 							>
-								<div className="content group relative pr-[30px] mb:pr-[20px]">
+								<div className="content group relative relative pr-[30px] mb:pr-[20px]">
 									<div className="overflow-hidden rounded-[60px]">
 										<img src={e.image} alt="" className="aspect-[360/425] w-full duration-500 group-hover:scale-[1.01]" />
 									</div>
@@ -107,6 +110,8 @@ function SectionHomeAbout({ ...props }) {
 											<IconArrow />
 										</div>
 									</div>
+
+									{e.href && <Link href={e.href} className="absFull" />}
 								</div>
 							</div>
 						))}
