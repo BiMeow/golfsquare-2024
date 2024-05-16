@@ -57,7 +57,7 @@ function PageTournament({ ...props }) {
 
 	return (
 		<>
-			<div className={`PageTournament`}>
+			<div className={`PageTournament w-screen overflow-x-hidden`}>
 				<div className={`SectionTournamentBanner relative`}>
 					<div className="relative aspect-[1445/795] w-full overflow-hidden mb:aspect-[375/600]">
 						<img src="/images/tournament/banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover grayscale" />
