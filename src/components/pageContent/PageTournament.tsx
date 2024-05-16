@@ -99,7 +99,7 @@ function PageTournament({ ...props }) {
 
 					<div className="mx-auto mb-[120px] max-w-[860px] mb:mb-[60px]">
 						<video
-							className="fadeUp mx-auto mb-[100px] aspect-1 max-w-[400px] rounded-[20px] mb:mb-[60px]"
+							className="fadeUp mx-auto mb-[100px] aspect-1 max-w-[400px] rounded-[20px] mb:mb-[60px] mb:max-w-[300px]"
 							preload={"auto"}
 							muted={true}
 							autoPlay={true}
