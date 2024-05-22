@@ -1,10 +1,14 @@
 import { IconPlay } from "@/components/elements/Icon";
 import gsap from "gsap";
 import { useRouter } from "next/router";
-import { memo, useEffect } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 function PageTournament({ ...props }) {
 	const router = useRouter();
+
+	const refVideo = useRef<any>(null);
+
+	const [isPlaying, setIsPlaying] = useState<any>(false);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -55,6 +59,15 @@ function PageTournament({ ...props }) {
 		}, 1500);
 	}, []);
 
+	useEffect(() => {
+		if (refVideo)
+			if (isPlaying) {
+				refVideo?.current.play();
+			} else {
+				refVideo?.current.pause();
+			}
+	}, [isPlaying, refVideo]);
+
 	return (
 		<>
 			<div className={`PageTournament w-screen overflow-x-hidden`}>
@@ -69,7 +82,7 @@ function PageTournament({ ...props }) {
 
 						<p className="moveUp mb-[30px] text-center text-[28px] opacity-0 mb:text-[20px]">Play Big - Win Bigger!</p>
 						<div className="moveUp opacity-0">
-							<a target="_blank" href="https://form.jotform.com/241082020623845">
+							<a target="_blank" href="https://www.trybooking.com/CSCSL">
 								<button className="mainBtn">REGISTER NOW</button>
 							</a>
 						</div>
@@ -85,42 +98,54 @@ function PageTournament({ ...props }) {
 							Want to Win $7500 First Prize and share up to <br /> $30000 in cash and prizes
 						</p>
 						<div className="fadeUp opacity-0">
-							<a target="_blank" href="https://form.jotform.com/241082020623845">
+							<a target="_blank" href="https://www.trybooking.com/CSCSL">
 								<button className="mainBtn">REGISTER NOW</button>
 							</a>
 						</div>
 					</div>
 				</div>
 
-				<div className="cusContainer">
-					<p className="fadeUp fadeUp mb-[80px] text-center text-[38px] mb:mb-[60px]">Sponsored by</p>
+				<div className="cusContainer overflow-hidden">
+					<p className="fadeUp mb-[80px] text-center text-[38px] mb:mb-[60px]">Sponsored by</p>
 
-					<img src="/images/logo.png" alt="" className="fadeUp fadeUp mx-auto mb-[100px] w-[155px] mb:mb-[60px]" />
+					<div className="mb-[100px] flex items-center justify-center gap-[60px] mb:mb-[60px]">
+						<img src="/images/logo.png" alt="" className="fadeUp w-[155px] " />
+						<img src="/images/logo-mizuno.png" alt="" className="fadeUp w-[120px] " />
+					</div>
 
 					<div className="mx-auto mb-[120px] max-w-[860px] mb:mb-[60px]">
-						<video
-							className="fadeUp mx-auto mb-[100px] aspect-1 max-w-[400px] rounded-[20px] mb:mb-[60px] mb:max-w-[300px]"
-							preload={"auto"}
-							muted={true}
-							autoPlay={true}
-							playsInline={true}
-							poster="/images/tournament/thumb-video.jpg"
-							loop={true}
+						<div
+							className="thumbVideo fadeUp group relative mb-[100px] cursor-pointer overflow-hidden rounded-[20px]"
+							onClick={() => setIsPlaying(!isPlaying)}
 						>
-							<source src="/video/tournament.mp4" type="video/mp4" />
-							<track src="/video/tournament.mp4" kind="subtitles" srcLang="en" label="English" />
-							Your browser does not support the video tag.
-						</video>
-						{/* <div className="thumbVideo relative mb-[100px] aspect-[860/485] overflow-hidden rounded-[20px] mb:mb-[60px] mb:aspect-[375/450]">
-							<img src="/images/tournament/thumb-video.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
-
-							<div className="group absolute left-1/2 top-1/2 flex -translate-x-[15%] -translate-y-1/2 cursor-pointer items-center justify-center">
-								<div className="icon hoverShadow flex aspect-1 w-[74px] items-center justify-center rounded-full border-4 border-red fill-red duration-500 group-hover:border-white group-hover:fill-white">
+							<video
+								ref={refVideo}
+								className="w-full"
+								preload={"auto"}
+								muted={true}
+								autoPlay={false}
+								playsInline={true}
+								poster="/images/tournament/thumb-video.jpg"
+								loop={true}
+								src="/video/tournament.mp4"
+							/>
+							<div
+								className={`
+								absolute left-1/2 top-1/2 flex -translate-x-[15%] -translate-y-1/2 cursor-pointer items-center justify-center duration-300
+								${isPlaying ? "opacity-0" : ""}
+								`}
+							>
+								<div
+									className={`
+									icon hoverShadow flex aspect-1 w-[74px] items-center justify-center rounded-full border-4 border-red fill-red duration-500 
+									group-hover:border-white group-hover:fill-white
+									`}
+								>
 									<IconPlay />
 								</div>
 								<p className="ml-[20px] text-[28px]">Introduction</p>
 							</div>
-						</div> */}
+						</div>
 						<div className="mx-[-25px] flex flex-wrap gap-y-[50px]">
 							<div className="c1 w-1/2 px-[25px] mb:w-full">
 								<p className="fadeUp mb-[20px] text-[28px] text-red">
@@ -163,12 +188,12 @@ function PageTournament({ ...props }) {
 								<p className="fadeUp mb-[20px] text-[28px] text-red">Ride Solo or Play with Mates! </p>
 								<div className="flex justify-between gap-[20px]">
 									<div className="fadeUp">
-										<a target="_blank" href="https://form.jotform.com/241082020623845">
+										<a target="_blank" href="https://www.trybooking.com/CSCSL">
 											<button className="mainBtn text-[16px]">REGISTER NOW</button>
 										</a>
 									</div>
 									<div className="fadeUp">
-										<a target="_blank" href="https://drive.google.com/file/d/1ngjeQVqQcDMQIIfLFKntbBt_RQCKmChV/view">
+										<a target="_blank" href="/Tournament_TC.pdf">
 											<button className="mainBtn text-[16px]">TERMS & CONDITIONS</button>
 										</a>
 									</div>
@@ -182,9 +207,9 @@ function PageTournament({ ...props }) {
 					</h2>
 				</div>
 
-				<div className="cusContainer fadeUp">
-					<img src="/images/contact/banner.jpg" alt="" className="aspect-[1110/414] w-full rounded-[60px] object-cover mb:aspect-[327/414]" />
-					<img src="/images/header-line.png" alt="" className="w-full -translate-y-[60%]" />
+				<div className="cusContainer overflow-hidden">
+					<img src="/images/contact/banner.jpg" alt="" className="fadeUp aspect-[1110/414] w-full rounded-[60px] object-cover mb:aspect-[327/414]" />
+					<img src="/images/header-line.png" alt="" className="fadeUp w-full -translate-y-[60%]" />
 				</div>
 			</div>
 		</>
