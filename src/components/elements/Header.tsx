@@ -13,7 +13,7 @@ let listMenu = [
 	{
 		title: "Book a table",
 		href: "https://widget.wabify.com/654c28d3b73e21699490003?fbclid=IwAR0wEo9lXXHkiQBw6klSfamYZa420cvw9RdOJc3jQNhOTMXXmthns_2y-dw",
-		target:"_blank",
+		target: "_blank",
 	},
 	{
 		title: "Plan a visit",
@@ -42,6 +42,10 @@ let listMenu = [
 				id: 98,
 			},
 		],
+	},
+	{
+		title: "2024 Tournament",
+		href: "/tournament",
 	},
 ];
 

@@ -5,7 +5,7 @@ const PageTournament = dynamic(() => import("@/components/pageContent/PageTourna
 
 export default function Event() {
 	return (
-		<MasterPage pageName={"Tournament"} activeNav={-1}>
+		<MasterPage pageName={"Tournament"} activeNav={6}>
 			<PageTournament />
 		</MasterPage>
 	);
