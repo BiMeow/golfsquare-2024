@@ -108,26 +108,31 @@ function PageTournament({ ...props }) {
 				<div className="cusContainer overflow-hidden">
 					<p className="fadeUp mb-[80px] text-center text-[38px] mb:mb-[60px]">Sponsored by</p>
 
-					<div className="mb-[100px] flex items-center justify-center gap-[60px] mb:mb-[60px]">
+					<div className="mb-[30px] flex items-center justify-center gap-[60px] mb:mb-[60px]">
 						<img src="/images/logo.png" alt="" className="fadeUp w-[155px] " />
 						<img src="/images/logo-mizuno.png" alt="" className="fadeUp w-[120px] " />
 					</div>
 
+					<p className="mb-[70px] text-center text-[14px]">Mizuno Oceania Australia sponsoring Tournament prizes excluding cash prizes.</p>
+
 					<div className="mx-auto mb-[120px] max-w-[860px] mb:mb-[60px]">
 						<div
 							className="thumbVideo fadeUp group relative mb-[100px] cursor-pointer overflow-hidden rounded-[20px]"
-							onClick={() => setIsPlaying(!isPlaying)}
+							onClick={() => {
+								setIsPlaying(!isPlaying);
+							}}
 						>
 							<video
 								ref={refVideo}
 								className="w-full"
 								preload={"auto"}
-								muted={true}
+								muted={false}
 								autoPlay={false}
 								playsInline={true}
 								poster="/images/tournament/thumb-video.jpg"
-								loop={true}
+								loop={false}
 								src="/video/tournament.mp4"
+								//controls
 							/>
 							<div
 								className={`
@@ -165,9 +170,10 @@ function PageTournament({ ...props }) {
 									<br />
 									Venue: Golf Square, Sunshine North
 								</p>
-								<p className="fadeUp mb-[20px] text-[28px] text-red">PARTICIPATION FEE</p>
+								<p className="fadeUp mb-[20px] text-[28px] text-red">Participation Fee</p>
 								<p className="fadeUp text-[16px]">
-									Tee off for just $50 per week for 12 weeks. Includes tournament entry and 3-months free Golf Square membership.
+									Tee off for just $50 per week for 12 weeks. Includes tournament entry and 3-months free Golf Square membership. Every entrant
+									receives a welcome package of gifts and vouchers worth over $700 from our sponsors.
 								</p>
 							</div>
 							<div className="c2 w-1/2 px-[25px] mb:w-full">
@@ -193,7 +199,7 @@ function PageTournament({ ...props }) {
 										</a>
 									</div>
 									<div className="fadeUp">
-										<a target="_blank" href="/Tournament_TC.pdf">
+										<a target="_blank" href="/Tournament_TC.pdf#toolbar=0">
 											<button className="mainBtn text-[16px]">TERMS & CONDITIONS</button>
 										</a>
 									</div>

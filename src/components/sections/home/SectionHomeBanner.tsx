@@ -115,7 +115,7 @@ function SectionHomeBanner({ ...props }) {
 
 						<p className="moveUp mb-[30px] text-center text-[28px] opacity-0 mb:text-[20px]">Play Big - Win Bigger!</p>
 						<div className="moveUp opacity-0">
-							<a target="_blank" href="https://www.trybooking.com/CSCSL">
+							<a href="/tournament">
 								<button className="mainBtn">REGISTER NOW</button>
 							</a>
 						</div>
