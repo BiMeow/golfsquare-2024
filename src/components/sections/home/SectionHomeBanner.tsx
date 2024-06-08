@@ -10,84 +10,84 @@ function SectionHomeBanner({ ...props }) {
 
 	const { setIsModalOpen } = useStorage();
 
-	// useEffect(() => {
-	// 	setTimeout(() => {
-	// 		const splitText = SplitType.create(".splitText", { types: "words,chars" });
-
-	// 		gsap
-	// 			.timeline({
-	// 				scrollTrigger: {
-	// 					trigger: ".SectionHomeBanner",
-	// 					start: "top bottom",
-	// 					end: "bottom 75%",
-	// 					//toggleActions: "restart reverse restart none",
-	// 				},
-	// 			})
-	// 			.fromTo(".SectionHomeBanner .moveUp", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 }, 0.3);
-	// 		// .to(
-	// 		// 	splitText.chars,
-	// 		// 	{
-	// 		// 		stagger: 0.05,
-	// 		// 		color: "#ED2224",
-	// 		// 	},
-	// 		// 	0.5
-	// 		// );
-
-	// 		gsap
-	// 			.timeline({
-	// 				scrollTrigger: {
-	// 					trigger: ".SectionHomeBanner",
-	// 					start: "top top",
-	// 					end: "bottom top",
-	// 					scrub: 2,
-	// 				},
-	// 			})
-	// 			.fromTo(".SectionHomeBanner .image", { y: 0 }, { y: -100 }, 0)
-	// 			.fromTo(".SectionHomeBanner .moveUp", { y: 0 }, { y: 150 }, 0);
-
-	// 		gsap.to(splitText.chars, {
-	// 			scrollTrigger: {
-	// 				trigger: ".SectionHomeBanner",
-	// 				start: "10px top",
-	// 				end: `20% top`,
-	// 				scrub: true,
-	// 			},
-	// 			stagger: 0.5,
-	// 			color: "#ff0000",
-	// 		});
-	// 	}, 1500);
-	// }, []);
-
 	useEffect(() => {
 		setTimeout(() => {
+			const splitText = SplitType.create(".splitText", { types: "words,chars" });
+
 			gsap
 				.timeline({
 					scrollTrigger: {
-						trigger: ".SectionTournamentBanner",
+						trigger: ".SectionHomeBanner",
+						start: "top bottom",
+						end: "bottom 75%",
+						//toggleActions: "restart reverse restart none",
+					},
+				})
+				.fromTo(".SectionHomeBanner .moveUp", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 }, 0.3);
+			// .to(
+			// 	splitText.chars,
+			// 	{
+			// 		stagger: 0.05,
+			// 		color: "#ED2224",
+			// 	},
+			// 	0.5
+			// );
+
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: ".SectionHomeBanner",
 						start: "top top",
 						end: "bottom top",
 						scrub: 2,
 					},
 				})
-				.fromTo(".SectionTournamentBanner .image", { y: 0 }, { y: -100 }, 0)
-				.fromTo(".SectionTournamentBanner .content", { y: 0 }, { y: 100 }, 0);
+				.fromTo(".SectionHomeBanner .image", { y: 0 }, { y: -100 }, 0)
+				.fromTo(".SectionHomeBanner .moveUp", { y: 0 }, { y: 150 }, 0);
 
-			gsap
-				.timeline({
-					scrollTrigger: {
-						trigger: ".SectionTournamentBanner",
-						start: "top bottom",
-					},
-				})
-				.fromTo(".SectionTournamentBanner .image", { filter: "grayscale(100%)" }, { filter: "grayscale(0%)", duration: 1.5 }, 0)
-				.fromTo(".SectionTournamentBanner .moveUp", { y: 150, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.3 }, 1);
+			gsap.to(splitText.chars, {
+				scrollTrigger: {
+					trigger: ".SectionHomeBanner",
+					start: "10px top",
+					end: `20% top`,
+					scrub: true,
+				},
+				stagger: 0.5,
+				color: "#ff0000",
+			});
 		}, 1500);
 	}, []);
+
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		gsap
+	// 			.timeline({
+	// 				scrollTrigger: {
+	// 					trigger: ".SectionTournamentBanner",
+	// 					start: "top top",
+	// 					end: "bottom top",
+	// 					scrub: 2,
+	// 				},
+	// 			})
+	// 			.fromTo(".SectionTournamentBanner .image", { y: 0 }, { y: -100 }, 0)
+	// 			.fromTo(".SectionTournamentBanner .content", { y: 0 }, { y: 100 }, 0);
+
+	// 		gsap
+	// 			.timeline({
+	// 				scrollTrigger: {
+	// 					trigger: ".SectionTournamentBanner",
+	// 					start: "top bottom",
+	// 				},
+	// 			})
+	// 			.fromTo(".SectionTournamentBanner .image", { filter: "grayscale(100%)" }, { filter: "grayscale(0%)", duration: 1.5 }, 0)
+	// 			.fromTo(".SectionTournamentBanner .moveUp", { y: 150, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.3 }, 1);
+	// 	}, 1500);
+	// }, []);
 
 	return (
 		<>
 			<div className={`SectionHomeBanner secSpacing relative`}>
-				{/* <div className="relative aspect-[144/84] overflow-hidden mb:aspect-[375/780]">
+				<div className="relative aspect-[144/84] overflow-hidden mb:aspect-[375/780]">
 					<img src="/images/home/banner.jpg" alt="" className="image absFull h-[calc(100%+100px)] object-cover" />
 				</div>
 				<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center tl-l:px-[20px]">
@@ -102,9 +102,9 @@ function SectionHomeBanner({ ...props }) {
 							<button className="mainBtn">BOOK A TABLE</button>
 						</a>
 					</div>
-				</div> */}
+				</div>
 
-				<div className={`SectionTournamentBanner relative`}>
+				{/* <div className={`SectionTournamentBanner relative`}>
 					<div className="relative aspect-[1445/795] w-full overflow-hidden mb:aspect-[375/600]">
 						<img src="/images/tournament/banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover grayscale" />
 					</div>
@@ -120,7 +120,7 @@ function SectionHomeBanner({ ...props }) {
 							</a>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);

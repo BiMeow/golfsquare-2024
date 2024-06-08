@@ -43,10 +43,10 @@ let listMenu = [
 			},
 		],
 	},
-	{
-		title: "2024 Tournament",
-		href: "/tournament",
-	},
+	// {
+	// 	title: "2024 Tournament",
+	// 	href: "/tournament",
+	// },
 ];
 
 function Header({ activeNav = -1, activeSubNav = -1, ...props }) {

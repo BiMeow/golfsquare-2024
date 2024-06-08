@@ -7,9 +7,9 @@ import { useWindowSize } from "usehooks-ts";
 
 let listHappen = [
 	{
-		title: "2024 Tournament",
+		title: "Golf Simulator",
 		image: "/images/home/happen-1.jpg",
-		href: "/tournament",
+		href: "/learn",
 	},
 	{
 		title: "Sports Bar",
