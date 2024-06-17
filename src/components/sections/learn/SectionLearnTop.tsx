@@ -17,10 +17,10 @@ function SectionLearnTop({ ...props }) {
 							<br />
 							<span className="text-red">GOLF</span>
 						</h2>
-						<p className="fadeUp mb-[20px] max-w-[495px] text-[16px] mb:max-w-none mb:text-[14px]">
+						{/* <p className="fadeUp mb-[20px] max-w-[495px] text-[16px] mb:max-w-none mb:text-[14px]">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero, sit venenatis vitae ut sollicitudin. Neque, dis vel velit arcu,
 							sagittis at faucibus nisi nulla. Nunc leo neque risus mauris turpis.
-						</p>
+						</p> */}
 						<div className="fadeUp">
 							<a target="_blank" href="https://swingsyncgolfacademy.as.me/schedule.php">
 								<button className="mainBtn">BOOK LESSON NOW</button>
