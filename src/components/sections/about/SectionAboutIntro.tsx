@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 let listImage = [
 	{
@@ -65,6 +66,8 @@ function SectionAboutIntro({ ...props }) {
 				stagger: 0.01,
 				color: "#fff",
 			});
+
+			ScrollTrigger.refresh();
 		}, 1500);
 	}, []);
 

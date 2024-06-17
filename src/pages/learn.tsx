@@ -5,7 +5,7 @@ const PageLearn = dynamic(() => import("@/components/pageContent/PageLearn"));
 
 export default function Learn() {
 	return (
-		<MasterPage pageName={"Learn"} activeNav={4}>
+		<MasterPage pageName={"Learn"} activeNav={2}>
 			<PageLearn />
 		</MasterPage>
 	);
