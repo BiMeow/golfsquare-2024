@@ -1,42 +1,43 @@
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 
-let listCeleb = [
-	{
-		title: "NEW YEAR EVE",
-		description: "Enjoy live bands, refreshing drinks, and a captivating atmosphere at this vibrant venue.",
-		image: "/images/visit/celeb-1.jpg",
-	},
-	{
-		title: "Christmas celebration",
-		description: "Enjoy live bands, refreshing drinks, and a captivating atmosphere at this vibrant venue.",
-		image: "/images/visit/celeb-2.jpg",
-	},
-	{
-		title: "memorable birthday",
-		description: "Enjoy live bands, refreshing drinks, and a captivating atmosphere at this vibrant venue.",
-		image: "/images/visit/celeb-3.jpg",
-	},
-	{
-		title: "MEETINGS LIKE NO OTHER",
-		description: "Meeting room plus coffee and lunch break",
-		image: "/images/visit/celeb-4.jpg",
-	},
-	{
-		title: "MEET & PLAY",
-		description: "A combined package of meeting sessions and the Square Golf game experience",
-		image: "/images/visit/celeb-5.jpg",
-	},
-	{
-		title: "PRIVATE EVENT",
-		description: "Gather up for a good time at any of our bars & restaurants add other event spaces",
-		image: "/images/visit/celeb-6.jpg",
-	},
-];
-
-function SectionVisitCelebration({ ...props }) {
+function SectionVisitCelebration({ data, ...props }: any) {
 	const router = useRouter();
+
+	let listCeleb = [
+		{
+			title: data?.title1,
+			description: data?.description1,
+			image: asset(data?.bg1),
+		},
+		{
+			title: data?.title2,
+			description: data?.description2,
+			image: asset(data?.bg2),
+		},
+		{
+			title: data?.title3,
+			description: data?.description3,
+			image: asset(data?.bg3),
+		},
+		{
+			title: data?.title4,
+			description: data?.description4,
+			image: asset(data?.bg4),
+		},
+		{
+			title: data?.title5,
+			description: data?.description5,
+			image: asset(data?.bg5),
+		},
+		{
+			title: data?.title6,
+			description: data?.description6,
+			image: asset(data?.bg6),
+		},
+	];
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -58,14 +59,11 @@ function SectionVisitCelebration({ ...props }) {
 			<div className={`SectionVisitCelebration mb-[40px]`}>
 				<div className="cusContainer">
 					<div className="visitTitle fadeUp relative mx-auto mb-[40px] w-max">
-						<h2 className="text-50">CELEBRATIONS</h2>
+						<h2 className="text-50">{data?.title}</h2>
 						<div className="absolute left-1/2 top-full h-[4px] w-full max-w-[89px] -translate-x-1/2 bg-red"></div>
 					</div>
 
-					<p className="fadeUp mx-auto mb-[100px] max-w-[715px] text-center mb:mb-[50px]">
-						Rain or shine, day or night, make your next party or group event more eventful at Square Golf. We offer versatile event catering packages
-						perfect for your next birthday party, company event, or social get-together!
-					</p>
+					<p className="fadeUp mx-auto mb-[100px] max-w-[715px] whitespace-pre-wrap text-center mb:mb-[50px]">{data?.subTitle}</p>
 
 					<div className="listCeleb mx-[-15px] flex flex-wrap items-stretch gap-y-[30px]">
 						{listCeleb.map((e: any, i: number) => (

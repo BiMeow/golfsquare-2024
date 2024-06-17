@@ -1,9 +1,10 @@
 import { IconPlay } from "@/components/elements/Icon";
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 
-function SectionVisitBanner({ ...props }) {
+function SectionVisitBanner({ data, ...props }: any) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -37,7 +38,7 @@ function SectionVisitBanner({ ...props }) {
 		<>
 			<div className={`SectionVisitBanner relative mb-[40px]`}>
 				<div className="relative aspect-[145/84] mb:aspect-[375/780]">
-					<img src="/images/visit/banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
+					<img src={asset(data?.bg)} alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
 				</div>
 				<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
 					<h2 className="moveUp mb-[40px] text-center text-[90px] font-bold opacity-0 mb:text-[52px]">

@@ -3,54 +3,67 @@ import { useRouter } from "next/router";
 import Slider from "react-slick";
 import { IconPlay } from "@/components/elements/Icon";
 import gsap from "gsap";
+import asset from "@/utils/asset";
 
-let listImg = [
-	{
-		image: "/images/fnb/img-1.jpg",
-	},
-	{
-		image: "/images/fnb/img-2.jpg",
-	},
-	{
-		image: "/images/fnb/img-3.jpg",
-	},
-	{
-		image: "/images/fnb/img-4.jpg",
-	},
-	{
-		image: "/images/fnb/img-5.jpg",
-	},
-	{
-		image: "/images/fnb/img-6.jpg",
-	},
-	{
-		image: "/images/fnb/img-1.jpg",
-	},
-	{
-		image: "/images/fnb/img-2.jpg",
-	},
-	{
-		image: "/images/fnb/img-4.jpg",
-	},
-	{
-		image: "/images/fnb/img-5.jpg",
-	},
-	{
-		image: "/images/fnb/img-2.jpg",
-	},
-	{
-		image: "/images/fnb/img-3.jpg",
-	},
-	{
-		image: "/images/fnb/img-4.jpg",
-	},
-	{
-		image: "/images/fnb/img-5.jpg",
-	},
-];
-
-function SectionEventListImg({ ...props }) {
+function SectionEventListImg({ data, ...props }: any) {
 	const router = useRouter();
+
+	let listImg = [
+		{
+			image: asset(data?.image),
+		},
+		{
+			image: asset(data?.image1),
+		},
+		{
+			image: asset(data?.image2),
+		},
+		{
+			image: asset(data?.image3),
+		},
+		{
+			image: asset(data?.image4),
+		},
+		{
+			image: asset(data?.image5),
+		},
+		{
+			image: asset(data?.image6),
+		},
+		{
+			image: asset(data?.image7),
+		},
+		{
+			image: asset(data?.image8),
+		},
+		{
+			image: asset(data?.image9),
+		},
+		{
+			image: asset(data?.image10),
+		},
+		{
+			image: asset(data?.image11),
+		},
+		{
+			image: asset(data?.image12),
+		},
+		{
+			image: asset(data?.image13),
+		},
+		{
+			image: asset(data?.image14),
+		},
+		{
+			image: asset(data?.image15),
+		},
+		{
+			image: asset(data?.image16),
+		},
+		{
+			image: asset(data?.image17),
+		},
+	];
 
 	const settings = {
 		dots: true,
@@ -99,9 +112,9 @@ function SectionEventListImg({ ...props }) {
 					<div className="relative aspect-[144/60] overflow-hidden mb:aspect-[375/450]">
 						<img src="/images/fnb/banner.jpg" alt="" className="absFull image h-[calc(100%+100px)] object-cover" />
 					</div>
-					<div className="hoverShadow absolute left-1/2 top-1/2 mb-[50px] flex aspect-1 w-[74px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white">
+					{/* <div className="hoverShadow absolute left-1/2 top-1/2 mb-[50px] flex aspect-1 w-[74px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-4 border-red fill-red duration-500 hover:border-white hover:fill-white">
 						<IconPlay />
-					</div>
+					</div> */}
 				</div>
 
 				<div className="cusContainer">
