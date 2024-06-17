@@ -50,7 +50,7 @@ function SectionVisitBanner({ ...props }) {
 						>
 							<button className="mainBtn">BOOK NOW</button>
 						</a>
-						<a target="_blank" href="#">
+						<a target="_blank" href="/menu.pdf#toolbar=0">
 							<button className="mainBtn">MENU</button>
 						</a>
 					</div>
