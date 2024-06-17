@@ -132,7 +132,7 @@ let listTab = [
 function PageMembership({ ...props }) {
 	const router = useRouter();
 
-	const [activeTab, setActiveTab] = useState<any>(0);
+	const [activeTab, setActiveTab] = useState<any>(1);
 
 	const membershipContent = useMemo(() => {
 		switch (activeTab) {
@@ -167,7 +167,7 @@ function PageMembership({ ...props }) {
 				<div className="cusContainer">
 					<h2 className="text-64 fadeUp mb-[45px] text-center uppercase">Membership</h2>
 
-					<div className="listTab fadeUp mb-[100px] flex items-center justify-center space-x-[70px] tl-p:hidden">
+					{/* <div className="listTab fadeUp mb-[100px] flex items-center justify-center space-x-[70px] tl-p:hidden">
 						{listTab.map((e: any, i: number) => (
 							<div
 								className={`
@@ -187,9 +187,9 @@ function PageMembership({ ...props }) {
 								></div>
 							</div>
 						))}
-					</div>
+					</div> */}
 				</div>
-				<div className="membershipContent">{membershipContent}</div>
+				<div className="membershipContent fadeUp">{membershipContent}</div>
 			</div>
 
 			<style jsx global>{`

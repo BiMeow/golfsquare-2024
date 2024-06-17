@@ -5,7 +5,7 @@ const PageMembership = dynamic(() => import("@/components/pageContent/PageMember
 
 export default function Membership() {
 	return (
-		<MasterPage pageName={"Membership"} activeNav={3}>
+		<MasterPage pageName={"Membership"} activeNav={1}>
 			<PageMembership />
 		</MasterPage>
 	);

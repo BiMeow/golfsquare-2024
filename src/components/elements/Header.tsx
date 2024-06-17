@@ -5,48 +5,76 @@ import gsap from "gsap";
 import { useWindowSize } from "usehooks-ts";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+// let listMenu = [
+// 	{
+// 		title: "About",
+// 		href: "/about",
+// 	},
+// 	{
+// 		title: "Book a table",
+// 		href: "https://widget.wabify.com/654c28d3b73e21699490003?fbclid=IwAR0wEo9lXXHkiQBw6klSfamYZa420cvw9RdOJc3jQNhOTMXXmthns_2y-dw",
+// 		target: "_blank",
+// 	},
+// 	{
+// 		title: "Plan a visit",
+// 		href: "/planavisit",
+// 	},
+// 	{
+// 		title: "Membership",
+// 		href: "/membership",
+// 	},
+// 	{
+// 		title: "Learn",
+// 		href: "/learn",
+// 	},
+// 	{
+// 		title: "Have fun",
+// 		href: "",
+// 		children: [
+// 			{
+// 				title: "F&B",
+// 				href: "/fnb",
+// 				id: 79,
+// 			},
+// 			{
+// 				title: "PARTIES & EVENTS",
+// 				href: "/events",
+// 				id: 98,
+// 			},
+// 		],
+// 	},
+// 	// {
+// 	// 	title: "2024 Tournament",
+// 	// 	href: "/tournament",
+// 	// },
+// ];
+
 let listMenu = [
+	{
+		title: "HOSPITALITY",
+		href: "/fnb",
+	},
+	{
+		title: "GOLF",
+		href: "/membership",
+	},
+	{
+		title: "LESSON",
+		href: "/learn",
+	},
+	{
+		title: "EVENT",
+		href: "/events",
+	},
 	{
 		title: "About",
 		href: "/about",
 	},
 	{
-		title: "Book a table",
+		title: "BOOK NOW",
 		href: "https://widget.wabify.com/654c28d3b73e21699490003?fbclid=IwAR0wEo9lXXHkiQBw6klSfamYZa420cvw9RdOJc3jQNhOTMXXmthns_2y-dw",
 		target: "_blank",
 	},
-	{
-		title: "Plan a visit",
-		href: "/planavisit",
-	},
-	{
-		title: "Membership",
-		href: "/membership",
-	},
-	{
-		title: "Learn",
-		href: "/learn",
-	},
-	{
-		title: "Have fun",
-		href: "",
-		children: [
-			{
-				title: "F&B",
-				href: "/fnb",
-				id: 79,
-			},
-			{
-				title: "PARTIES & EVENTS",
-				href: "/events",
-				id: 98,
-			},
-		],
-	},
-	// {
-	// 	title: "2024 Tournament",
-	// 	href: "/tournament",
-	// },
 ];
 
 function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
@@ -124,7 +152,7 @@ function Header({ activeNav = -1, activeSubNav = -1, ...props }) {
 									`}
 								>
 									{e.title}
-									{e.href && <Link href={e.href} className="absFull" />}
+									{e.href && <Link href={e.href} className="absFull" target={e.target || "_self"} />}
 									{e.children && (
 										<div className={`absolute right-0 top-[3px] hidden aspect-1 w-[24px]  mb:block`}>
 											<div className="absolute left-1/2 top-1/2 h-[2px] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white group-hover:bg-red"></div>

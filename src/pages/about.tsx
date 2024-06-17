@@ -5,7 +5,7 @@ const PageAbout = dynamic(() => import("@/components/pageContent/PageAbout"));
 
 export default function About() {
 	return (
-		<MasterPage pageName={"About"} activeNav={0}>
+		<MasterPage pageName={"About"} activeNav={4}>
 			<PageAbout />
 		</MasterPage>
 	);

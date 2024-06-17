@@ -5,7 +5,7 @@ const PageEvents = dynamic(() => import("@/components/pageContent/PageEvents"));
 
 export default function Event() {
 	return (
-		<MasterPage pageName={"Parties & Events"} activeNav={5} activeSubNav={1}>
+		<MasterPage pageName={"Parties & Events"} activeNav={3} activeSubNav={1}>
 			<PageEvents />
 		</MasterPage>
 	);
