@@ -1,25 +1,11 @@
 import { IconArrow } from "@/components/elements/Icon";
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 import { useWindowSize } from "usehooks-ts";
 
-let listHappen = [
-	{
-		title: "Golf Simulator",
-		image: "/images/home/happen-1.jpg",
-	},
-	{
-		title: "Sports Bar",
-		image: "/images/home/happen-2.jpg",
-	},
-	{
-		title: "Dine With Us",
-		image: "/images/home/happen-3.jpg",
-	},
-];
-
-function SectionAboutFacilities({ ...props }) {
+function SectionAboutFacilities({ data, ...props }: any) {
 	const router = useRouter();
 
 	const { width } = useWindowSize();
@@ -57,25 +43,40 @@ function SectionAboutFacilities({ ...props }) {
 		}
 	}, [width]);
 
+	let listHappen = [
+		{
+			title: data?.title,
+			image: asset(data?.image),
+		},
+		{
+			title: data?.title1,
+			image: asset(data?.image1),
+		},
+		{
+			title: data?.title2,
+			image: asset(data?.image2),
+		},
+	];
+
 	return (
 		<>
 			<div className={`SectionAboutFacilities mb-[126px] mb:mb-[60px]`}>
 				<div className="mb-[30px] flex flex-wrap justify-center tl-l:px-[20px]">
 					<div className="relative w-full max-w-[730px]">
-						<img src="/images/golfman.png" alt="" className="fadeRight w-full" />
+						<img src={data?.bg ? asset(data?.bg) : "/images/golfman.png"} alt="" className="fadeRight w-full" />
 					</div>
 					<div className="content ml-[-300px] w-full max-w-[525px] pt-[150px] mb:ml-0 mb:pt-[20px]">
-						<img src="/images/logo-icon-white.png" alt="" className="fadeUp mb-[50px] w-[50px] mb:mb-[25px] mb:w-[35px]" />
-						<p className="fadeUp mb-[20px]">
-							At Golf Square, golf is more than just a sport; it is an opportunity to create lasting memories, push your limits, and indulge in pure
-							enjoyment. We envision a haven where golf enthusiasts of all levels, from beginners to seasoned professionals, come together to embrace
-							the essence of the game in a cozy environment.
-						</p>
+						<img
+							src={data?.bg1 ? asset(data?.bg1) : "/images/logo-icon-white.png"}
+							alt=""
+							className="fadeUp mb-[50px] w-[50px] mb:mb-[25px] mb:w-[35px]"
+						/>
+						<p className="fadeUp mb-[20px]">{data?.description}</p>
 					</div>
 				</div>
 
 				<div className="cusContainer">
-					<h3 className="text-36 fadeUp mb-[40px] mb:mb-[25px]">FACILITIES INCLUDE</h3>
+					<h3 className="text-36 fadeUp mb-[40px] whitespace-pre-wrap mb:mb-[25px]">{data?.titleService}</h3>
 					<div className="listHappen mx-[-20px] flex flex-wrap gap-y-[25px]">
 						{listHappen.map((e: any, i: number) => (
 							<div

@@ -3,23 +3,9 @@ import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import asset from "@/utils/asset";
 
-let listImage = [
-	{
-		image: "/images/about/intro-1.jpg",
-	},
-	{
-		image: "/images/about/intro-2.jpg",
-	},
-	{
-		image: "/images/about/intro-3.jpg",
-	},
-	{
-		image: "/images/about/intro-4.jpg",
-	},
-];
-
-function SectionAboutIntro({ ...props }) {
+function SectionAboutIntro({ data, banner, ...props }: any) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -71,6 +57,21 @@ function SectionAboutIntro({ ...props }) {
 		}, 1500);
 	}, []);
 
+	let listImage = [
+		{
+			image: asset(data?.bg),
+		},
+		{
+			image: asset(data?.bg1),
+		},
+		{
+			image: asset(data?.bg2),
+		},
+		{
+			image: asset(data?.bg3),
+		},
+	];
+
 	return (
 		<>
 			<div className={`SectionAboutIntro secSpacing`}>
@@ -116,24 +117,27 @@ function SectionAboutIntro({ ...props }) {
 
 					<div className="fadeUp splitText mx-auto max-w-[920px] text-center text-[#fff7]">
 						<p>
-							<span className="text-[24px] font-bold">Welcome to Golf Square!</span>
+							<span className="text-[24px] font-bold">{data?.title}</span>
 							<br />
 							<br />
-							Immerse yourself in a captivating world where state-of-the-art Korean Golf Simulator technology seamlessly combines with a love for
-							sports, captivating entertainment, and delectable culinary delights. It's not just about golf - it's an unforgettable experience.
+							{data?.description}
 						</p>
 					</div>
 				</div>
 
 				<div className="banner relative">
 					<div className="fadeIn relative aspect-[145/75] overflow-hidden mb:aspect-[375/620]">
-						<img src="/images/about/intro-banner.jpg" alt="" className="image absFull h-[calc(100%+100px)] object-cover" />
+						<img
+							src={banner?.bg ? asset(banner?.bg) : "/images/about/intro-banner.jpg"}
+							alt=""
+							className="image absFull h-[calc(100%+100px)] object-cover"
+						/>
 					</div>
 
 					<div className="content absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-						<h2 className="text-52 fadeUp mb-[40px] text-center uppercase">WE DON’T MAKE FUN</h2>
+						<h2 className="text-52 fadeUp mb-[40px] text-center uppercase">{banner?.title}</h2>
 						<h1 className="fadeUp w-full border-y border-red py-[20px] pb-[0px] text-center text-[125px] font-bold uppercase text-red mb:font-GilroyBold mb:text-[54px]">
-							We make fun better
+							{banner?.description}
 						</h1>
 					</div>
 				</div>

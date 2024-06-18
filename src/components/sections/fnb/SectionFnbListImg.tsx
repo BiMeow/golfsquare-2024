@@ -10,58 +10,58 @@ function SectionEventListImg({ data, ...props }: any) {
 
 	let listImg = [
 		{
-			image: asset(data?.image),
+			image: data?.image ? asset(data?.image) : "",
 		},
 		{
-			image: asset(data?.image1),
+			image: data?.image1 ? asset(data?.image1) : "",
 		},
 		{
-			image: asset(data?.image2),
+			image: data?.image2 ? asset(data?.image2) : "",
 		},
 		{
-			image: asset(data?.image3),
+			image: data?.image3 ? asset(data?.image3) : "",
 		},
 		{
-			image: asset(data?.image4),
+			image: data?.image4 ? asset(data?.image4) : "",
 		},
 		{
-			image: asset(data?.image5),
+			image: data?.image5 ? asset(data?.image5) : "",
 		},
 		{
-			image: asset(data?.image6),
+			image: data?.image6 ? asset(data?.image6) : "",
 		},
 		{
-			image: asset(data?.image7),
+			image: data?.image7 ? asset(data?.image7) : "",
 		},
 		{
-			image: asset(data?.image8),
+			image: data?.image8 ? asset(data?.image8) : "",
 		},
 		{
-			image: asset(data?.image9),
+			image: data?.image9 ? asset(data?.image9) : "",
 		},
 		{
-			image: asset(data?.image10),
+			image: data?.image10 ? asset(data?.image10) : "",
 		},
 		{
-			image: asset(data?.image11),
+			image: data?.image11 ? asset(data?.image11) : "",
 		},
 		{
-			image: asset(data?.image12),
+			image: data?.image12 ? asset(data?.image12) : "",
 		},
 		{
-			image: asset(data?.image13),
+			image: data?.image13 ? asset(data?.image13) : "",
 		},
 		{
-			image: asset(data?.image14),
+			image: data?.image14 ? asset(data?.image14) : "",
 		},
 		{
-			image: asset(data?.image15),
+			image: data?.image15 ? asset(data?.image15) : "",
 		},
 		{
-			image: asset(data?.image16),
+			image: data?.image16 ? asset(data?.image16) : "",
 		},
 		{
-			image: asset(data?.image17),
+			image: data?.image17 ? asset(data?.image17) : "",
 		},
 	];
 
@@ -121,11 +121,14 @@ function SectionEventListImg({ data, ...props }: any) {
 					<h2 className="fadeUp mb-[60px] text-center text-[36px] font-bold uppercase mb:mb-[30px] mb:text-[20px]">square golf favorites</h2>
 					<div className="listImg fadeUp">
 						<Slider {...settings} className="cusSlider">
-							{listImg.map((e: any, i: number) => (
-								<div className="itemImg px-[15px] pb-[30px]" key={i}>
-									<img src={e.image} alt="" className="aspect-[350/425] object-cover" />
-								</div>
-							))}
+							{listImg.map(
+								(e: any, i: number) =>
+									e.image && (
+										<div className="itemImg px-[15px] pb-[30px]" key={i}>
+											<img src={e.image} alt="" className="aspect-[350/425] object-cover" />
+										</div>
+									)
+							)}
 						</Slider>
 					</div>
 				</div>
