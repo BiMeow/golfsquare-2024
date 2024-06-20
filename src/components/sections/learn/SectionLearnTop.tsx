@@ -1,13 +1,18 @@
+import asset from "@/utils/asset";
 import { useRouter } from "next/router";
 import { memo } from "react";
 
-function SectionLearnTop({ ...props }) {
+function SectionLearnTop({ banner, ...props }: any) {
 	const router = useRouter();
 
 	return (
 		<>
 			<div className={`SectionLearnTop secSpacing relative`}>
-				<img src="/images/learn/top-man.jpg" alt="" className="fadeIn aspect-[216/125] w-full object-cover mb:hidden" />
+				<img
+					src={banner?.bg ? asset(banner?.bg) : "/images/learn/top-man.jpg"}
+					alt=""
+					className="fadeIn aspect-[216/125] w-full object-cover mb:hidden"
+				/>
 				<img src="/images/learn/top-man-mb.jpg" alt="" className="fadeIn mb-[30px] hidden w-full mb:block" />
 
 				<div className="content absolute left-0 top-0 h-full w-full mb:relative mb:px-[20px]">
@@ -17,10 +22,7 @@ function SectionLearnTop({ ...props }) {
 							<br />
 							<span className="text-red">GOLF</span>
 						</h2>
-						{/* <p className="fadeUp mb-[20px] max-w-[495px] text-[16px] mb:max-w-none mb:text-[14px]">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero, sit venenatis vitae ut sollicitudin. Neque, dis vel velit arcu,
-							sagittis at faucibus nisi nulla. Nunc leo neque risus mauris turpis.
-						</p> */}
+						{banner?.description && <p className="fadeUp mb-[20px] max-w-[495px] text-[16px] mb:max-w-none mb:text-[14px]">{banner?.description}</p>}
 						<div className="fadeUp">
 							<a target="_blank" href="https://swingsyncgolfacademy.as.me/schedule.php">
 								<button className="mainBtn">BOOK LESSON NOW</button>

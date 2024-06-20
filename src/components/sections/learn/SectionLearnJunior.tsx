@@ -1,36 +1,10 @@
 import SectionLearnFee from "@/components/sections/learn/SectionLearnFee";
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 
-let listFeature = [
-	{
-		image: "/images/learn/feature-1.png",
-		desc: "Beginner, Intermediate and Advanced level class",
-	},
-	{
-		image: "/images/learn/feature-2.png",
-		desc: "Instructed by PGA coaches",
-	},
-	{
-		image: "/images/learn/feature-3.png",
-		desc: "Group lesson (max 5 pax), 50 mins lesson time",
-	},
-	{
-		image: "/images/learn/feature-4.png",
-		desc: "Weekly competitons and challenges for prizes",
-	},
-	{
-		image: "/images/learn/feature-5.png",
-		desc: "Unique and advanced skills programme available",
-	},
-	{
-		image: "/images/learn/feature-6.png",
-		desc: "It’s fun and exciting for both boys and girls",
-	},
-];
-
-function SecitonLearnJunior({ ...props }) {
+function SecitonLearnJunior({ data, ...props }: any) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -59,6 +33,33 @@ function SecitonLearnJunior({ ...props }) {
 		}, 1500);
 	}, []);
 
+	let listFeature = [
+		{
+			image: asset(data?.info?.image),
+			desc: data?.info?.text,
+		},
+		{
+			image: asset(data?.info?.image1),
+			desc: data?.info?.text1,
+		},
+		{
+			image: asset(data?.info?.image2),
+			desc: data?.info?.text2,
+		},
+		{
+			image: asset(data?.info?.image3),
+			desc: data?.info?.text3,
+		},
+		{
+			image: asset(data?.info?.image4),
+			desc: data?.info?.text4,
+		},
+		{
+			image: asset(data?.info?.image5),
+			desc: data?.info?.text5,
+		},
+	];
+
 	return (
 		<>
 			<div className={`SecitonLearnJunior`}>
@@ -73,11 +74,9 @@ function SecitonLearnJunior({ ...props }) {
 									<img src="/images/logo-icon.png" alt="" className="fadeUp mr-[35px] w-[105px] mb:w-[55px]" />
 								</div>
 								<div className="fadeUp max-w-[460px] mb:max-w-none">
-									<h2 className="text-64 mb-[20px]">JUNIOR GOLF PROGRAMME</h2>
-									<p className="mb-[40px] text-[22px] mb:mb-[20px] mb:text-[16px]">Excellent for children aged 5 to 15 years old</p>
-									<p className="text-[16px] mb:text-[14px]">
-										Golf is a life skill. Teaching your children how to golf will instill discipline, self-confidence, concentration, and patience.
-									</p>
+									<h2 className="text-64 mb-[20px]">{data?.info?.title}</h2>
+									<p className="mb-[40px] text-[22px] mb:mb-[20px] mb:text-[16px]">{data?.info?.subTitle}</p>
+									<p className="text-[16px] mb:text-[14px]">{data?.info?.description}</p>
 								</div>
 							</div>
 						</div>
@@ -93,7 +92,7 @@ function SecitonLearnJunior({ ...props }) {
 							{listFeature.map((e: any, i: number) => (
 								<div className="itemFeature w-1/2 px-[10px] mb:w-full" key={i}>
 									<div className="border-l-[3px] border-white">
-										<img src={e.image} alt="" className="ml-[20px] aspect-1 w-[100px] object-contain object-center mb:w-[60px]" />
+										<img src={e.image} alt="" className="mb-[10px] ml-[20px] aspect-1 w-[100px] object-contain object-center mb:w-[60px]" />
 										<p className="ml-[40px] text-[20px] mb:ml-[20px] mb:text-[14px]">{e.desc}</p>
 									</div>
 								</div>
@@ -111,11 +110,11 @@ function SecitonLearnJunior({ ...props }) {
 										Group Lesson
 									</p>
 									<div className="relative mb-[20px] flex items-center pb-[25px]">
-										<p className="mr-[10px] text-[90px] font-bold mb:text-[52px]">50</p>
-										<p className="text-[32px] mb:text-[18px]">minutes lesson time</p>
+										<p className="mr-[10px] text-[90px] font-bold mb:text-[52px]">{data?.timing?.time}</p>
+										<p className="text-[32px] mb:text-[18px]">{data?.timing?.text}</p>
 										<div className="absolute bottom-0 left-0 h-[1px] w-[175px] bg-[#00FFFF] mb:w-full"></div>
 									</div>
-									<p className="mb:text-center">Max 5 pax</p>
+									<p className="mb:text-center">{data?.timing?.pax}</p>
 								</div>
 							</div>
 							<div className="c2 fadeUp relative w-1/2 px-[15px] mb:w-full">
@@ -124,18 +123,18 @@ function SecitonLearnJunior({ ...props }) {
 										Personal Makeup Lesson
 									</p>
 									<div className="relative mb-[20px] flex items-center pb-[25px]">
-										<p className="mr-[10px] text-[90px] font-bold mb:text-[52px]">30</p>
-										<p className="text-[32px] mb:text-[18px]">minutes lesson time</p>
+										<p className="mr-[10px] text-[90px] font-bold mb:text-[52px]">{data?.timing?.time1}</p>
+										<p className="text-[32px] mb:text-[18px]">{data?.timing?.text1}</p>
 										<div className="absolute bottom-0 left-0 h-[1px] w-[175px] bg-[#00FFFF] mb:w-full"></div>
 									</div>
-									<p className="mb:text-center">Limited to 3 Make-Up Lessons for every 10 Group Lessons credits</p>
+									<p className="mb:text-center">{data?.timing?.pax1}</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<SectionLearnFee title="Junior Lesson Fees (Off-Peak Rate Only)" />
+				<SectionLearnFee title="Junior Lesson Fees (Off-Peak Rate Only)" data={data?.fee} />
 			</div>
 		</>
 	);

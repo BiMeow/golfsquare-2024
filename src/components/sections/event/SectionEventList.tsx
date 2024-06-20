@@ -1,52 +1,10 @@
 import { IconPlay } from "@/components/elements/Icon";
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 
-let listEvents = [
-	{
-		title: "HIGHLIGHTS EVENTS",
-		list: [
-			{
-				title: "NEW YEAR EVE",
-				description: "Enjoy live bands, refreshing drinks, and a captivating atmosphere at this vibrant venue.",
-				image: "/images/visit/celeb-1.jpg",
-			},
-			{
-				title: "Christmas celebration",
-				description: "Enjoy live bands, refreshing drinks, and a captivating atmosphere at this vibrant venue.",
-				image: "/images/visit/celeb-2.jpg",
-			},
-			{
-				title: "memorable birthday",
-				description: "Enjoy live bands, refreshing drinks, and a captivating atmosphere at this vibrant venue.",
-				image: "/images/visit/celeb-3.jpg",
-			},
-		],
-	},
-	{
-		title: "square golf event spaces",
-		list: [
-			{
-				title: "MEETINGS LIKE NO OTHER",
-				description: "Meeting room plus coffee and lunch break",
-				image: "/images/visit/celeb-4.jpg",
-			},
-			{
-				title: "MEET & PLAY",
-				description: "A combined package of meeting sessions and the Square Golf game experience",
-				image: "/images/visit/celeb-5.jpg",
-			},
-			{
-				title: "PRIVATE EVENT",
-				description: "Gather up for a good time at any of our bars & restaurants add other event spaces",
-				image: "/images/visit/celeb-6.jpg",
-			},
-		],
-	},
-];
-
-function SectionEventList({ ...props }) {
+function SectionEventList({ highlights, squareGolf, ...props }: any) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -63,6 +21,49 @@ function SectionEventList({ ...props }) {
 				.fromTo(".SectionEventList .listEvents .itemEvent", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
 		}, 1500);
 	}, []);
+
+	let listEvents = [
+		{
+			title: "HIGHLIGHTS EVENTS",
+			list: [
+				{
+					title: highlights?.text,
+					description: highlights?.description,
+					image: asset(highlights?.image),
+				},
+				{
+					title: highlights?.text1,
+					description: highlights?.description1,
+					image: asset(highlights?.image1),
+				},
+				{
+					title: highlights?.text2,
+					description: highlights?.description2,
+					image: asset(highlights?.image2),
+				},
+			],
+		},
+		{
+			title: "square golf event spaces",
+			list: [
+				{
+					title: squareGolf?.text,
+					description: squareGolf?.description,
+					image: asset(squareGolf?.image),
+				},
+				{
+					title: squareGolf?.text1,
+					description: squareGolf?.description1,
+					image: asset(squareGolf?.image1),
+				},
+				{
+					title: squareGolf?.text2,
+					description: squareGolf?.description2,
+					image: asset(squareGolf?.image2),
+				},
+			],
+		},
+	];
 
 	return (
 		<>

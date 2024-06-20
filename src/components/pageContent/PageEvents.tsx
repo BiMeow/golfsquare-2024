@@ -6,10 +6,27 @@ import SectionHomeBanner from "@/components/sections/home/SectionHomeBanner";
 import SectionHomeHaveFun from "@/components/sections/home/SectionHomeHaveFun";
 import SectionHomeYourChance from "@/components/sections/home/SectionHomeYourChance";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 function PageEvents({ ...props }) {
 	const router = useRouter();
+
+	const [pageContent, setPageContent] = useState<any>();
+
+	const getPageContent = async () => {
+		const ApiCall = await fetch(`${process.env.NEXT_PUBLIC_BASE_ULR_API}/api/v1/pages/EVENTS`);
+		const res = await ApiCall.json();
+
+		if (res.status) {
+			setPageContent(res.data?.content);
+		}
+	};
+
+	useEffect(() => {
+		getPageContent();
+	}, []);
+
+	console.log(`BiMeow log pageContent`, pageContent);
 
 	return (
 		<>
@@ -24,15 +41,10 @@ function PageEvents({ ...props }) {
 							<br />
 							<span className="text-red">EVENTS</span>
 						</h2>
-						<p className="fadeUp mx-auto mb-[100px] max-w-[920px] text-center font-GilroyMedium mb:mb-[60px]">
-							Eat, Drink and Play - At GolfSquare, we redefine leisure and elevate enjoyment. Our state-of-the-art indoor golfing facility is paired
-							with a dining experience that tantalizes the senses, exceptional event hosting, and wine cocktails that are nothing short of
-							perfection.  Dive into an experience where every moment is crafted for delight. After all, 'We make fun better'. Packages to suit all
-							occasions and budgets.
-						</p>
+						<p className="fadeUp mx-auto mb-[100px] max-w-[920px] text-center font-GilroyMedium mb:mb-[60px]">{pageContent?.banner?.description}</p>
 					</div>
-					<SectionEventList />
-					<SectionEventListImg />
+					<SectionEventList highlights={pageContent?.highlights} squareGolf={pageContent?.squareGolf} />
+					<SectionEventListImg data={pageContent?.square} />
 					<SectionReady />
 				</div>
 			</div>

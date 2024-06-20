@@ -7,71 +7,9 @@ import "swiper/css/effect-fade";
 import { useWindowSize } from "usehooks-ts";
 import gsap from "gsap";
 import { IconArrowSlider } from "@/components/elements/Icon";
+import asset from "@/utils/asset";
 
-let listCol = [
-	[
-		{
-			text: "4 Languages (Korea, Chinese, Vietnamese, English)",
-		},
-		{
-			text: "150 field games (6-players)",
-		},
-		{
-			text: "Full HD Real 3D Graphic",
-		},
-	],
-	[
-		{
-			text: "Driving, Practice on field software Console",
-		},
-		{
-			text: `Built-in computer, 21.5" monitor`,
-		},
-		{
-			text: "Analysis camera",
-		},
-	],
-	[
-		{
-			text: "Ceilng camera sensor",
-		},
-		{
-			text: "Rough / Bunker Mat",
-		},
-		{
-			text: "Semi auto tee-up box",
-		},
-	],
-];
-
-let listImage = [
-	{
-		image: "/images/about/simulator-1.jpg",
-	},
-	{
-		image: "/images/about/simulator-2.jpg",
-	},
-	{
-		image: "/images/about/simulator-3.jpg",
-	},
-	{
-		image: "/images/about/simulator-2.jpg",
-	},
-	{
-		image: "/images/about/simulator-1.jpg",
-	},
-	{
-		image: "/images/about/simulator-2.jpg",
-	},
-	{
-		image: "/images/about/simulator-1.jpg",
-	},
-	{
-		image: "/images/about/simulator-3.jpg",
-	},
-];
-
-function SectionAboutSimulator({ ...props }) {
+function SectionAboutSimulator({ data, ...props }: any) {
 	const router = useRouter();
 
 	const { width } = useWindowSize();
@@ -95,16 +33,81 @@ function SectionAboutSimulator({ ...props }) {
 		}, 1500);
 	}, []);
 
+	let listCol = [
+		[
+			{
+				text: data?.title,
+			},
+			{
+				text: data?.title1,
+			},
+			{
+				text: data?.title2,
+			},
+		],
+		[
+			{
+				text: data?.title3,
+			},
+			{
+				text: data?.title4,
+			},
+			{
+				text: data?.title5,
+			},
+		],
+		[
+			{
+				text: data?.title6,
+			},
+			{
+				text: data?.title7,
+			},
+			{
+				text: data?.title8,
+			},
+		],
+	];
+
+	let listImage = [
+		{
+			image: data?.image ? asset(data?.image) : "",
+		},
+		{
+			image: data?.image1 ? asset(data?.image1) : "",
+		},
+		{
+			image: data?.image2 ? asset(data?.image2) : "",
+		},
+		{
+			image: data?.image3 ? asset(data?.image3) : "",
+		},
+		{
+			image: data?.image4 ? asset(data?.image4) : "",
+		},
+		{
+			image: data?.image5 ? asset(data?.image5) : "",
+		},
+		{
+			image: data?.image6 ? asset(data?.image6) : "",
+		},
+		{
+			image: data?.image7 ? asset(data?.image7) : "",
+		},
+		{
+			image: data?.image8 ? asset(data?.image8) : "",
+		},
+		{
+			image: data?.image9 ? asset(data?.image9) : "",
+		},
+	];
+
 	return (
 		<>
 			<div className={`SectionAboutSimulator secSpacing mb-[60px]`}>
 				<div className="cusContainer">
-					<h2 className="text-64 fadeUp mb-[20px] uppercase">Golf simulator</h2>
-					<p className="fadeUp mb-[80px] max-w-[800px] mb:mb-[30px]">
-						Embark on a golfing adventure and explore the world's most prestigious courses right at your fingertips. Unleash the power of our advanced
-						Korean golf simulator technology to play rounds, perfect your swing, or engage in thrilling tournaments against other players. Prepare for
-						a vivid, precise, and sensational golfing experience like no other.
-					</p>
+					<h2 className="text-64 fadeUp mb-[20px] uppercase">{data?.text}</h2>
+					<p className="fadeUp mb-[80px] max-w-[800px] mb:mb-[30px]">{data?.description}</p>
 
 					<div className="listCol relative mx-[-30px] mb-[60px] flex flex-wrap gap-y-[40px]">
 						{listCol.map((e: any, i: number) => (
@@ -140,18 +143,21 @@ function SectionAboutSimulator({ ...props }) {
 											onSwiper={setMainSwiper}
 											slideToClickedSlide
 										>
-											{listImage.map((e: any, i: number) => (
-												<SwiperSlide
-													key={i}
-													className={`
-                                                itemSliderSimulator h-full w-full overflow-hidden rounded-[30px] duration-500
-												mb:h-auto mb:rounded-[20px]
-                                                ${activeSlide == i ? "border-2 border-white grayscale-0" : "grayscale"}
-                                                `}
-												>
-													<img src={e.image} alt="" className="h-full w-full object-cover" />
-												</SwiperSlide>
-											))}
+											{listImage.map(
+												(e: any, i: number) =>
+													e.image && (
+														<SwiperSlide
+															key={i}
+															className={`
+													itemSliderSimulator h-full w-full overflow-hidden rounded-[30px] duration-500
+													mb:h-auto mb:rounded-[20px]
+													${activeSlide == i ? "border-2 border-white grayscale-0" : "grayscale"}
+													`}
+														>
+															<img src={e.image} alt="" className="h-full w-full object-cover" />
+														</SwiperSlide>
+													)
+											)}
 										</Swiper>
 									)}
 								</div>
@@ -166,11 +172,14 @@ function SectionAboutSimulator({ ...props }) {
 									onSwiper={setThumbsSwiper}
 									allowTouchMove={false}
 								>
-									{listImage.map((e: any, i: number) => (
-										<SwiperSlide key={i} className="itemSliderSimulator !h-full overflow-hidden rounded-[30px]">
-											<img src={e.image} alt="" className="aspect-[255/160] w-full object-cover" />
-										</SwiperSlide>
-									))}
+									{listImage.map(
+										(e: any, i: number) =>
+											e.image && (
+												<SwiperSlide key={i} className="itemSliderSimulator !h-full overflow-hidden rounded-[30px]">
+													<img src={e.image} alt="" className="aspect-[255/160] w-full object-cover" />
+												</SwiperSlide>
+											)
+									)}
 								</Swiper>
 
 								<div

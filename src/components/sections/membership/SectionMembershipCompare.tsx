@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { useEffect, useState, useContext, useRef, memo, useMemo } from "react";
 import { useRouter } from "next/router";
 
-let listMembership = [
+let list = [
 	{
 		title: "RED Membership\n(5 Days)",
 		image: "/images/membership/mem-1.png",
@@ -21,7 +21,7 @@ let listMembership = [
 	},
 ];
 
-function SectionMemberShipCompare({ data = [], ...props }: any) {
+function SectionMemberShipCompare({ data = [], listMembership = { list }, ...props }: any) {
 	const router = useRouter();
 
 	return (
@@ -31,12 +31,10 @@ function SectionMemberShipCompare({ data = [], ...props }: any) {
 					<div className="c1 w-[20%] px-[15px]"></div>
 					<div className="c2 w-[80%] px-[15px]">
 						<div className="mx-[-15px] flex">
-							{listMembership.map((e: any, i: number) => (
+							{listMembership?.map((e: any, i: number) => (
 								<div className="itemMem w-1/4 px-[15px]" key={i}>
 									<img src={e.image} alt="" className="mb-[25px] w-full" />
-									<p className="whitespace-pre-wrap text-center font-bold">
-										{e.title}
-									</p>
+									<p className="whitespace-pre-wrap text-center font-bold">{e.title}</p>
 								</div>
 							))}
 						</div>
@@ -45,30 +43,23 @@ function SectionMemberShipCompare({ data = [], ...props }: any) {
 
 				<div className="listCompare mb-[50px]">
 					{data.map((e: any, i: number) => (
-						<div
-							className="itemCompare border-t border-white py-[30px] last:border-y"
-							key={i}
-						>
+						<div className="itemCompare border-t border-white py-[30px] last:border-y" key={i}>
 							<div className="mx-[-15px] flex">
 								<div className="c1 w-[20%] px-[15px]">
-									<p className="whitespace-pre-wrap font-bold dt-exl:whitespace-normal">
-										{e.title}
-									</p>
+									<p className="whitespace-pre-wrap font-bold dt-exl:whitespace-normal">{e.title}</p>
 								</div>
 								<div className="c2 w-[80%] px-[15px]">
 									{e.list?.map((e2: any, i2: number) => (
 										<div
 											className={`
-                      dataCompare mx-[-10px] flex
-                      ${e.list?.length > 1 ? "mb-[30px] last:mb-0" : ""}
-                      `}
+											dataCompare mx-[-10px] flex
+											${e.list?.length > 1 ? "mb-[30px] last:mb-0" : ""}
+											`}
 											key={i2}
 										>
 											{e2.map((e3: any, i3: number) => (
 												<div className="w-1/4 px-[10px]" key={i3}>
-													<p className="whitespace-pre-wrap text-center">
-														{e3}
-													</p>
+													<p className="whitespace-pre-wrap text-center">{e3}</p>
 												</div>
 											))}
 										</div>

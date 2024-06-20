@@ -1,40 +1,10 @@
 import { IconArrow } from "@/components/elements/Icon";
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 
-let listWhy = [
-	{
-		title: "High - end golf simulator technology",
-		image: "/images/about/why-1.png",
-	},
-	{
-		title: "Wide selection of renowned golf courses",
-		image: "/images/about/why-2.png",
-	},
-	{
-		title: "Friendly and welcoming environment",
-		image: "/images/about/why-3.png",
-	},
-	{
-		title: "Vibrant sports bar with an extensive beverage menu",
-		image: "/images/about/why-4.png",
-	},
-	{
-		title: "Delectable restaurant \noffering a diverse menu",
-		image: "/images/about/why-5.png",
-	},
-	{
-		title: "Event hosting and special promotions",
-		image: "/images/about/why-6.png",
-	},
-	{
-		title: "Entertainment suitable for golfers of all skill levels.",
-		image: "/images/about/why-7.png",
-	},
-];
-
-function SectionAboutWhy({ ...props }) {
+function SectionAboutWhy({ data, ...props }: any) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -51,6 +21,37 @@ function SectionAboutWhy({ ...props }) {
 				.fromTo(".SectionAboutWhy .listWhy .itemWhy", { opacity: 0, y: 100 }, { opacity: 1, y: 0, stagger: 0.3 });
 		}, 1500);
 	}, []);
+
+	let listWhy = [
+		{
+			title: data?.title,
+			image: asset(data?.image),
+		},
+		{
+			title: data?.title1,
+			image: asset(data?.image1),
+		},
+		{
+			title: data?.title2,
+			image: asset(data?.image2),
+		},
+		{
+			title: data?.title3,
+			image: asset(data?.image3),
+		},
+		{
+			title: data?.title4,
+			image: asset(data?.image4),
+		},
+		{
+			title: data?.title5,
+			image: asset(data?.image5),
+		},
+		{
+			title: data?.title6,
+			image: asset(data?.image6),
+		},
+	];
 
 	return (
 		<>

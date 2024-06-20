@@ -1,23 +1,9 @@
+import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
 import { memo, useEffect } from "react";
 
-let listBetter = [
-	{
-		title: "Party up with buddies",
-		image: "/images/about/funbetter-1.jpg",
-	},
-	{
-		title: "Endless fun with family",
-		image: "/images/about/funbetter-2.jpg",
-	},
-	{
-		title: "Eat & Drink",
-		image: "/images/about/funbetter-3.jpg",
-	},
-];
-
-function SectionAboutFunBetter({ ...props }) {
+function SectionAboutFunBetter({ data, ...props }: any) {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -46,23 +32,37 @@ function SectionAboutFunBetter({ ...props }) {
 		}, 1500);
 	}, []);
 
+	let listBetter = [
+		{
+			title: data?.text,
+			image: asset(data?.bg),
+		},
+		{
+			title: data?.text1,
+			image: asset(data?.bg1),
+		},
+		{
+			title: data?.text2,
+			image: asset(data?.bg2),
+		},
+	];
+
 	return (
 		<>
 			<div className={`SectionAboutFunBetter secSpacing relative`}>
 				<div className="moveBanner absolute left-0 top-[50px] max-h-[90%] w-full overflow-hidden opacity-80 blur-[5px] mb:max-h-[97%]">
-					<img src="/images/about/funbetter-banner.jpg" alt="" className="fadeUp aspect-[144/140] w-full object-cover mb:aspect-[375/2121]" />
+					<img
+						src={data?.banner ? asset(data?.banner) : "/images/about/funbetter-banner.jpg"}
+						alt=""
+						className="fadeUp aspect-[144/140] w-full object-cover mb:aspect-[375/2121]"
+					/>
 				</div>
 				<div className="cusContainer relative mb-[84px]">
 					<h2 className="titleStoke fadeUp relative z-10 mb-[80px] mb:mb-[40px]">
 						MAKE FUN <br /> BETTER
 					</h2>
 
-					<p className="fadeUp mx-auto mb-[120px] max-w-[920px] text-center mb:mb-[60px]">
-						Eat, Drink and Play - At GolfSquare, we redefine leisure and elevate enjoyment. Our state-of-the-art indoor golfing facility is paired
-						with a dining experience that tantalizes the senses, exceptional event hosting, and wine cocktails that are nothing short of perfection. 
-						Dive into an experience where every moment is crafted for delight. After all, 'We make fun better'. Packages to suit all occasions and
-						budgets.
-					</p>
+					<p className="fadeUp mx-auto mb-[120px] max-w-[920px] text-center mb:mb-[60px]">{data?.description}</p>
 
 					<div className="listBetter mb-[40px] flex flex-wrap mb:gap-y-[25px]">
 						{listBetter.map((e: any, i: number) => (
