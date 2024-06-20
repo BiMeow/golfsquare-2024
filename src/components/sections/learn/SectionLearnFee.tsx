@@ -91,7 +91,7 @@ function SectionLearnFee({ title = "Lesson Package Fees (Off-Peak Rate Only)", d
 							</div>
 
 							<div className="content fadeUp px-[40px] mb:px-0">
-								<div dangerouslySetInnerHTML={{ __html: listTab[activeTab]?.desc }}></div>
+								<div className="contentEditor" dangerouslySetInnerHTML={{ __html: listTab[activeTab]?.desc }}></div>
 								{/* <p className="mb-[16px] font-bold mb:text-[18px]">Details:</p>
 								<div className="listDetail mb-[40px] space-y-[14px] pl-[10px]">
 									{["Period: N/A", "Simulator (9 Hole) - 1 hour", "Field Lesson: $200"].map((e: any, i: number) => (

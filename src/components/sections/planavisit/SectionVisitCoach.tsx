@@ -62,7 +62,7 @@ function SectionVisitCoach({ data, ...props }: any) {
 
 										<div className="info w-[65%] px-[30px] pt-[70px] mb:w-full mb:pt-[20px]">
 											{e.desc ? (
-												<div dangerouslySetInnerHTML={{ __html: e.desc }}></div>
+												<div className="contentEditor" dangerouslySetInnerHTML={{ __html: e.desc }}></div>
 											) : (
 												<>
 													<p className="mb-[30px] font-bold mb:mb-[10px]">About:</p>

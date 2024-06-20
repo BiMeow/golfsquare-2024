@@ -92,7 +92,7 @@ function SecitonLearnJunior({ data, ...props }: any) {
 							{listFeature.map((e: any, i: number) => (
 								<div className="itemFeature w-1/2 px-[10px] mb:w-full" key={i}>
 									<div className="border-l-[3px] border-white">
-										<img src={e.image} alt="" className="ml-[20px] aspect-1 w-[100px] object-contain object-center mb:w-[60px]" />
+										<img src={e.image} alt="" className="mb-[10px] ml-[20px] aspect-1 w-[100px] object-contain object-center mb:w-[60px]" />
 										<p className="ml-[40px] text-[20px] mb:ml-[20px] mb:text-[14px]">{e.desc}</p>
 									</div>
 								</div>

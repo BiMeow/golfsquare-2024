@@ -85,6 +85,10 @@ html {
 			display: flex;
 			align-items: flex-end;
 		}
+
+		&:focus {
+			border: none;
+		}
 	}
 
 	.slick-dots {
@@ -146,4 +150,23 @@ html {
 .fadeLeft,
 .fadeIn {
 	opacity: 0;
+}
+
+.contentEditor {
+	p {
+		margin-bottom: 10px;
+	}
+
+	em {
+		font-size: 14px;
+	}
+
+	ul {
+		list-style-type: disc;
+		padding-left: 30px;
+
+		ul {
+			list-style-type: circle;
+		}
+	}
 }
