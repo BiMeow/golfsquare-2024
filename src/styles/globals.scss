@@ -130,11 +130,38 @@ html {
 		border-radius: 50%;
 
 		&:hover {
-			background: #fff;
+			background: #fff !important;
 		}
 
 		.anticon {
 			font-size: 22px;
+			transition: 0.5s;
+		}
+	}
+
+	&.PopupRegister {
+		.ant-modal-content {
+			background: #0000;
+			box-shadow: none;
+		}
+
+		.ant-modal-close {
+			top: 20px;
+			right: 20px;
+			width: 36px;
+			height: 36px;
+			border: 2px solid #fff;
+			background: #0000;
+
+			.anticon {
+				color: white;
+			}
+
+			&:hover {
+				.anticon {
+					color: #000;
+				}
+			}
 		}
 	}
 }

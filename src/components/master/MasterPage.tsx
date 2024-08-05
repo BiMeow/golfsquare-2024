@@ -3,6 +3,7 @@ import Footer from "@/components/elements/Footer";
 import Header from "@/components/elements/Header";
 import Preloader from "@/components/elements/Preloader";
 import PopupIframe from "@/components/sections/common/PopupIframe";
+import PopupRegister from "@/components/sections/common/PopupRegister";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -75,6 +76,7 @@ function MasterPage({
 					<div className={`pageContent`}>{children}</div>
 					<Footer />
 					<PopupIframe />
+					<PopupRegister />
 
 					<noscript
 						dangerouslySetInnerHTML={{
