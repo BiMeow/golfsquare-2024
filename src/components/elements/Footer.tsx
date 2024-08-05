@@ -18,7 +18,7 @@ let listSocial = [
 	},
 	{
 		icon: <IconYt />,
-		link: "https://www.tiktok.com/@golfsquare_australia",
+		link: "https://www.youtube.com/channel/UC2rsIsWzbO1FfSDYV2K650w",
 	},
 ];
 
