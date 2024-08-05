@@ -24,8 +24,6 @@ function PagePlanAVisit({ ...props }) {
 		getPageContent();
 	}, []);
 
-	console.log(`BiMeow log pageContent`, pageContent);
-
 	return (
 		<>
 			<div className={`PagePlanAVisit`}>

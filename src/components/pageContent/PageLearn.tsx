@@ -22,8 +22,6 @@ function PageLearn({ ...props }) {
 		getPageContent();
 	}, []);
 
-	console.log(`BiMeow log pageContent`, pageContent);
-
 	return (
 		<>
 			<div className={`PageLearn relative overflow-hidden`}>

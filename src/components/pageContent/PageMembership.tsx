@@ -25,8 +25,6 @@ function PageMembership({ ...props }) {
 		getPageContent();
 	}, []);
 
-	console.log(`BiMeow log pageContent`, pageContent);
-
 	useEffect(() => {
 		gsap.timeline().fromTo(".membershipContent", { y: 400 }, { y: 0 });
 	}, [activeTab]);

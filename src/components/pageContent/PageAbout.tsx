@@ -25,8 +25,6 @@ function PageAbout({ ...props }) {
 		getPageContent();
 	}, []);
 
-	console.log(`BiMeow log pageContent`, pageContent);
-
 	return (
 		<>
 			<div className={`PageAbout pt-[230px] mb:pt-[120px]`}>
