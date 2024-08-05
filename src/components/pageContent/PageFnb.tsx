@@ -23,8 +23,6 @@ function PageFnb({ ...props }) {
 		getPageContent();
 	}, []);
 
-	console.log(`BiMeow log pageContent`, pageContent);
-
 	return (
 		<>
 			<div className={`PageFnb relative overflow-hidden pt-[230px] mb:pt-[120px]`}>

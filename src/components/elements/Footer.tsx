@@ -1,4 +1,4 @@
-import { IconFb, IconInsta, IconTiktok, IconTwitter } from "@/components/elements/Icon";
+import { IconFb, IconInsta, IconTiktok, IconTwitter, IconYt } from "@/components/elements/Icon";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { memo } from "react";
@@ -15,6 +15,10 @@ let listSocial = [
 	{
 		icon: <IconTiktok />,
 		link: "https://www.tiktok.com/@golfsquare_australia",
+	},
+	{
+		icon: <IconYt />,
+		link: "https://www.youtube.com/channel/UC2rsIsWzbO1FfSDYV2K650w",
 	},
 ];
 
@@ -43,19 +47,69 @@ function Footer({ ...props }) {
 	return (
 		<>
 			<div
-				className={`Footer fadeIn flex flex-col items-center justify-center py-[100px] text-[16px] text-red tl-l:px-[20px] mb:pb-[60px] mb:pt-[20px] mb:text-[14px]`}
+				className={`Footer fadeIn flex flex-col items-center justify-center py-[50px] text-[16px] text-red tl-l:px-[20px] mb:pb-[60px] mb:pt-[20px] mb:text-[14px]`}
 			>
-				{" "}
-				<p className="mb-[50px] text-center text-[28px]">
+				<p className="mb-[20px] text-center text-[16px]">
 					The ultimate destination for dedicated golfers to play indoor golf <br />
 					Become a Member now!
 				</p>
-				<img src="/images/logo-icon.png" alt="" className="mb-[32px] w-[65px]" />
-				<p className="mb-[50px] text-center">
+				<img src="/images/logo-icon.png" alt="" className="mb-[20px] w-[65px]" />
+				<p className="mb-[20px] text-center font-semibold">
 					Address:
 					<br />8 Annastasia Way, Sunshine North, Victoria 3020, Australia
 				</p>
-				<div className="listSocial mb-[50px] flex items-center space-x-[30px]">
+				<a href="https://maps.app.goo.gl/qC1kKUyrNi9FxSmV6" target="_blank" className="mainBtn mb-[20px] text-white">
+					Google map
+				</a>
+				<div className="mx-[-25px] mb-[30px] flex">
+					<div className="c1 px-[25px]">
+						<p className="font-semibold">Opening Hours:</p>
+					</div>
+					<div className="c2 px-[25px]">
+						<p className="mb-[10px] font-semibold">Golf:</p>
+						<p className="text-[13px] tracking-[1px]">
+							Mon: 12pm - 9pm
+							<br />
+							Tues: 12pm - 9pm
+							<br />
+							Wed: 12pm - 9pm
+							<br />
+							Thur: 12pm - 10pm
+							<br />
+							Fri: 12pm - 11pm
+							<br />
+							Sat: 10am - 11pm
+							<br />
+							Sun: 10am - 10pm
+						</p>
+					</div>
+					<div className="c3 px-[25px]">
+						<p className="mb-[10px] font-semibold">Kitchen</p>
+						<p className="text-[13px] tracking-[1px]">
+							Mon: Closed
+							<br />
+							Tues: Closed
+							<br />
+							Wed: 5pm - 9pm
+							<br />
+							Thur: 5pm - 9pm
+							<br />
+							Fri: 12pm - 3pm & 5pm - 9pm
+							<br />
+							Sat: 12pm - 3pm & 5pm - 9pm
+							<br />
+							Sun: 12pm - 3pm & 5pm - 9pm
+						</p>
+					</div>
+				</div>
+				<p className="mb-[30px] flex items-center text-center font-bold mb:flex-col">
+					Contact Us: +61 3 9689 1888
+					<span className="mx-[10px] mb:hidden">|</span>
+					<br className="hidden mb:block" />
+					<br className="hidden mb:block" />
+					marketing@golfsquare.com.au
+				</p>
+				<div className="listSocial flex items-center space-x-[30px]">
 					{listSocial.map((e: any, i: number) => (
 						<div className="itemSocial relative cursor-pointer fill-red duration-300 hover:fill-white" key={i}>
 							{e.icon}
@@ -63,13 +117,6 @@ function Footer({ ...props }) {
 						</div>
 					))}
 				</div>
-				<p className="//mb-[190px] flex items-center text-center font-bold mb:flex-col">
-					HOTLINE: +61 1800 166 168
-					<span className="mx-[10px] mb:hidden">|</span>
-					<br className="hidden mb:block" />
-					<br className="hidden mb:block" />
-					marketing@golfsquare.com.au
-				</p>
 				{/* <div className="listMore flex flex-wrap items-center gap-y-[25px] space-x-[40px] mb:w-full mb:space-x-0">
 					{listMore.map((e: any, i: number) => (
 						<div
