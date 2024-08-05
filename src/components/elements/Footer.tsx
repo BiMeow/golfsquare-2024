@@ -89,15 +89,15 @@ function Footer({ ...props }) {
 				<a href="https://maps.app.goo.gl/qC1kKUyrNi9FxSmV6" target="_blank" className="mainBtn mb-[20px] text-white">
 					Google map
 				</a>
-				<div className="mx-[-25px] mb-[30px] flex">
-					<div className="c1 px-[25px]">
+				<div className="mx-[-25px] mb-[30px] flex mb:flex-wrap mb:space-y-[20px]">
+					<div className="c1 px-[25px] mb:w-full">
 						<p className="font-semibold">Opening Hours:</p>
 					</div>
-					<div className="c2 px-[25px]">
+					<div className="c2 px-[25px] mb:w-full">
 						<p className="mb-[10px] font-semibold">Golf:</p>
 						<p className="whitespace-pre-wrap text-[13px] tracking-[1px]">{setting?.golf}</p>
 					</div>
-					<div className="c3 px-[25px]">
+					<div className="c3 px-[25px] mb:w-full">
 						<p className="mb-[10px] font-semibold">Kitchen</p>
 						<p className="whitespace-pre-wrap text-[13px] tracking-[1px]">{setting?.kitchen}</p>
 					</div>
