@@ -1,3 +1,4 @@
+import { useStorage } from "@/components/context/StorageProvider";
 import asset from "@/utils/asset";
 import gsap from "gsap";
 import { useRouter } from "next/router";
@@ -5,6 +6,7 @@ import { memo, useEffect } from "react";
 
 function SectionVisitCelebration({ data, ...props }: any) {
 	const router = useRouter();
+	const { setIsModalRegisterOpen } = useStorage();
 
 	let listCeleb = [
 		{
@@ -67,10 +69,10 @@ function SectionVisitCelebration({ data, ...props }: any) {
 
 					<div className="listCeleb mx-[-15px] flex flex-wrap items-stretch gap-y-[30px]">
 						{listCeleb.map((e: any, i: number) => (
-							<div className="itemCeleb group w-1/3 px-[15px] mb:w-full" key={i}>
+							<div className="itemCeleb group w-1/3 cursor-pointer px-[15px] mb:w-full" key={i} onClick={() => setIsModalRegisterOpen(true)}>
 								<div className="h-full bg-[#202642]">
 									<div className="overflow-hidden">
-										<img src={e.image} alt="" className="aspect-[35/41] object-cover duration-500 group-hover:scale-[1.01]" />
+										<img src={e.image} alt="" className="aspect-[35/41] object-cover duration-500 group-hover:scale-[1.05]" />
 									</div>
 									<div className="p-[30px]">
 										<p className="text-24 mb-[16px] font-bold">{e.title}</p>

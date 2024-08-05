@@ -6,6 +6,7 @@ const StorageProvider = (props: any) => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const [isModalOpen, setIsModalOpen] = useState<any>(false);
+	const [isModalRegisterOpen, setIsModalRegisterOpen] = useState<any>(false);
 
 	return (
 		<StorageContext.Provider
@@ -14,6 +15,8 @@ const StorageProvider = (props: any) => {
 				setIsLoading,
 				isModalOpen,
 				setIsModalOpen,
+				isModalRegisterOpen,
+				setIsModalRegisterOpen,
 			}}
 			{...props}
 		></StorageContext.Provider>

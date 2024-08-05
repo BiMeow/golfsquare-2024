@@ -1,7 +1,7 @@
 import { IconFb, IconInsta, IconTiktok, IconTwitter, IconYt } from "@/components/elements/Icon";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 let listSocial = [
 	{
@@ -44,20 +44,48 @@ let listSocial = [
 function Footer({ ...props }) {
 	const router = useRouter();
 
+	const [setting, setSetting] = useState<any>();
+
+	const getSetting = async () => {
+		const ApiCall = await fetch(`${process.env.NEXT_PUBLIC_BASE_ULR_API}/api/v1/pages/SETTINGS`);
+		const res = await ApiCall.json();
+
+		if (res.status) {
+			setSetting(res.data?.content?.settings);
+		}
+	};
+
+	useEffect(() => {
+		getSetting();
+	}, []);
+
+	let listSocial: any = [
+		{
+			icon: <IconFb />,
+			link: setting?.facebook,
+		},
+		{
+			icon: <IconInsta />,
+			link: setting?.instagram,
+		},
+		{
+			icon: <IconTiktok />,
+			link: setting?.tiktok,
+		},
+		{
+			icon: <IconYt />,
+			link: setting?.youtube,
+		},
+	];
+
 	return (
 		<>
 			<div
 				className={`Footer fadeIn flex flex-col items-center justify-center py-[50px] text-[16px] text-red tl-l:px-[20px] mb:pb-[60px] mb:pt-[20px] mb:text-[14px]`}
 			>
-				<p className="mb-[20px] text-center text-[16px]">
-					The ultimate destination for dedicated golfers to play indoor golf <br />
-					Become a Member now!
-				</p>
+				<p className="mb-[20px] text-center text-[16px]">{setting?.title}</p>
 				<img src="/images/logo-icon.png" alt="" className="mb-[20px] w-[65px]" />
-				<p className="mb-[20px] text-center font-semibold">
-					Address:
-					<br />8 Annastasia Way, Sunshine North, Victoria 3020, Australia
-				</p>
+				<p className="mb-[20px] whitespace-pre-wrap text-center font-semibold">{setting?.address}</p>
 				<a href="https://maps.app.goo.gl/qC1kKUyrNi9FxSmV6" target="_blank" className="mainBtn mb-[20px] text-white">
 					Google map
 				</a>
@@ -67,53 +95,30 @@ function Footer({ ...props }) {
 					</div>
 					<div className="c2 px-[25px]">
 						<p className="mb-[10px] font-semibold">Golf:</p>
-						<p className="text-[13px] tracking-[1px]">
-							Mon: 12pm - 9pm
-							<br />
-							Tues: 12pm - 9pm
-							<br />
-							Wed: 12pm - 9pm
-							<br />
-							Thur: 12pm - 10pm
-							<br />
-							Fri: 12pm - 11pm
-							<br />
-							Sat: 10am - 11pm
-							<br />
-							Sun: 10am - 10pm
-						</p>
+						<p className="whitespace-pre-wrap text-[13px] tracking-[1px]">{setting?.golf}</p>
 					</div>
 					<div className="c3 px-[25px]">
 						<p className="mb-[10px] font-semibold">Kitchen</p>
-						<p className="text-[13px] tracking-[1px]">
-							Mon: Closed
-							<br />
-							Tues: Closed
-							<br />
-							Wed: 5pm - 9pm
-							<br />
-							Thur: 5pm - 9pm
-							<br />
-							Fri: 12pm - 3pm & 5pm - 9pm
-							<br />
-							Sat: 12pm - 3pm & 5pm - 9pm
-							<br />
-							Sun: 12pm - 3pm & 5pm - 9pm
-						</p>
+						<p className="whitespace-pre-wrap text-[13px] tracking-[1px]">{setting?.kitchen}</p>
 					</div>
 				</div>
 				<p className="mb-[30px] flex items-center text-center font-bold mb:flex-col">
-					Contact Us: +61 3 9689 1888
+					Contact Us:{" "}
+					<a className="mx-[5px] duration-500 hover:text-white" href={`tel:${setting?.hotline}`}>
+						{setting?.hotline}
+					</a>
 					<span className="mx-[10px] mb:hidden">|</span>
 					<br className="hidden mb:block" />
 					<br className="hidden mb:block" />
-					marketing@golfsquare.com.au
+					<a className="mx-[5px] duration-500 hover:text-white" href={`mailto:${setting?.email}`}>
+						{setting?.email}
+					</a>
 				</p>
 				<div className="listSocial flex items-center space-x-[30px]">
 					{listSocial.map((e: any, i: number) => (
 						<div className="itemSocial relative cursor-pointer fill-red duration-300 hover:fill-white" key={i}>
 							{e.icon}
-							<Link href={e.link} className="absFull" target="_blank" />
+							{e.link && <Link href={e.link} className="absFull" target="_blank" />}
 						</div>
 					))}
 				</div>
