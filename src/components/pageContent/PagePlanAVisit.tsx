@@ -1,3 +1,4 @@
+import { useStorage } from "@/components/context/StorageProvider";
 import SectionContact from "@/components/sections/common/SectionContact";
 import SectionVisitBanner from "@/components/sections/planavisit/SectionVisitBanner";
 import SectionVisitCelebration from "@/components/sections/planavisit/SectionVisitCelebration";
@@ -8,6 +9,8 @@ import { memo, useEffect, useState } from "react";
 
 function PagePlanAVisit({ ...props }) {
 	const router = useRouter();
+
+	const { setIsModalRegisterOpen } = useStorage();
 
 	const [pageContent, setPageContent] = useState<any>();
 
@@ -22,6 +25,9 @@ function PagePlanAVisit({ ...props }) {
 
 	useEffect(() => {
 		getPageContent();
+		setTimeout(() => {
+			setIsModalRegisterOpen(true);
+		}, 1500);
 	}, []);
 
 	return (

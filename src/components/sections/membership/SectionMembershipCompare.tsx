@@ -26,7 +26,7 @@ function SectionMemberShipCompare({ data = [], listMembership = { list }, ...pro
 
 	return (
 		<>
-			<div className={`SectionMemberShipCompare`}>
+			<div className={`SectionMemberShipCompare min-w-[1000px]`}>
 				<div className="listMem mx-[-15px] mb-[50px] flex">
 					<div className="c1 w-[20%] px-[15px]"></div>
 					<div className="c2 w-[80%] px-[15px]">
