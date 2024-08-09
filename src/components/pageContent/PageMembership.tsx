@@ -195,24 +195,17 @@ function PageMembership({ ...props }) {
 			<div className={`PageMembership pt-[230px] mb:pt-[120px]`}>
 				<div className="golfPricing mb-[75px] border-b border-red">
 					<div className="cusContainer">
-						<h2 className="text-64 fadeUp mb-[155px] text-center uppercase">Golf Pricing</h2>
-						<p className="fadeUp mb-[10px] text-center text-[20px] font-semibold text-red">Peak hours </p>
+						<h2 className="text-64 fadeUp mb-[155px] text-center uppercase mb:mb-[40px]">Golf Pricing</h2>
+						<p className="fadeUp mb-[10px] text-center text-[20px] font-semibold text-red mb:hidden">Peak hours </p>
 						<div className="fadeUp flex justify-center text-center text-[20px] font-semibold leading-[1.5] mb:flex-wrap">
-							<p className="border-r-2 border-red px-[60px] tl-l:px-[30px] mb:w-full mb:border-b mb:border-r-0 mb:px-0">
-								One hour sim hire (off peak) - $45
-								<br />
-								One hour sim hire (peak) - $60
+							<p className="whitespace-pre-wrap border-r-2 border-red px-[60px] tl-l:px-[30px] mb:w-full mb:border-b mb:border-r-0 mb:px-0 mb:py-[10px]">
+								{pageContent?.block1}
 							</p>
-							<p className="border-r-2 border-red px-[60px] tl-l:px-[30px] mb:w-full mb:border-b mb:border-r-0 mb:px-0">
-								Wednesday - Friday from 5pm
-								<br />
-								Saturday & Sunday from 3pm
+							<p className="whitespace-pre-wrap border-r-2 border-red px-[60px] tl-l:px-[30px] mb:w-full mb:border-b mb:border-r-0 mb:px-0 mb:py-[10px]">
+								<span className="fadeUp hidden text-center text-[20px] font-semibold text-red mb:block">Peak hours </span>
+								{pageContent?.block2}
 							</p>
-							<p className="px-[60px] tl-l:px-[30px] mb:w-full mb:px-0">
-								Club hire - $20
-								<br />
-								Premium club hire - $30
-							</p>
+							<p className="whitespace-pre-wrap px-[60px] tl-l:px-[30px] mb:w-full mb:px-0 mb:py-[10px]">{pageContent?.block3}</p>
 						</div>
 						<img src="/images/membership/bg-golf-pricing.png" alt="" className="fadeRight mx-auto mt-[-275px] block w-full max-w-[585px]" />
 					</div>
@@ -242,7 +235,7 @@ function PageMembership({ ...props }) {
 						))}
 					</div> */}
 				</div>
-				<div className="membershipContent fadeUp">{membershipContent}</div>
+				<div className="membershipContent fadeUp overflow-x-auto overflow-y-hidden">{membershipContent}</div>
 			</div>
 
 			<style jsx global>{`

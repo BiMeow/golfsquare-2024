@@ -27,9 +27,20 @@ function PopupIframe({ ...props }) {
 
 	const onRegister = async (data: any) => {
 		console.log(`BiMeow log on register`, data);
-		message.success("You have successfully registered. Thank you!");
-		reset();
-		handleCancel();
+		const ApiCall = await fetch(`${process.env.NEXT_PUBLIC_BASE_ULR_API}/api/v1/fe/signup`, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(data),
+		});
+		const res = await ApiCall.json();
+
+		if (res.status) {
+			message.success("You have successfully registered. Thank you!");
+			reset();
+			handleCancel();
+		} else {
+			message.warning("Please try again!");
+		}
 	};
 
 	return (
@@ -49,11 +60,11 @@ function PopupIframe({ ...props }) {
 					<form className="formLogin" onSubmit={handleSubmit(onRegister)}>
 						<div className="itemForm mb-[10px]">
 							<input
-								id="firstName"
+								id="name"
 								className="cusInput rounded-[10px] px-[10px]"
 								type="text"
 								placeholder="First Name"
-								{...register("firstName", { required: true })}
+								{...register("name", { required: true })}
 							/>
 							{errors?.firstName && <div className="errors text-yellow-300">Please check your First Name!</div>}
 						</div>
@@ -70,11 +81,11 @@ function PopupIframe({ ...props }) {
 						<div className="itemForm mb-[40px]">
 							<p className="mb-[5px] text-white">Closest venue</p>
 							<input
-								id="postcode"
+								id="venue"
 								className="cusInput rounded-[10px] px-[10px]"
 								type="text"
 								placeholder="Postcode"
-								{...register("postcode", { required: true })}
+								{...register("venue", { required: true })}
 							/>
 							{errors?.postcode && <div className="errors text-yellow-300">Please check your Postcode!</div>}
 						</div>

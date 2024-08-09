@@ -69,7 +69,11 @@ function SectionVisitCelebration({ data, ...props }: any) {
 
 					<div className="listCeleb mx-[-15px] flex flex-wrap items-stretch gap-y-[30px]">
 						{listCeleb.map((e: any, i: number) => (
-							<div className="itemCeleb group w-1/3 cursor-pointer px-[15px] mb:w-full" key={i} onClick={() => setIsModalRegisterOpen(true)}>
+							<div
+								className="itemCeleb group w-1/3 cursor-pointer px-[15px] mb:w-full"
+								key={i}
+								//onClick={() => setIsModalRegisterOpen(true)}
+							>
 								<div className="h-full bg-[#202642]">
 									<div className="overflow-hidden">
 										<img src={e.image} alt="" className="aspect-[35/41] object-cover duration-500 group-hover:scale-[1.05]" />
