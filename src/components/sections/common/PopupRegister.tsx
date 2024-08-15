@@ -36,6 +36,7 @@ function PopupIframe({ ...props }) {
 
 		if (res.status) {
 			message.success("You have successfully registered. Thank you!");
+			localStorage.setItem("GolfSquare_IsSingup", JSON.stringify(true));
 			reset();
 			handleCancel();
 		} else {

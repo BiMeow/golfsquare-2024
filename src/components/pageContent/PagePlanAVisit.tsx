@@ -25,8 +25,12 @@ function PagePlanAVisit({ ...props }) {
 
 	useEffect(() => {
 		getPageContent();
+
 		setTimeout(() => {
-			setIsModalRegisterOpen(true);
+			const local = JSON.parse(localStorage.getItem("GolfSquare_IsSingup") as string);
+			if (local == null || !local) {
+				setIsModalRegisterOpen(true);
+			}
 		}, 1500);
 	}, []);
 
