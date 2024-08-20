@@ -32,8 +32,14 @@ function SectionMemberShipCompare({ data = [], listMembership = { list }, ...pro
 					<div className="c2 w-[80%] px-[15px]">
 						<div className="mx-[-15px] flex">
 							{listMembership?.map((e: any, i: number) => (
-								<div className="itemMem w-1/4 px-[15px]" key={i}>
-									<img src={e.image} alt="" className="mb-[25px] w-full" />
+								<div
+									className={`
+									itemMem //w-1/4 w-1/2 px-[15px]
+									${[2, 3].includes(i) && "hidden"}
+									`}
+									key={i}
+								>
+									<img src={e.image} alt="" className="mx-auto mb-[25px] w-full max-w-[400px]" />
 									<p className="whitespace-pre-wrap text-center font-bold">{e.title}</p>
 								</div>
 							))}
@@ -43,7 +49,13 @@ function SectionMemberShipCompare({ data = [], listMembership = { list }, ...pro
 
 				<div className="listCompare mb-[50px]">
 					{data.map((e: any, i: number) => (
-						<div className="itemCompare border-t border-white py-[30px] last:border-y" key={i}>
+						<div
+							className={`
+							itemCompare border-t border-white py-[30px] last:border-y
+							${[1, 4, 5].includes(i) && "hidden"}
+							`}
+							key={i}
+						>
 							<div className="mx-[-15px] flex">
 								<div className="c1 w-[20%] px-[15px]">
 									<p className="whitespace-pre-wrap font-bold dt-exl:whitespace-normal">{e.title}</p>
@@ -58,7 +70,13 @@ function SectionMemberShipCompare({ data = [], listMembership = { list }, ...pro
 											key={i2}
 										>
 											{e2.map((e3: any, i3: number) => (
-												<div className="w-1/4 px-[10px]" key={i3}>
+												<div
+													className={`
+													//w-1/4 w-1/2 px-[10px]
+													${[2, 3].includes(i3) && "hidden"}
+													`}
+													key={i3}
+												>
 													<p className="whitespace-pre-wrap text-center">{e3}</p>
 												</div>
 											))}
